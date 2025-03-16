@@ -213,8 +213,8 @@ header[data-big] {
   }
 
   .title {
-    font-size: var(--xxl);
-    margin-bottom: 10px;
+    font-size: var(--xl);
+    margin-bottom: 30px;
     text-align: center;
     width: 100%;
   }
@@ -265,4 +265,14 @@ header nav {
 /* Ensure the nav items are visible on toggle */
 header:not([data-big]) .nav-toggle:checked + nav {
   display: flex;
+}
+
+/* Hide the subtitle specifically on the home page */
+body.home-page header .subtitle {
+  display: none;
+}
+
+/* Ensure subtitle is still visible on other pages */
+body:not(.home-page) header .subtitle {
+  display: inline-block;
 }

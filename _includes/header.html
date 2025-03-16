@@ -47,6 +47,12 @@
   <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
 
   <nav>
+    {% if page.url != "/" %}
+    <a href="{{ '/' | relative_url }}" data-tooltip="Return to homepage">
+      Home
+    </a>
+    {% endif %}
+    
     {% assign pages = site.pages
       | where_exp: "page", "page.nav"
       | sort: "nav.order"

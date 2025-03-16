@@ -12,7 +12,7 @@ This repository contains the source code for the website of the Transport System
 
 ## ⚠️ IMPORTANT DEPLOYMENT WARNING ⚠️
 
-**Pushing to the main branch will AUTOMATICALLY deploy to our live server at [transport-systems.imperial.ac.uk](https://transport-systems.imperial.ac.uk).**
+**Pushing to the main branch will AUTOMATICALLY deploy to our live server.**
 
 It is absolutely required that you:
 1. Test all changes locally before pushing to main
@@ -136,27 +136,7 @@ This website was initially built using the [Greene Lab Website Template](https:/
 
 **Note:** We have made significant customizations to the template and have stopped syncing with the upstream project. Not all aspects of the original documentation apply to our implementation. Use the original documentation as a reference, but be aware of our custom modifications.
 
-## Working with Logos and Images
-
-The website uses several logo files:
-
-### Main Logos
-- The TSL logo is stored in `images/logo.svg`
-- The Imperial College London logo is stored in `images/IMPERIAL_logo_RGB_Black_2024.svg`
-
-### Header Logo Display
-The header displays different logos based on the page:
-- On the home page, both the Imperial and TSL logos are displayed with a divider
-- On other pages, only the TSL logo is shown
-
-### Funder Logos
-- Logos of funding organizations are stored in `images/funders/`
-- These are displayed on the home page in a grid layout
-- To add a new funder logo:
-  1. Add the logo file to `images/funders/`
-  2. Update the `index.md` file to include the new logo in the funders section
-
-### Team Member Photos
+## Team Member Photos
 - Team member profile photos should be placed in `images/team/`
 - Use the same naming convention: `lastname-initial.jpg`
 - Photos should be square format, ideally 400x400 pixels
@@ -171,39 +151,6 @@ To update the publications list, you can use the citation processing scripts:
 ```
 
 This will update the `_data/citations.yaml` file with the latest publication information.
-
-## Deployment Instructions
-
-### Recommended Workflow
-
-1. Create a feature branch for your changes:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes and test them locally using `./view.sh`
-
-3. Commit your changes:
-   ```bash
-   git add .
-   git commit -m "Description of changes"
-   ```
-
-4. Push your feature branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-5. Create a pull request on GitHub and ask for a review
-
-6. Once approved, merge the pull request into the main branch, which will trigger the automatic deployment
-
-### Monitoring Deployment
-
-After pushing to main:
-1. The deployment process typically takes 2-5 minutes
-2. You can verify the deployment by checking the website
-3. If you notice any issues after deployment, be prepared to fix them immediately or revert your changes
 
 ## Troubleshooting
 
