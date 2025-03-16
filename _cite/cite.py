@@ -21,7 +21,6 @@ from modules.reporter import generate_reports
 # Configuration
 CONFIG = {
     "output_file": "_data/citations.yaml",
-    "backup_file": "_data/citations.yaml.bak",
     "report_dir": "_cite/report",
     "plugins": ["pubmed", "orcid", "google-scholar", "sources", "eid"],  # Added 'eid' plugin
     "similarity_threshold": 0.95,  # Higher threshold to avoid false positives
@@ -73,17 +72,6 @@ def main():
         log("Errors occurred during citation generation", level="ERROR")
         log_to_file("Errors occurred during citation generation", level="ERROR")
         exit(1)
-    
-    # Create backup of citations
-    try:
-        save_data(CONFIG["backup_file"], citations)
-        log(f"Created backup at {CONFIG['backup_file']}", 1)
-        log_to_file(f"Created backup at {CONFIG['backup_file']}", 1)
-    except Exception as e:
-        log(str(e), level="WARNING")
-        log_to_file(str(e), level="WARNING")
-        log("Continuing without backup", 1)
-        log_to_file("Continuing without backup", 1)
     
     # Deduplicate citations
     log()

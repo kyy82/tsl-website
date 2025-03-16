@@ -1,28 +1,16 @@
 ---
-title: Projects
-# nav:
-#   order: 1
-#   tooltip: Software, datasets, and more
+title: Research Projects
+nav:
+  order: 3
+  tooltip: Our research projects
 ---
 
-# {% include icon.html icon="fa-solid fa-wrench" %}Projects
+# {% include icon.html icon="fa-solid fa-flask" %}Research Projects
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Our research at the Transport Systems & Logistics Laboratory focuses on innovative solutions for complex transportation challenges. We develop advanced algorithms, simulation models, and optimization techniques to improve efficiency, safety, and sustainability in transport systems.
 
-{% include tags.html tags="publication, resource, website" %}
+{% include project-tags.html %}
 
-{% include search-info.html %}
-
-{% include section.html %}
-
-## Featured
-
-{% include list.html component="card" data="projects" filters="group: featured" %}
-
-{% include section.html %}
-
-## More
-
-{% include list.html component="card" data="projects" filters="group: " style="small" %}
-
+{% for project in site.data.projects %}
+    {% include project-card.html project=project %}
+{% endfor %}
