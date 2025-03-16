@@ -48,13 +48,28 @@ def generate_reports(report_dir, all_sources, all_citations, duplicate_groups,
 def generate_text_report(all_citations, duplicate_groups, group_details):
     """Generate a plain text report of deduplication results for quick review"""
     
+    # Identify Google Scholar-only entries
+    google_scholar_only = []
+    
+    # Find citations that are only in Google Scholar
+    for citation in all_citations:
+        id_from_gs = citation.get('id', '').startswith('gs-id:') or citation.get('id', '').startswith('pyOTFWoAAAAJ:')
+        plugin_is_gs = citation.get('plugin') == 'google-scholar.py'
+        
+        if (id_from_gs or plugin_is_gs) and not any(
+            c.get('id') == citation.get('id') and c.get('plugin') != 'google-scholar.py' 
+            for c in all_citations if c != citation
+        ):
+            google_scholar_only.append(citation)
+    
     report = "CITATION DEDUPLICATION SUMMARY\n"
     report += "=" * 30 + "\n\n"
     
     report += f"Total citations: {len(all_citations)}\n"
     report += f"Duplicate groups found: {len(duplicate_groups)}\n"
     report += f"Citations removed: {sum(len(group) - 1 for group in duplicate_groups)}\n"
-    report += f"Final citation count: {len(all_citations) - sum(len(group) - 1 for group in duplicate_groups)}\n\n"
+    report += f"Final citation count: {len(all_citations) - sum(len(group) - 1 for group in duplicate_groups)}\n"
+    report += f"Google Scholar only entries: {len(google_scholar_only)}\n\n"
     
     if not group_details:
         report += "No duplicates were found and removed.\n"
@@ -97,6 +112,27 @@ def generate_text_report(all_citations, duplicate_groups, group_details):
         
         report += "-" * 30 + "\n\n"
     
+    # Add section for Google Scholar-only entries
+    if google_scholar_only:
+        report += "GOOGLE SCHOLAR ONLY ENTRIES\n"
+        report += "-" * 30 + "\n\n"
+        report += f"Found {len(google_scholar_only)} entries that exist only in Google Scholar:\n\n"
+        
+        for idx, citation in enumerate(google_scholar_only):
+            title = citation.get('title', 'No title')
+            authors = format_authors_for_display(citation.get('authors', []))
+            publisher = citation.get('publisher', 'Unknown source')
+            date = citation.get('date', 'Unknown date')
+            id_str = citation.get('id', 'No ID')
+            
+            report += f"{idx+1}. \"{title}\" \n"
+            report += f"   by {authors}\n"
+            report += f"   in {publisher} ({date})\n"
+            report += f"   ID: {id_str}\n\n"
+        
+        report += "-" * 30 + "\n\n"
+        report += "NOTE: These entries might need to be properly cataloged in your sources.\n\n"
+    
     return report
 
 def generate_html_report(all_sources, all_citations, duplicate_groups, 
@@ -114,6 +150,28 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
     Returns:
         str: HTML report content
     """
+    # Identify Google Scholar-only entries
+    google_scholar_only = []
+    gs_ids = set()
+    
+    # Find all citations from Google Scholar
+    for citation in all_citations:
+        if citation.get('plugin') == 'google-scholar.py' or citation.get('id', '').startswith('gs-id:') or citation.get('id', '').startswith('pyOTFWoAAAAJ:'):
+            # Store identifier to check if it's unique to Google Scholar
+            if citation.get('id'):
+                gs_ids.add(citation.get('id'))
+    
+    # Find citations that are only in Google Scholar and not in other sources
+    for citation in all_citations:
+        id_from_gs = citation.get('id', '').startswith('gs-id:') or citation.get('id', '').startswith('pyOTFWoAAAAJ:')
+        plugin_is_gs = citation.get('plugin') == 'google-scholar.py'
+        
+        if (id_from_gs or plugin_is_gs) and not any(
+            c.get('id') == citation.get('id') and c.get('plugin') != 'google-scholar.py' 
+            for c in all_citations if c != citation
+        ):
+            google_scholar_only.append(citation)
+    
     html = """
     <!DOCTYPE html>
     <html lang="en">
@@ -223,6 +281,9 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
                 border: 1px solid #ddd;
                 border-radius: 4px;
             }
+            .gs-entry {
+                background-color: #e9ffef;
+            }
         </style>
         <script>
             // Simple filter function for tables
@@ -252,7 +313,7 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
             <a href="#sources">All Sources</a>
             <a href="#citations">All Citations</a>
             <a href="#duplicates">Duplicate Groups</a>
-            <a href="#similarity">Similarity Matrix</a>
+            <a href="#google-scholar">Google Scholar Only</a>
         </div>
         
         <div class="section stats" id="summary">
@@ -261,6 +322,7 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
             <p><strong>Total Citations:</strong> """ + str(len(all_citations)) + """</p>
             <p><strong>Duplicate Groups Found:</strong> """ + str(len(duplicate_groups)) + """</p>
             <p><strong>Citations After Deduplication:</strong> """ + str(len(all_citations) - sum(len(group) - 1 for group in duplicate_groups)) + """</p>
+            <p><strong>Google Scholar Only Entries:</strong> """ + str(len(google_scholar_only)) + """</p>
         </div>
         
         <div class="section" id="sources">
@@ -322,8 +384,12 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
         publisher = citation.get("publisher", "")
         date = citation.get("date", "")
         
+        # Check if this is a Google Scholar-only entry
+        is_gs_only = citation in google_scholar_only
+        row_class = "gs-entry" if is_gs_only else ""
+        
         html += f"""
-                <tr>
+                <tr class="{row_class}">
                     <td>{idx}</td>
                     <td>{citation.get('id', '')}</td>
                     <td>
@@ -434,25 +500,33 @@ def generate_html_report(all_sources, all_citations, duplicate_groups,
                 </tr>
     """
     
-    # Add similarity matrix
-    for key, data in similarity_matrix.items():
-        similarity = data['similarity']
-        if similarity > 0.7:  # Only show high similarity items
-            row_class = ""
-            if similarity > 0.9:
-                row_class = "similarity-high"
-            elif similarity > 0.8:
-                row_class = "similarity-medium"
+    
+    # Add Google Scholar-only entries
+    if google_scholar_only:
+        for citation in google_scholar_only:
+            title = citation.get('title', 'No title')
+            authors = ", ".join(citation.get('authors', []))
+            publisher = citation.get('publisher', '')
+            date = citation.get('date', '')
+            id_str = citation.get('id', '')
+            link = citation.get('link', '')
             
             html += f"""
-                <tr class="{row_class}">
-                    <td>{data['index1']}</td>
-                    <td>{data['index2']}</td>
-                    <td>{data['title1']}</td>
-                    <td>{data['title2']}</td>
-                    <td>{similarity:.4f}</td>
+                <tr>
+                    <td>{title}</td>
+                    <td>{authors}</td>
+                    <td>{publisher}</td>
+                    <td>{date}</td>
+                    <td>{id_str}</td>
+                    <td><a href="{link}" target="_blank">{link}</a></td>
                 </tr>
             """
+    else:
+        html += """
+                <tr>
+                    <td colspan="6">No Google Scholar-only entries found.</td>
+                </tr>
+        """
     
     html += """
             </table>
