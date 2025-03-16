@@ -1,38 +1,56 @@
-{% comment %}
-  Displays a single project card with title, tags, description, and image on the right.
-  
-  Usage:
-  {% include project-card.html project=project %}
-{% endcomment %}
-
+{% capture project_markup %}
 <div class="project-card">
-  <h2>{{ include.project.title }}</h2>
+  <h2 style="margin-bottom: 5px; font-size: 1.7rem; border-bottom: none;">{{ include.project.title }}</h2>
   
-  <div class="project-tags">
-    {% for tag in include.project.tags %}
-      <span class="project-tag">{{ tag }}</span>
-    {% endfor %}
-  </div>
-  
-  <div class="project-content">
-    <div class="project-text">
-      <p>{{ include.project.description }}</p>
+  <div style="display: grid; grid-template-columns: 1fr 250px; grid-gap: 30px; align-items: start;">
+    <div>
+      <div style="margin-bottom: 15px;">
+        {% for tag in include.project.tags %}
+          <span style="display: inline-block; background-color: #e0e0e0; padding: 3px 15px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.9rem;">{{ tag }}</span>
+        {% endfor %}
+      </div>
       
-      <p class="project-collaborators">
+      <p style="margin-top: 0;">{{ include.project.description }}</p>
+      
+      <p style="margin-top: 20px; font-size: 0.95rem;">
         <em>Collaborators: {{ include.project.collaborators }}</em>
       </p>
+      
+      {% if include.project.collaborator_icons %}
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px; align-items: center;">
+          {% for icon in include.project.collaborator_icons %}
+            <img src="{{ icon.image | relative_url }}" alt="{{ icon.name }}" title="{{ icon.name }}" style="height: 40px; width: auto; max-width: 120px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: filter 0.3s ease, opacity 0.3s ease;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7';">
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
     
-    <div class="project-image">
-      <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}">
+    <div>
+      <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}" style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
     </div>
   </div>
   
-  {% if include.project.collaborator_icons %}
-    <div class="collaborator-icons">
-      {% for icon in include.project.collaborator_icons %}
-        <img src="{{ icon.image | relative_url }}" alt="{{ icon.name }}" title="{{ icon.name }}">
-      {% endfor %}
-    </div>
-  {% endif %}
+  <hr style="margin: 40px 0; border: none; height: 1px; background-color: #e0e0e0;">
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .project-card > div[style*="grid"] {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .project-card > div[style*="grid"] > div:first-child {
+      grid-row: 2 !important;
+    }
+    
+    .project-card > div[style*="grid"] > div:last-child {
+      grid-row: 1 !important;
+      justify-self: center;
+      max-width: 250px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+{% endcapture %}
+
+{{ project_markup }}

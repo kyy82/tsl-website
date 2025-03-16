@@ -2,60 +2,53 @@
 ---
 ---
 
-/* Project cards for all projects */
+/* Project cards */
 .project-card {
   margin-bottom: 40px;
   padding-bottom: 20px;
 }
 
-.project-card h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-  font-weight: var(--semi-bold);
-  color: var(--primary);
-}
-
-/* Tags styling */
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.project-tag {
-  background-color: var(--light-gray);
-  color: var(--text);
-  padding: 3px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+/* Project title */
+.project-title {
+  margin-bottom: 5px;
+  font-size: 1.7rem;
+  border-bottom: none;
 }
 
 /* Project content layout */
 .project-content {
-  display: flex;
-  flex-direction: row; /* Ensure horizontal layout */
-  gap: 30px;
-  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-gap: 30px;
+  align-items: start;
 }
 
+/* Project text container */
 .project-text {
-  flex: 3;
-  order: 1; /* Put text first */
+  /* Left column content */
 }
 
-.project-image {
-  flex: 2;
-  max-width: 35%;
-  order: 2; /* Put image second (right side) */
+/* Tags styling */
+.project-tags {
+  margin-bottom: 15px;
 }
 
-.project-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+.project-tag {
+  display: inline-block;
+  background-color: var(--light-gray);
+  padding: 3px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
+/* Project description */
+.project-description {
+  margin-top: 0;
+}
+
+/* Collaborators section */
 .project-collaborators {
   margin-top: 20px;
   font-size: 0.95rem;
@@ -70,7 +63,7 @@
   align-items: center;
 }
 
-.collaborator-icons img {
+.collaborator-icon {
   height: 40px;
   width: auto;
   max-width: 120px;
@@ -80,13 +73,24 @@
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.collaborator-icons img:hover {
+.collaborator-icon:hover {
   filter: grayscale(0%);
   opacity: 1;
 }
 
+/* Project image */
+.project-image-container {
+  /* Right column content */
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
 /* Divider between projects */
-hr {
+.project-divider {
   margin: 40px 0;
   border: none;
   height: 1px;
@@ -96,19 +100,17 @@ hr {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .project-content {
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
   }
   
-  .project-image {
-    max-width: 100%;
+  .project-text {
+    grid-row: 2;
+  }
+  
+  .project-image-container {
+    grid-row: 1;
+    justify-self: center;
+    max-width: 250px;
     margin-bottom: 20px;
-  }
-  
-  .collaborator-icons {
-    justify-content: center;
-  }
-  
-  .collaborator-icons img {
-    height: 30px;
   }
 }
