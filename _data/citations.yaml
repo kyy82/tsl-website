@@ -1,18 +1,5 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
-- id: doi:10.1109/LRA.2025.3531146
-  title: 'IntNet: A Communication-Driven Multi-Agent Reinforcement Learning Framework
-    for Cooperative Autonomous Driving'
-  authors:
-  - Leandro Parada
-  - Kevin Yu
-  - Panagiotis Angeloudis
-  publisher: IEEE Robotics and Automation Letters
-  date: '2025-01-01'
-  link: https://doi.org/g82fn6
-  orcid: 0000-0002-6778-8264
-  plugin: orcid.py
-  file: orcid.yaml
 - id: doi:10.1109/OJITS.2025.3530268
   title: Risk-Aware Stochastic Vehicle Trajectory Prediction With Spatial-Temporal
     Interaction Modelling
@@ -231,7 +218,7 @@
   - Ana Mijic
   - Jennifer Whyte
   - Rupert Myers
-  - Panagiotis Angeloudis
+  - Pangiotis Angeloudis
   - Michel-Alexandre Cardin
   - Marc Stettler
   - Washington Ochieng
@@ -457,19 +444,6 @@
   orcid: 0000-0002-6778-8264
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1016/j.trpro.2020.03.187
-  title: Optimal logistics planning for modular construction using multi-stage stochastic
-    programming
-  authors:
-  - Pei-Yuan Hsu
-  - Marco Aurisicchio
-  - Panagiotis Angeloudis
-  publisher: Transportation Research Procedia
-  date: '2020-01-01'
-  link: https://doi.org/gtm4jm
-  orcid: 0000-0002-6778-8264
-  plugin: orcid.py
-  file: orcid.yaml
 - id: doi:10.1016/j.tre.2019.101830
   title: Optimal supply chain resilience with consideration of failure propagation
     and repair logistics
@@ -540,9 +514,6 @@
   orcid: 0000-0002-6778-8264
   plugin: sources.py
   file: sources.yaml
-  image: /images/papers/highlight-urban.jpg
-  group:
-  - featured
 - id: doi:10.1016/j.aap.2016.04.030
   title: 'Modelling the impact of liner shipping network perturbations on container
     cargo routing: Southeast Asia to Europe application'
@@ -934,6 +905,422 @@
   orcid: 0000-0002-6778-8264
   plugin: sources.py
   file: sources.yaml
+- id: gs-id:hsu.2018.optimal-logistics-planning-for-modular-constructio
+  title: Optimal logistics planning for modular construction using two-stage stochastic
+    programming
+  authors:
+  - PY Hsu
+  - P Angeloudis
+  - M Aurisicchio
+  publisher: Automation in construction 94, 47-61, 2018
+  date: '2018-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:HDshCWvjkbEC
+  gs_id: pyOTFWoAAAAJ:HDshCWvjkbEC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:angeloudis.2013.security-and-reliability-of-the-liner-containershi
+  title: 'Security and reliability of the liner container-shipping network: analysis
+    of robustness using a complex network framework'
+  authors:
+  - P Angeloudis
+  - K Bichou
+  - MGH Bell
+  publisher: Risk Management in Port Operations, Logistics and Supply Chain Security,
+    95-105, 2013
+  date: '2013-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:u-x6o8ySG0sC
+  gs_id: pyOTFWoAAAAJ:u-x6o8ySG0sC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:iossifova.2017.defining-the-urban
+  title: Defining the urban
+  authors:
+  - D Iossifova
+  - CNH Doll
+  - A Gasparatos
+  publisher: Taylor & Francis, 2017
+  date: '2017-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:isC4tDSrTZIC
+  gs_id: pyOTFWoAAAAJ:isC4tDSrTZIC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:novati.2015.modelling-the-effects-of-port-disruptions-assessme
+  title: 'Modelling the effects of port disruptions: assessment of disaster impacts
+    using a cost-based container flow assignment in liner shipping networks'
+  authors:
+  - M Novati
+  - PE Achurra-Gonzalez
+  - R Foulser-Piggott
+  - G Bowman
+  - MGH Bell
+  - '...'
+  publisher: Transportation Research Board (TRB) 94th Annual Meeting, 2015
+  date: '2015-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:pqnbT2bcN3wC
+  gs_id: pyOTFWoAAAAJ:pqnbT2bcN3wC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:sengupta.2017.sustainable-smart-cities-applying-complexity-scien
+  title: 'Sustainable smart cities: applying complexity science to achieve urban sustainability'
+  authors:
+  - U Sengupta
+  - CNH Doll
+  - A Gasparatos
+  - D Iossifova
+  - P Angeloudis
+  - '...'
+  publisher: United Nations University Press, 2017
+  date: '2017-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:ZeXyd9-uunAC
+  gs_id: pyOTFWoAAAAJ:ZeXyd9-uunAC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:ye.2022.approximate-optimum-curbside-utilisation-for-picku
+  title: Approximate optimum curbside utilisation for pick-up and drop-off (PUDO)
+    and parking demands using reinforcement learning
+  authors:
+  - Q Ye
+  - Y Feng
+  - J Qiu
+  - M Stettler
+  - P Angeloudis
+  publisher: "2022 IEEE 25th International Conference on Intelligent Transportation\
+    \ \u2026, 2022"
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:HE397vMXCloC
+  gs_id: pyOTFWoAAAAJ:HE397vMXCloC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:liu.2022.locationrouting-planning-for-lastmile-deliveries-u
+  title: 'Location-Routing Planning for Last-Mile Deliveries Using Mobile Parcel Lockers:
+    A Hybrid Q-Learning Network Approach.'
+  authors:
+  - Y Liu
+  - Q Ye
+  - JE Macias
+  - Y Feng
+  - P Angeloudis
+  publisher: CoRR, 2022
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:bnK-pcrLprsC
+  gs_id: pyOTFWoAAAAJ:bnK-pcrLprsC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:achurra-gonzalez.2017.attackerdefender-modelling-of-vulnerability-in-mar
+  title: Attacker-defender modelling of vulnerability in maritime logistics corridors
+  authors:
+  - P Achurra-Gonzalez
+  - P Angeloudis
+  - K Zavitsas
+  - A Niknejad
+  - DJ Graham
+  publisher: Advances in Shipping Data Analysis and Modeling, 297-315, 2017
+  date: '2017-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:NMxIlDl6LWMC
+  gs_id: pyOTFWoAAAAJ:NMxIlDl6LWMC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:zhang.2022.the-competition-and-inefficiency-in-urban-road-las
+  title: The competition and inefficiency in urban road last-mile delivery
+  authors:
+  - K Zhang
+  - JJ Escribano Macias
+  - D Paccagnan
+  - P Angeloudis
+  publisher: "Proceedings of the 21st International Conference on Autonomous Agents\
+    \ and \u2026, 2022"
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:V3AGJWp-ZtQC
+  gs_id: pyOTFWoAAAAJ:V3AGJWp-ZtQC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:ngu.2021.a-decentralised-multiagent-reinforcement-learning-
+  title: A Decentralised Multi-Agent Reinforcement Learning Approach for the Same-Day
+    Delivery Problem
+  authors:
+  - E Ngu
+  - L Parada
+  - JJE Macias
+  - P Angeloudis
+  publisher: Transportation Research Board 101st Annual Meeting (TRBAM 2022), 2021
+  date: '2021-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:kRWSkSYxWN8C
+  gs_id: pyOTFWoAAAAJ:kRWSkSYxWN8C
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:feng.2024.predicting-spatiotemporal-traffic-flow-a-comprehen
+  title: 'Predicting spatio-temporal traffic flow: a comprehensive end-to-end approach
+    from surveillance cameras'
+  authors:
+  - Y Feng
+  - Y Zhao
+  - X Zhang
+  - SFA Batista
+  - Y Demiris
+  - P Angeloudis
+  publisher: 'Transportmetrica B: Transport Dynamics 12 (1), 2380915, 2024'
+  date: '2024-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:evX43VCCuoAC
+  gs_id: pyOTFWoAAAAJ:evX43VCCuoAC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:goldbeck.2018.unlocking-the-potential-of-future-cities-through-s
+  title: Unlocking the potential of future cities through sustainable and resilient
+    infrastructure
+  authors:
+  - N Goldbeck
+  - P Angeloudis
+  publisher: 'Defining the Urban: Interdisciplinary and professional perspectives,
+    128-140, 2018'
+  date: '2018-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:mVmsd5A6BfQC
+  gs_id: pyOTFWoAAAAJ:mVmsd5A6BfQC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:zis.2014.effects-of-speed-reduction-policies-near-ports
+  title: Effects of speed reduction policies near ports
+  authors:
+  - T Zis
+  - RJ North
+  - P Angeloudis
+  - WY Ochieng
+  - MGH Bell
+  publisher: Transportation Research Board 93rd Annual MeetingTransportation Research
+    Board, 2014
+  date: '2014-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:eQOLeE2rZwMC
+  gs_id: pyOTFWoAAAAJ:eQOLeE2rZwMC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:zis.2013.a-systematic-evaluation-of-alternative-options-for
+  title: A systematic evaluation of alternative options for the reduction of vessel
+    emissions in ports
+  authors:
+  - T Zis
+  - RJ North
+  - P Angeloudis
+  - MGH Bell
+  publisher: Transportation Research Board 92nd Annual MeetingTransportation Research
+    Board, 2013
+  date: '2013-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:Tyk-4Ss8FVUC
+  gs_id: pyOTFWoAAAAJ:Tyk-4Ss8FVUC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:blayney.2024.bezier-everywhere-all-at-once-learning-drivable-la
+  title: 'Bezier Everywhere All at Once: Learning Drivable Lanes as Bezier Graphs'
+  authors:
+  - H Blayney
+  - H Tian
+  - H Scott
+  - N Goldbeck
+  - C Stetson
+  - P Angeloudis
+  publisher: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern\
+    \ \u2026, 2024"
+  date: '2024-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:ZfRJV9d4-WMC
+  gs_id: pyOTFWoAAAAJ:ZfRJV9d4-WMC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:karamanis.2020.identifying-critical-fleet-sizes-using-a-novel-age
+  title: Identifying critical fleet sizes using a novel agent-based modelling framework
+    for autonomous ride-sourcing
+  authors:
+  - R Karamanis
+  - H Cheong
+  - S Hu
+  - M Stettler
+  - P Angeloudis
+  publisher: arXiv preprint arXiv:2011.11085, 2020
+  date: '2020-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:bFI3QPDXJZMC
+  gs_id: pyOTFWoAAAAJ:bFI3QPDXJZMC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:karamanis.2017.a-fleet-sizing-algorithm-for-autonomous-car-sharin
+  title: A fleet sizing algorithm for autonomous car sharing
+  authors:
+  - R Karamanis
+  - A Niknejad
+  - P Angeloudis
+  publisher: Transportation Research Board 96th Annual MeetingTransportation Research
+    Board, 2017
+  date: '2017-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:Wp0gIr-vW9MC
+  gs_id: pyOTFWoAAAAJ:Wp0gIr-vW9MC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:zavitsas.2016.assessing-autonomous-vehicle-impact-on-urban-traff
+  title: Assessing autonomous vehicle impact on urban traffic emissions and intersection
+    performance
+  authors:
+  - K Zavitsas
+  - S Hu
+  - R Gooden
+  - P Angeloudis
+  - J Polak
+  publisher: Transportation Research Board 95th Annual MeetingTransportation Research
+    Board, 2016
+  date: '2016-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:MXK_kJrjxJIC
+  gs_id: pyOTFWoAAAAJ:MXK_kJrjxJIC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:anvari.2014.prediction-of-potential-conflicts-and-velocity-opt
+  title: Prediction of Potential Conflicts and Velocity Optimisation of Long-range
+    Collision Avoidance for Force-based Shared Space Simulation
+  authors:
+  - B Anvari
+  - M Bell
+  - P Angeloudis
+  - W Ochieng
+  publisher: International Conference on Pedestrian and Evacuation Dynamics, 2014
+  date: '2014-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:maZDTaKrznsC
+  gs_id: pyOTFWoAAAAJ:maZDTaKrznsC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:liu.2023.customer-behaviour-analysis-for-coordinated-delive
+  title: 'Customer Behaviour Analysis for Coordinated Delivery Service Using Mobile
+    Parcel Lockers and Autonomous Robots: A Congestion-Game Model'
+  authors:
+  - Y Liu
+  - JJ Escribano Macias
+  - K Zhang
+  - Q Ye
+  - P Angeloudis
+  publisher: Available at SSRN 4549554, 2023
+  date: '2023-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:1yQoGdGgb4wC
+  gs_id: pyOTFWoAAAAJ:1yQoGdGgb4wC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:feng.2023.rapid-procedural-generation-of-real-world-environm
+  title: Rapid Procedural Generation of Real World Environments for Autonomous Vehicle
+    Testing
+  authors:
+  - Y Feng
+  - Q Ye
+  - P Angeloudis
+  publisher: ICRA 2023 Workshop Lab-to-Real Gap, 2023
+  date: '2023-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:9vf0nzSNQJEC
+  gs_id: pyOTFWoAAAAJ:9vf0nzSNQJEC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:shipman.2022.novel-trajectory-prediction-algorithm-using-a-full
+  title: 'Novel trajectory prediction algorithm using a full dataset: comparison and
+    ablation studies'
+  authors:
+  - A Shipman
+  - D Mead
+  - Y Feng
+  - J Escribano
+  - P Angeloudis
+  - Y Demiris
+  publisher: "2022 IEEE 25th International Conference on Intelligent Transportation\
+    \ \u2026, 2022"
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:t6usbXjVLHcC
+  gs_id: pyOTFWoAAAAJ:t6usbXjVLHcC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:escribano.2022.integrated-path-planning-and-task-assignment-model
+  title: Integrated Path Planning and Task Assignment Model for On-Demand Last-Mile
+    UAV-Based Delivery
+  authors:
+  - J Escribano
+  - H Chang
+  - P Angeloudis
+  publisher: International Conference on Computational Logistics, 198-213, 2022
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:XiVPGOgt02cC
+  gs_id: pyOTFWoAAAAJ:XiVPGOgt02cC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:cheong.2022.feasibility-of-equitydriven-taxi-pricing-strategy-
+  title: Feasibility of Equity-driven Taxi Pricing Strategy based on Double Auction
+    Mechanism in Bangkok Metropolitan Region, Thailand
+  authors:
+  - H Cheong
+  - JS Carcelen
+  - M Sukitpaneenit
+  - P Angeloudis
+  - A Majumdar
+  - '...'
+  publisher: Transportation Research Board 101st Annual Meeting (TRBAM 2022), 2022
+  date: '2022-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:J-pR_7NvFogC
+  gs_id: pyOTFWoAAAAJ:J-pR_7NvFogC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:anastasiadis.2019.a-bilevel-optimisation-model-for-the-selection-of-
+  title: A bilevel optimisation model for the selection of parking and charging facilities
+    for EV-based ride-hailing services
+  authors:
+  - E Anastasiadis
+  - P Angeloudis
+  - D Ainalis
+  - Q Ye
+  - PY Hsu
+  publisher: ''
+  date: '2019-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:RGFaLdJalmkC
+  gs_id: pyOTFWoAAAAJ:RGFaLdJalmkC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:karamanis.2018.market-dynamics-between-public-transport-and-compe
+  title: Market dynamics between public transport and competitive ride-sourcing providers
+  authors:
+  - R Karamanis
+  - P Angeloudis
+  - A Sivakumar
+  - M Stettler
+  publisher: ''
+  date: '2018-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:blknAaTinKkC
+  gs_id: pyOTFWoAAAAJ:blknAaTinKkC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
+- id: gs-id:angeloudis.2009.uncertaintyaware-assignment-techniques-for-automat
+  title: Uncertainty-aware assignment techniques for automated guided vehicles in
+    maritime cotainer terminals
+  authors:
+  - P Angeloudis
+  publisher: Imperial College London, 2009
+  date: '2009-01-01'
+  link: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pyOTFWoAAAAJ&pagesize=100&citation_for_view=pyOTFWoAAAAJ:TFP_iSt0sucC
+  gs_id: pyOTFWoAAAAJ:TFP_iSt0sucC
+  gsid: pyOTFWoAAAAJ
+  plugin: google-scholar.py
+  file: google-scholar.yaml
 - id: 10.1109/LRA.2025.3531146
   title: 'IntNet: A Communication-Driven Multi-Agent Reinforcement Learning Framework
     for Cooperative Autonomous Driving'
@@ -1183,21 +1570,6 @@
   publisher: Journal of Shipping and Trade
   date: '2019-06-13'
   link: https://doi.org/gtm4hh
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.48550/ARXIV.2209.04265
-  title: 'Route Planning for Last-Mile Deliveries Using Mobile Parcel Lockers: A Hybrid
-    Q-Learning Network Approach'
-  authors:
-  - Yubin Liu
-  - Qiming Ye
-  - Jose Escribano-Macias
-  - Yuxiang Feng
-  - Eduardo Candela
-  - Panagiotis Angeloudis
-  publisher: arXiv
-  date: '2022-01-01'
-  link: https://doi.org/gtm4hp
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.48550/ARXIV.2104.12945

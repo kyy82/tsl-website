@@ -1,7 +1,7 @@
 ---
 title: Papers
 nav:
-  order: 2
+  order: 3
   tooltip: Published works
 redirect_from: 
   - publications

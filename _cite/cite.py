@@ -1,185 +1,153 @@
+#!/usr/bin/env python3
 """
-cite process to convert sources and metasources into full citations
+Main citation processing script with improved duplicate detection and logging
 """
 
-import traceback
-from importlib import import_module
+import os
+import sys
+import atexit
 from pathlib import Path
-from util import *
 
+# Add the current directory to the path to import modules
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from util import log, save_data
+from modules.logging_module import setup_logging, close_logging, log_to_file
+from modules.source_processor import process_sources
+from modules.citation_generator import generate_citations
+from modules.deduplicator import deduplicate_citations
+from modules.reporter import generate_reports
 
+# Configuration
+CONFIG = {
+    "output_file": "_data/citations.yaml",
+    "backup_file": "_data/citations.yaml.bak",
+    "report_dir": "_cite/report",
+    "plugins": ["pubmed", "orcid", "google-scholar", "sources"],
+    "similarity_threshold": 0.95,  # Higher threshold to avoid false positives
+    "text_report": "_cite/report/deduplication_summary.txt",
+    "html_report": "_cite/report/citation_report.html",
+    "log_file": "_cite/report/citation_processing.log"
+}
 
-# error flag
-error = False
+def main():
+    # Ensure report directory exists
+    os.makedirs(CONFIG["report_dir"], exist_ok=True)
+    
+    # Set up logging to both console and file
+    setup_logging(CONFIG["log_file"])
+    
+    # Register cleanup function to close log file on exit
+    atexit.register(close_logging)
+    
+    # Initialize error flag
+    error = False
+    
+    # Process all sources from plugins
+    log()
+    log_to_file()
+    log("Compiling sources")
+    log_to_file("Compiling sources")
+    
+    sources, all_sources, source_error = process_sources(CONFIG["plugins"])
+    error = error or source_error
+    
+    if error:
+        log("Errors occurred during source processing", level="ERROR")
+        log_to_file("Errors occurred during source processing", level="ERROR")
+        exit(1)
+    
+    log(f"{len(sources)} total source(s) to cite")
+    log_to_file(f"{len(sources)} total source(s) to cite")
+    
+    # Generate citations from sources
+    log()
+    log_to_file()
+    log("Generating citations")
+    log_to_file("Generating citations")
+    
+    citations, all_citations, citation_error = generate_citations(sources)
+    error = error or citation_error
+    
+    if error:
+        log("Errors occurred during citation generation", level="ERROR")
+        log_to_file("Errors occurred during citation generation", level="ERROR")
+        exit(1)
+    
+    # Create backup of citations
+    try:
+        save_data(CONFIG["backup_file"], citations)
+        log(f"Created backup at {CONFIG['backup_file']}", 1)
+        log_to_file(f"Created backup at {CONFIG['backup_file']}", 1)
+    except Exception as e:
+        log(str(e), level="WARNING")
+        log_to_file(str(e), level="WARNING")
+        log("Continuing without backup", 1)
+        log_to_file("Continuing without backup", 1)
+    
+    # Deduplicate citations
+    log()
+    log_to_file()
+    log("Running deduplication with stricter matching criteria")
+    log_to_file("Running deduplication with stricter matching criteria")
+    
+    deduplicated_citations, duplicate_groups, similarity_matrix, group_details = (
+        deduplicate_citations(citations, CONFIG["similarity_threshold"])
+    )
+    
+    log(f"Found {len(duplicate_groups)} groups of duplicate citations", 1)
+    log_to_file(f"Found {len(duplicate_groups)} groups of duplicate citations", 1)
+    
+    if duplicate_groups:
+        log(f"Deduplicated citations list now has {len(deduplicated_citations)} entries", 1)
+        log_to_file(f"Deduplicated citations list now has {len(deduplicated_citations)} entries", 1)
+        log(f"Removed {sum(len(group) - 1 for group in duplicate_groups)} duplicate citations", 1)
+        log_to_file(f"Removed {sum(len(group) - 1 for group in duplicate_groups)} duplicate citations", 1)
+    
+    # Generate reports
+    log()
+    log_to_file()
+    log("Generating detailed reports")
+    log_to_file("Generating detailed reports")
+    
+    generate_reports(
+        CONFIG["report_dir"],
+        all_sources,
+        all_citations,
+        duplicate_groups,
+        similarity_matrix,
+        group_details
+    )
+    
+    # Save final citations
+    log()
+    log_to_file()
+    log("Saving updated citations")
+    log_to_file("Saving updated citations")
+    
+    try:
+        save_data(CONFIG["output_file"], deduplicated_citations)
+    except Exception as e:
+        log(str(e), level="ERROR")
+        log_to_file(str(e), level="ERROR")
+        error = True
+    
+    # Final status
+    if error:
+        log("Error(s) occurred above", level="ERROR")
+        log_to_file("Error(s) occurred above", level="ERROR")
+        exit(1)
+    else:
+        log("All done!", level="SUCCESS")
+        log_to_file("All done!", level="SUCCESS")
+        if duplicate_groups:
+            log(f"\nCheck {CONFIG['text_report']} for a detailed deduplication summary", 1)
+            log_to_file(f"\nCheck {CONFIG['text_report']} for a detailed deduplication summary", 1)
+            log(f"A full HTML report is available at {CONFIG['html_report']}", 1)
+            log_to_file(f"A full HTML report is available at {CONFIG['html_report']}", 1)
+    
+    log("\n")
+    log_to_file("\n")
 
-# output citations file
-output_file = "_data/citations.yaml"
-
-
-log()
-
-log("Compiling sources")
-
-# compiled list of sources
-sources = []
-
-# in-order list of plugins to run
-plugins = ["pubmed", "orcid", "sources"] # "google-scholar",
-
-# loop through plugins
-for plugin in plugins:
-    # convert into path object
-    plugin = Path(f"plugins/{plugin}.py")
-
-    log(f"Running {plugin.stem} plugin")
-
-    # get all data files to process with current plugin
-    files = Path.cwd().glob(f"_data/{plugin.stem}*.*")
-    files = list(filter(lambda p: p.suffix in [".yaml", ".yml", ".json"], files))
-
-    log(f"Found {len(files)} {plugin.stem}* data file(s)", 1)
-
-    # loop through data files
-    for file in files:
-        log(f"Processing data file {file.name}", 1)
-
-        # load data from file
-        try:
-            data = load_data(file)
-            # check if file in correct format
-            if not list_of_dicts(data):
-                raise Exception("File not a list of dicts")
-        except Exception as e:
-            log(e, 2, "ERROR")
-            error = True
-            continue
-
-        # loop through data entries
-        for index, entry in enumerate(data):
-            log(f"Processing entry {index + 1} of {len(data)}, {label(entry)}", 2)
-
-            # run plugin on data entry to expand into multiple sources
-            try:
-                expanded = import_module(f"plugins.{plugin.stem}").main(entry)
-                # check that plugin returned correct format
-                if not list_of_dicts(expanded):
-                    raise Exception("Plugin didn't return list of dicts")
-            # catch any plugin error
-            except Exception as e:
-                # log detailed pre-formatted/colored trace
-                print(traceback.format_exc())
-                # log high-level error
-                log(e, 3, "ERROR")
-                error = True
-                continue
-
-            # loop through sources
-            for source in expanded:
-                if plugin.stem != "sources":
-                    log(label(source), 3)
-
-                # include meta info about source
-                source["plugin"] = plugin.name
-                source["file"] = file.name
-
-                # add source to compiled list
-                sources.append(source)
-
-            if plugin.stem != "sources":
-                log(f"{len(expanded)} source(s)", 3)
-
-
-log("Merging sources by id")
-
-# merge sources with matching (non-blank) ids
-for a in range(0, len(sources)):
-    a_id = get_safe(sources, f"{a}.id", "")
-    if not a_id:
-        continue
-    for b in range(a + 1, len(sources)):
-        b_id = get_safe(sources, f"{b}.id", "")
-        if b_id == a_id:
-            log(f"Found duplicate {b_id}", 2)
-            sources[a].update(sources[b])
-            sources[b] = {}
-sources = [entry for entry in sources if entry]
-
-
-log(f"{len(sources)} total source(s) to cite")
-
-
-log()
-
-log("Generating citations")
-
-# list of new citations
-citations = []
-
-
-# loop through compiled sources
-for index, source in enumerate(sources):
-    log(f"Processing source {index + 1} of {len(sources)}, {label(source)}")
-
-    # if explicitly flagged, remove/ignore entry
-    if get_safe(source, "remove", False) == True:
-        continue
-
-    # new citation data for source
-    citation = {}
-
-    # source id
-    _id = get_safe(source, "id", "").strip()
-
-    # Manubot doesn't work without an id
-    if _id:
-        log("Using Manubot to generate citation", 1)
-
-        try:
-            # run Manubot and set citation
-            citation = cite_with_manubot(_id)
-
-        # if Manubot cannot cite source
-        except Exception as e:
-            # if regular source (id entered by user), throw error
-            if get_safe(source, "plugin", "") == "sources.py":
-                log(e, 3, "ERROR")
-                error = True
-            # otherwise, if from metasource (id retrieved from some third-party API), just warn
-            else:
-                log(e, 3, "WARNING")
-                # discard source from citations
-                continue
-
-    # preserve fields from input source, overriding existing fields
-    citation.update(source)
-
-    # ensure date in proper format for correct date sorting
-    if get_safe(citation, "date", ""):
-        citation["date"] = format_date(get_safe(citation, "date", ""))
-
-    # add new citation to list
-    citations.append(citation)
-
-
-log()
-
-log("Saving updated citations")
-
-
-# save new citations
-try:
-    save_data(output_file, citations)
-except Exception as e:
-    log(e, level="ERROR")
-    error = True
-
-
-# exit at end, so user can see all errors in one run
-if error:
-    log("Error(s) occurred above", level="ERROR")
-    exit(1)
-else:
-    log("All done!", level="SUCCESS")
-
-log("\n")
+if __name__ == "__main__":
+    main()
