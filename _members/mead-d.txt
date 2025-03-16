@@ -1,0 +1,44 @@
++++ 
+title = "Dan Mead" 
+firstname = "Daniel"
+lastname = "Mead"
+authors = ["mead-d"] 
+role = "Researcher ('22)"
+
+organizations = [
+ { name = "Imperial College London", url = "https://www.imperial.ac.uk/" } 
+ ]
+
+interests = [ "Swarm Robotics", 
+"Autonomous Vehicles"]
+
+user_groups = ["Alumni5"]
+
+[[education.courses]] 
+course = "MSc in Robotics and Computation"
+institution = "University College London"
+year = 2019
+
+[[education.courses]] 
+course = "BSc in Physics"
+institution = "Durham University"
+year = 2017
+
+[[social]] 
+icon = "envelope"
+icon_pack = "fas"
+link = "mailto:"
+
+[[social]] 
+icon = "linkedin"
+icon_pack = "fab"
+link = "https://www.linkedin.com/in/dan-mead-785134195/"
++++
+
+Dan is a Research Assistant at the Transport Systems and Logistics Laboratory. He joined in February 2021.
+
+His work focuses on developing models that capture the interaction between autonomous vehicles and other road users, which could be used to evaluate the safety of future AV control systems. 
+
+Dan holds an MSc in Robotics and Computation from University College London, having graduated with Distinction honours. His dissertation focused on Swarm Robotics and Foraging Techniques. He previously studied Physics in Durham University.
+
+Before joining Imperial College London as a researcher, Dan worked with SLAMcore, an Imperial spinout. His academic interests include the interaction of Autonomous Vehicles with urban infrastructure, developing and utilising simulations to assist in research, exploring multi-agent systems, and promoting the positive application of robotics in industries such as agriculture and medicine. 

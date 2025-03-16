@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/_site": true,
+        "**/.github": true,
+        "**/.jekyll-cache": true,
+        "**/.vscode": true,
+        "**/tf": true
+    }
+}

@@ -1,0 +1,97 @@
+- title: "Prof Angeloudis to present at [Singapore Maritime Research Conference 2025](https://www.smrc.sg)"
+  date: 2025-03-27
+  content: |
+    Professor Panagiotis Angeloudis will deliver a talk on the current state of the art of Maritime AI Developments at the 2025 Singapore Maritime Research Conference 2025. 
+    
+    The talk will build upon the lab's ongoing educational and research initiatives in autonomy, freight transport and artificial intelligence.
+
+- title: "Guest lecture at [NTU School of Civil and Environmental Engineering](https://www.ntu.edu.sg/cee) in Singapore"
+  date: 2025-03-25
+  content: |
+    The lecture will be titled "Mitigating Risk in Autonomous Vehicle Operations: Urban Autonomy and Beyond," and will cover TSL's work on AV training models based on real-world traffic incidents and camera data. 
+
+- title: "TSL participates in latest edition of <a href='https://www.imperial.ac.uk/be-inspired/lates/'>Imperial Lates</a>: Future Cities"
+  date: 2025-03-06
+  content: |
+    Our researchers showcased our work on vehicle autonomy, with a demonstration using our bespoke driving simulator that helps the public experience what it would be like to drive in a city full of autonomous vehicles. 
+
+- title: "[Dr. Felix Feng](/members/felix-feng) promoted to Research Fellow & Lab Manager"
+  date: 2025-02-04
+  content: |
+    We are delighted to announce that [Dr. Felix Feng](/members/felix-feng) has been promoted to Research Fellow & Laboratory Manager at the Transport Systems & Logistics Laboratory.
+
+    Since joining TSL, Felix has made significant contributions to our research on autonomous vehicle safety and validation. His work on developing highly configurable automotive system models that simulate host vehicle motions and interactions with other road users has been instrumental in advancing our understanding of AV safety.
+
+    In his expanded role, Dr. Feng will oversee the laboratory's research infrastructure and continue his groundbreaking work on autonomous vehicle modeling. 
+
+
+- title: "[Ellin Ivarsson](https://www.imperial.ac.uk/stories/alumni-awards-2025-ellin/) wins prestigious Emerging Alumni Leader Award 2025"
+  date: 2025-01-10
+  content: |
+    We are delighted to announce that our TSL alumna [Ellin Ivarsson](https://www.imperial.ac.uk/stories/alumni-awards-2025-ellin/) has been named the winner of the Imperial College London Emerging Alumni Leader Award 2025. 
+    
+    Since graduating from Imperial, Ellin has built an impressive career leading high-profile infrastructure projects across the United Kingdom, Australia, and Latin America. 
+    
+    Currently at the World Bank, she is making a significant impact by transforming the lives of people in the poorest regions of Colombia through innovative transportation solutions.
+
+- title: "[Dr. Leandro Parada](/members/parada-l.html) successfully defends PhD on Multi-Agent Reinforcement Learning for Autonomous Vehicles"
+  hide_from_front: true
+  date: 2024-11-07
+  content: |
+    We are delighted to announce that [Leandro Parada](/members/parada-l.html) has successfully passed his PhD viva with only minor corrections required.
+    
+    Dr. Parada's research has focused on multi-agent reinforcement learning methods for the robust, safe, and efficient control of autonomous vehicle fleets across diverse decision-making horizons.
+    
+    Among his many contributions was his groundbreaking work on detecting and isolating malicious actors who seek to disrupt communication and coordination data streams between interacting autonomous vehicles. By addressing the potential for these actors to manipulate control algorithms or cause accidents, Dr. Parada's work represents a critical step towards ensuring the safe, large-scale deployment of autonomous vehicles.
+        
+    Dr. Parada will continue his research with TSL as part of the DeepSafe project, and we look forward to his future contributions in this exciting field.
+
+- title: "Prof Angeloudis speaks at 5th Athens Triennial Meeting at the Onassis Foundation"
+  hide_from_front: true
+  date: 2024-10-12
+  content: |
+    Professor Panagiotis Angeloudis delivered a talk at the 5th Athens Triennial Meeting, celebrating the 40th anniversary of the Costas Grammenos Centre for Shipping, Trade and Finance. 
+    
+    The event featured vibrant discussions with distinguished co-panelists and attendees, highlighting the industry's interest in AI-driven maritime operations.
+
+- title: "New [MSc in Transport with Data Science](https://www.imperial.ac.uk/study/courses/postgraduate-taught/transport-data-science/) welcomes first cohort"
+  date: 2024-10-01
+  content: |
+    Imperial's new [MSc in Transport with Data Science](https://www.imperial.ac.uk/study/courses/postgraduate-taught/transport-data-science/), directed and designed by Prof Angeloudis, welcomed its inaugural cohort of students. 
+    
+    The innovative curriculum goes beyond basic data analysis, offering a deep dive into the foundational science behind statistical modeling and machine learning underpinning current AI developments. 
+    
+    The program aims to equip the next generation of Civil Engineers to be innovators who can evaluate AI solutions and integrate them with established engineering principles, ensuring the responsible and effective adoption of these powerful tools.
+
+
+- title: "Dr Panagiotis Angeloudis promoted to Professor of Transport Systems & Logistics"
+  date: 2024-09-05
+  content: |
+    We are delighted to announce that Dr Panagiotis Angeloudis has been promoted to Professor of Transport Systems & Logistics at Imperial College London.
+
+- title: "Launch of Imperial-CMA CGM Executive Education Programme on Maritime Decarbonisation"
+  date: 2024-05-25
+  content: |
+    The Transport Systems & Logistics Laboratory is proud to contribute to Imperial College Business School's executive education partnership with CMA CGM Group and the TANGRAM Center in Marseille.
+
+    This bespoke programme aims to equip over 1000 CMA CGM employees with knowledge and strategies to tackle climate change and drive sustainability in the transport and logistics industry.
+
+    Dr Panagiotis Angeloudis delivers Day 2 of the programme, focusing on Maritime Decarbonisation Policy and Operational Levers. His sessions cover key regulatory frameworks, technological innovations, and operational strategies that shipping companies can implement to reduce their carbon footprint.
+
+- title: "Dr Panagiotis Angeloudis appointed as Turing Fellow"
+  date: 2024-03-01
+  content: |
+    We are proud to announce that Dr Panagiotis Angeloudis has been appointed as Fellow of the Alan Turing Institute, the UK's national institute for data science and artificial intelligence.
+
+    The Turing Fellowship recognizes established researchers with proven excellence in data science, artificial intelligence, or related fields who have the potential to be the next generation of world leaders. 
+
+    As a Turing Fellow, Professor Angeloudis will collaborate with other leading researchers across the UK to advance cutting-edge research in data science and AI, with a particular focus on applications in transport and logistics systems. This fellowship will strengthen existing collaborations between the Transport Systems & Logistics Laboratory at Imperial College London and the Alan Turing Institute.
+
+- title: "Alumnus Dr. Eduardo Candela raises seed funding for AI startup [MAIHEM.ai](https://maihem.ai) and joins YCombinator W24 cohort"
+  date: 2024-02-01
+  content: |
+    We are proud to announce that TSL alumnus Dr. Eduardo Candela has successfully raised seed funding for his startup MAIHEM.ai and was selected to join YCombinator's prestigious W24 cohort.
+    
+    MAIHEM.ai creates AI agents that continuously test LLM applications, automating quality assurance to ensure AI performance and safety from development through deployment. The platform enables companies to simulate thousands of users testing LLM applications before launch, evaluate performance with custom metrics, and improve their systems with hyper-realistic simulated data.
+    
+    Dr. Candela completed his PhD in AI Safety at Imperial College London in October 2023. Congratulations to Eduardo and the MAIHEM team on this remarkable achievement!

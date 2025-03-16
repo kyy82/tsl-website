@@ -1,0 +1,28 @@
+- title: Cool Dataset
+  subtitle: a subtitle
+  group: featured
+  image: images/photo.jpg
+  link: https://github.com/
+  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  repo: greenelab/lab-website-template
+  tags:
+    - resource
+
+
+
+- title: Agent-based Simulation
+  image: images/agent.jpg
+  description: Scalable logic-driven models for mobility systems.
+  group: theme
+
+
+- title: Freight & Logistics
+  image: images/freight.jpg
+  description: Last-mile logistics, freight and maritime transport.
+  group: theme
+
+
+- title: Autonomous Vehicle Fleets 
+  image: images/jetracer.jpg
+  description: Determining optimal policies for distributed and robust control.
+  group: theme

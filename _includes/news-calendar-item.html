@@ -1,0 +1,29 @@
+<div class="news-item">
+  <!-- Calendar display -->
+  <div class="date-container">
+    <div class="news-date-calendar">
+      <div class="news-date-year">
+        {{ include.date | date: "%Y" }}
+      </div>
+      <div class="news-date-month">
+        {{ include.date | date: "%b" }}
+      </div>
+      <div class="news-date-day">
+        {{ include.date | date: "%d" }}
+      </div>
+    </div>
+  </div>
+  
+  <!-- News content -->
+  <div class="news-text">
+    <p class="news-title">
+      {{ include.title | markdownify | remove: "<p>" | remove: "</p>" }}
+    </p>
+    
+    {% if include.content and include.content != "" %}
+      <div class="news-content" style="display: block;">
+        {{ include.content | markdownify }}
+      </div>
+    {% endif %}
+  </div>
+</div>

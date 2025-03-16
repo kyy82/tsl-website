@@ -1,0 +1,64 @@
++++
+title 		= "Lefteris Anastasiadis"
+firstname = "Dr Lefteris"
+lastname  = "Anastasiadis"
+authors 	= ["anastasiadis-e"]
+
+role = "Postdoc ('21)"
+
+organizations = [ 
+{ name = "Imperial College London", url = "https://www.imperial.ac.uk/people/e.anastasiadis" } 
+]
+
+interests = [
+  "Network Mechanism Design",
+  "Logistics Fleet Operations",
+  "Mathematical Optimisation",
+  "Game-Theoretic Modelling"
+]
+
+user_groups = ["Alumni5"]
+
+[[education.courses]]
+  course = "PhD in Algorithmic Mechanism Design"
+  institution = "University of Liverpool"
+  year = 2017
+[[education.courses]]
+  course = "MSc in Computation and Game Theory"
+  institution = "University of Liverpool"
+  year = 2012
+
+[[education.courses]]
+  course = "BSc in Informatics and Telecommunications"
+  institution = "University of Athens"
+  year = 2010
+
+[[social]]
+  icon = "envelope"
+  icon_pack = "fas"
+  link = "mailto:e.anastasiadis@imperial.ac.uk"
+
+[[social]]
+  icon = "linkedin"
+  icon_pack = "fab"
+  link = "https://www.linkedin.com/in/lefteran/"
+
+[[social]]
+  icon = "google-scholar"
+  icon_pack = "ai"
+  link = "https://scholar.google.gr/citations?user=YDiT5mQAAAAJ"
+
++++
+
+Lefteris is a Research Associate at the Transport Systems and Logistics Laboratory in the Centre for Transport studies. 
+His current research focuses on the agent-based simulation of Shared Autonomous Vehicle (AV) fleets, underpinned by game-theoretic analysis of their interactions with other modes of transport and interacting systems.
+
+The ultimate objective of his work is the reduction of traffic congestion and the facilitation of a controlled mode shift from private cars to AVs. 
+His is particularly interested in the mathematical modelling and design of fast and practical algorithms for vehicle routing and depot-location (parking/EV charging) problems in Mobility as a Service platforms. 
+
+Before joining TSL, Lefteris obtained a PhD in Algorithmic Mechanism Design from the University of Liverpool and the Economics and Computation Group and an MSc in Computation and Game Theory from the same institution. 
+He holds a BSc in Informatics and Telecommunications from the University of Athens.
+
+His doctoral research focused on algorithmic mechanism design for network problems with applications in urban planning, focusing on computationally intractable optimisation problems, implemented as games between competing entities. 
+The resulting algorithms where computationally efficient and robust against strategic manipulations. 
+

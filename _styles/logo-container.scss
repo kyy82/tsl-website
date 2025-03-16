@@ -1,0 +1,74 @@
+---
+---
+
+/* Styles for the logo container and Imperial logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-divider {
+  height: 80px; /* Match the height of the TSL logo */
+  width: 1px;
+  background-color: #cccccc;
+  display: none;
+}
+
+.imperial-logo {
+  display: none;
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.imperial-logo img {
+  height: 30px;
+  width: auto;
+}
+
+/* Only show the divider and Imperial logo on the home page */
+body:has(header[data-big]) .logo-divider,
+body:has(header[data-big]) .imperial-logo {
+  display: flex; /* Changed from block to flex for better alignment */
+}
+
+/* Alternative approach for older browsers that don't support :has() */
+/* Only show these on the home page which has the data-big attribute */
+header[data-big] .logo-divider,
+header[data-big] .imperial-logo {
+  display: flex; /* Changed from block to flex for better alignment */
+}
+
+/* Make sure the logo and divider are hidden on non-home pages */
+header:not([data-big]) .logo-divider,
+header:not([data-big]) .imperial-logo {
+  display: none;
+}
+
+/* Make sure the logos maintain their responsive behavior */
+@media (max-width: 380px) {
+  .logo-divider,
+  .imperial-logo {
+    display: none !important;
+  }
+}
+
+/* Ensure the Imperial logo can adjust based on light/dark mode */
+[data-dark="true"] .imperial-logo img {
+  filter: invert(1);
+}
+
+/* Fix logo sizes specifically for the big header mode */
+header[data-big] .imperial-logo img {
+  height: 35px;
+}
+
+header[data-big] .logo-divider {
+  height: 70px; /* Match TSL logo height in the big header mode */
+}
+
+/* Ensure proper alignment for the TSL logo */
+header[data-big] .logo {
+  display: flex;
+  align-items: center;
+}

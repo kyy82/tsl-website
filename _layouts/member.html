@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<!--
+<p class="center">
+  <a href="{{ search | relative_url }}">
+    See {{ page.name | default: page.title }}'s posts on the Blog page
+  </a>
+</p>
+-->
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol class="breadcrumb px-0">
+      <li class="breadcrumb-item"><a href="/team">Team</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ page.name }}</li>
+  </ol>
+</nav>
+
+<div class="text-center mt-5">
+  <!-- Avatar -->
+  <img src="/{{ page.image }}"
+       style=" max-width: 250px; "
+       class="portrait-image"
+       />
+
+  <!-- Name & Role -->
+  <h1>{{ page.name }}</h1>
+  <div class="text-center mt-5">{{ page.position }}</div> <br>
+
+  <div>
+    {% for link in page.links %}
+      {% assign key = link[0] %}
+      {% assign value = link[1] %}
+      {% include button.html type=key link=value style="bare" %}
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Affiliations -->
+{% if page.affiliations %}
+<div>
+  <h3>Affiliations</h3>
+  <ul>
+      {% for education in page.affiliations %}
+      <li>{{ education }}</li>
+      {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+
+
+<!-- Bio -->
+<div>
+  <h3>Biography</h3>
+  {{ content }}
+</div>
+
+<!-- Education -->
+{% if page.education %}
+<div>
+  <h3>Education</h3>
+  <ul>
+      {% for education in page.education %}
+      <li>{{ education }}</li>
+      {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+

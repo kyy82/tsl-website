@@ -1,0 +1,18 @@
+<div class="news-item">
+    <p>
+      <strong>{{ include.date | date: "%d %b %y" }}: </strong>{{ include.title }} &nbsp;
+      {% if news.content and news.content != "" %}
+      <a href="#" onclick="toggleNewsContent('{{ include.id }}'); return false;" class="news-more-link" id="news-more-{{ include.id }}">(more)</a>
+      {% endif %}
+
+    </p>
+    
+    {% if news.content and news.content != "" %}
+        <div id="news-content-{{ include.id }}" class="news-content" style="display: none;">
+            <br>
+        {{ include.content | markdownify }}
+        <br>
+        </div>
+    {% endif %}
+
+  </div>
