@@ -23,7 +23,7 @@ CONFIG = {
     "output_file": "_data/citations.yaml",
     "backup_file": "_data/citations.yaml.bak",
     "report_dir": "_cite/report",
-    "plugins": ["pubmed", "orcid", "google-scholar", "sources"],
+    "plugins": ["pubmed", "orcid", "google-scholar", "sources", "eid"],  # Added 'eid' plugin
     "similarity_threshold": 0.95,  # Higher threshold to avoid false positives
     "text_report": "_cite/report/deduplication_summary.txt",
     "html_report": "_cite/report/citation_report.html",

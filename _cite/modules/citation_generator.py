@@ -1,5 +1,5 @@
 """
-Module for generating citations from sources with file logging
+Module for generating citations from sources with file logging and improved error handling
 """
 
 from util import log, get_safe, cite_with_manubot, format_date, label
@@ -39,13 +39,32 @@ def generate_citations(sources):
         # Source id
         _id = get_safe(source, "id", "").strip()
 
-        # Check if it's a Google Scholar citation (IDs start with "pyOTFWoAAAAJ:" or "gs-id:")
+        # Handle different ID types appropriately
         if _id.startswith("pyOTFWoAAAAJ:") or _id.startswith("gs-id:"):
             # For Google Scholar citations, we already have all the data we need
             # Just use the source as is
             citation = source
             log(f"Using Google Scholar data for citation: {source.get('title', 'No title')}", 1)
             log_to_file(f"Using Google Scholar data for citation: {source.get('title', 'No title')}", 1)
+        elif _id.startswith("eid:"):
+            # For Scopus EIDs, check if we already have the citation data
+            if source.get("title") and source.get("authors") and source.get("date"):
+                # If we have complete citation data, use it directly
+                citation = source
+                log(f"Using existing data for Scopus EID citation: {source.get('title', 'No title')}", 1)
+                log_to_file(f"Using existing data for Scopus EID citation: {source.get('title', 'No title')}", 1)
+            else:
+                # If data is incomplete, create placeholder to be manually updated
+                citation = {
+                    "id": _id,
+                    "title": f"[Need Manual Citation] - Scopus EID: {_id}",
+                    "authors": ["Please Update Manually"],
+                    "publisher": "Unknown - Scopus Reference",
+                    "date": "2000-01-01",  # Placeholder date
+                    "link": f"https://www.scopus.com/record/display.uri?eid={_id.replace('eid:', '')}"
+                }
+                log(f"Created placeholder for Scopus EID citation: {_id}", 1, level="WARNING")
+                log_to_file(f"Created placeholder for Scopus EID citation: {_id}", 1, level="WARNING")
         # Manubot doesn't work without an id for other types
         elif _id:
             log("Using Manubot to generate citation", 1)
@@ -68,8 +87,16 @@ def generate_citations(sources):
                 else:
                     log(e, 3, "WARNING")
                     log_to_file(e, 3, "WARNING")
-                    # Discard source from citations
-                    continue
+                    # Create a placeholder citation instead of discarding
+                    citation = {
+                        "id": _id,
+                        "title": f"[Citation Failed] - ID: {_id}",
+                        "authors": ["Please Update Manually"],
+                        "publisher": "Unknown - Citation Generation Failed",
+                        "date": "2000-01-01"  # Placeholder date
+                    }
+                    log(f"Created placeholder citation for {_id}", 3, "WARNING")
+                    log_to_file(f"Created placeholder citation for {_id}", 3, "WARNING")
 
         # Preserve fields from input source, overriding existing fields
         citation.update(source)

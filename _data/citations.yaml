@@ -293,6 +293,17 @@
   orcid: 0000-0002-6778-8264
   plugin: orcid.py
   file: orcid.yaml
+- id: eid:2-s2.0-85118869100
+  title: Location-routing optimisation for urban logistics using mobile parcel locker
+    based on hybrid Q-learning algorithm
+  authors:
+  - Please Update Manually
+  publisher: arXiv
+  date: '2022-10-14'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-85118869100&partnerID=MN8TOARS
+  orcid: 0000-0002-6778-8264
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1109/TITS.2021.3089777
   title: Vehicle Redistribution in Ride-Sourcing Markets Using Convex Minimum Cost
     Flows
@@ -514,6 +525,17 @@
   orcid: 0000-0002-6778-8264
   plugin: sources.py
   file: sources.yaml
+- id: eid:2-s2.0-85104439203
+  title: A top-down integrated approach to define key vulnerability indices for disaster
+    risk management at container terminals
+  authors:
+  - Please Update Manually
+  publisher: Proceedings of the International Conference on Natural Hazards and Infrastructure
+  date: '2022-10-14'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-85104439203&partnerID=MN8TOARS
+  orcid: 0000-0002-6778-8264
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1016/j.aap.2016.04.030
   title: 'Modelling the impact of liner shipping network perturbations on container
     cargo routing: Southeast Asia to Europe application'
