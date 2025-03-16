@@ -2,12 +2,12 @@
 
 - id: doi:10.1109/OJITS.2025.3530268
   title: Risk-Aware Stochastic Vehicle Trajectory Prediction With Spatial-Temporal
-    Interaction Modelling
+    Interaction Modeling
   authors:
   - Yuxiang Feng
   - Qiming Ye
   - Eduardo Candela
-  - Jose Escribano-Macias
+  - Jose Javier Escribano-Macias
   - Bo Hu
   - Yiannis Demiris
   - Panagiotis Angeloudis
@@ -1351,7 +1351,7 @@
   - Kevin Yu
   - Panagiotis Angeloudis
   publisher: IEEE Robotics and Automation Letters
-  date: '2025-01-01'
+  date: '2025-03-01'
   link: https://doi.org/g82fn6
   group:
   - featured
