@@ -139,4 +139,4 @@ Our alumni have achieved success in academia, hold influential roles in industry
 {% endcapture %}
 
 
-{% include cols.html col1=col1 col2=col2 col3=col3 col4=col4 col5=col5%}
+{% include cols.html col1=col1 col2=col2 col3=col3 col4=col4%}

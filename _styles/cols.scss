@@ -2,15 +2,26 @@
 ---
 
 $two: 750px;
-$one: 500px;
+$one: 350px;
 
 .cols {
   display: grid;
   --repeat: min(4, var(--cols));
   grid-template-columns: repeat(var(--repeat), 1fr);
-  align-items:center;
+  align-items: center;
   gap: 40px;
   margin: auto;
+  padding: 20px 0;
+  
+  // For funder logos specifically
+  &.funders-grid {
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 80px;
+      object-fit: contain;
+    }
+  }
 }
 
 .cols > * {
@@ -29,11 +40,21 @@ $one: 500px;
 @media (max-width: $two) {
   .cols {
     --repeat: min(2, var(--cols));
+    gap: 30px;
   }
 }
 
 @media (max-width: $one) {
   .cols {
     --repeat: min(1, var(--cols));
+    gap: 20px;
+    
+    &.funders-grid {
+      img {
+        max-height: 60px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
   }
 }
