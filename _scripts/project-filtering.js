@@ -1,7 +1,3 @@
-/*
-  handles filtering projects by tags
-*/
-
 {
     // wait until the DOM is fully loaded
     window.addEventListener('load', () => {

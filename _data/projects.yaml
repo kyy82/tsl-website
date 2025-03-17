@@ -7,7 +7,7 @@
   subtitle: Strategic Planning for China's OBOR Initiative
   group: theme
   image: images/projects/wuhan-project.jpg
-  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster (WLC), commissioned by China's National Development and Reform Commission. Wuhan constitutes an important gateway to Hubei and surrounding regions, with recent infrastructure developments enhancing its role as a vital intermodal node in national and international supply chains. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
+  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster (WLC), commissioned by China's National Development and Reform Commission. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
   collaborators: National Development and Reform Commission (NDRC) China
   collaborator_icons:
     - name: NDRC China
@@ -22,14 +22,13 @@
   subtitle: Optimizing Wireless Charging Infrastructure for Electric Buses
   group: theme
   image: images/projects/bus_electric.JPG
-  description: As part of our involvement in the DTE Network+ project, we developed a stochastic mathematical model for designing city-wide wireless charging infrastructure for electric buses. Our solution addressed the limitations of electric buses—limited driving range and long recharge times—by proposing Wireless Charging Lanes (WCL) that recharge buses while in motion. Using a two-stage stochastic programming model, we've optimized infrastructure deployment considering various energy consumption scenarios and demonstrated potential annual cost reductions of 24% compared to stationary charging solutions.
+  description: We developed a stochastic optimisation model for designing city-wide wireless charging infrastructure for electric buses. Our solution addressed the limitations of electric buses—limited driving range and long recharge times—by proposing Wireless Charging Lanes (WCL) that recharge buses while in motion. The model optimized infrastructure deployment considering various energy consumption scenarios and demonstrated potential annual cost reductions of 24% compared to stationary charging solutions.
   collaborators: DTE Network+, Cardiff University
   collaborator_icons:
     - name: DTE Network+
       image: images/collaborators/dte_network.jpg
   tags:
     - infrastructure
-    - fleet operations
     - sustainability
     - optimization
     
