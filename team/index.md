@@ -46,7 +46,8 @@ redirect_from:
 
 
 <a style="text-decoration: none; color: inherit;" href="/members/angeloudis-p.html">
-Professor Panagiotis Angeloudis is part of the **Centre for Transport Engineering & Modelling** (CTEM) and the **Department of Civil & Environmental Engineering** at **Imperial College London**. His research focuses on the intersection of vehicle autonomy, multi-agent systems modelling, network optimisation and their applications to fleet operations, freight and maritime transport. &nbsp;&nbsp;&nbsp;
+Professor Panagiotis Angeloudis leads the Transport Systems & Logistics Laboratory within the **Centre for Transport Engineering & Modelling** (CTEM) at **Imperial College London**. As a member of the Department of Civil & Environmental Engineering, his research program addresses critical challenges at the intersection of transportation technology and operations management.
+ &nbsp;&nbsp;&nbsp;
  <a href="/members/angeloudis-p.html">(more)</a>
 
 

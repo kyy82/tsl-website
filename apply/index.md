@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 
-# Join us
+# {% include icon.html icon="fa-solid fa-user-plus" %} Join us
 
 We receive a high volume of admissions enquiries and endeavour to respond to all. To enhance the likelihood of a favorable reply, please follow the guidance below. We encourage you to reach out to our director [Prof Angeloudis](mailto:p.angeloudis@imperial.ac.uk), for a preliminary discussion.
 

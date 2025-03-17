@@ -7,7 +7,9 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-flask" %}Research Projects
 
-Our research at the Transport Systems & Logistics Laboratory focuses on innovative solutions for complex transportation challenges. We develop advanced algorithms, simulation models, and optimization techniques to improve efficiency, safety, and sustainability in transport systems.
+Our work addresses modelling challenges in transportation and infrastructure systems. We combine specialised scientific software development expertise with advanced machine learning and optimisation methods developed and utilised in our research, focusing on applications in vehicle autonomy, freight logistics, construction, maritime transport, and infrastructure management.
+
+Through both fundamental research and applied industry collaborations, we develop innovative solutions and models aimed at improving efficiency, safety, and sustainability in transportation and infrastructure.
 
 {% include project-tags.html %}
 

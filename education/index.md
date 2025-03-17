@@ -6,8 +6,7 @@ redirect_from:
   - recruitment
 ---
 
-
-# Education
+# {% include icon.html icon="fa-solid fa-chalkboard-user" %}Education
 
 Prof Panagiotis Angeloudis is the course director for the [MSc in Transport and Data Science](https://www.imperial.ac.uk/study/courses/postgraduate-taught/transport-data-science/), offered by the Centre for Transport Engineering & Modelling at Imperial College London. 
 

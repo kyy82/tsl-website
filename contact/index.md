@@ -4,7 +4,7 @@ nav:
   order: 9
 ---
 
-# Contact
+# {% include icon.html icon="fa-solid fa-envelope" %} Contact
 
 Our facilities are located at the Skempton Building, in the South Kensington campus of Imperial College London. 
 
