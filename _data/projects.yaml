@@ -1,13 +1,9 @@
-# _data/projects.yaml
-# This file contains all project data to be displayed on the projects page
 
-# Add this to _data/projects.yaml
+
 
 - title: Wuhan Logistics Cluster Masterplan
-  subtitle: Strategic Planning for China's OBOR Initiative
-  group: theme
   image: images/projects/wuhan-project.jpg
-  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster (WLC), commissioned by China's National Development and Reform Commission. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
+  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster, commissioned by China's National Development and Reform Commission. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
   collaborators: National Development and Reform Commission (NDRC) China
   collaborator_icons:
     - name: NDRC China
@@ -16,11 +12,7 @@
     - logistics
     - maritime
 
-# Add this to _data/projects.yaml
-
 - title: Electrification of Public Transport
-  subtitle: Optimizing Wireless Charging Infrastructure for Electric Buses
-  group: theme
   image: images/projects/bus_electric.JPG
   description: We developed a stochastic optimisation model for designing city-wide wireless charging infrastructure for electric buses. Our solution addressed the limitations of electric buses—limited driving range and long recharge times—by proposing Wireless Charging Lanes (WCL) that recharge buses while in motion. The model optimized infrastructure deployment considering various energy consumption scenarios and demonstrated potential annual cost reductions of 24% compared to stationary charging solutions.
   collaborators: DTE Network+, Cardiff University
@@ -31,4 +23,33 @@
     - infrastructure
     - sustainability
     - optimization
-    
+
+- title: Thames Tideway Intermodal Logistics Optimisation
+  image: images/projects/thames_tideway.jpg
+  description: >
+    TSL was contracted to develop an optimisation model for a multi-modal logistics strategy for the Thames Tideway tunnelling works, meeting a regulatory requirement to prioritise river barge movements over trucks to reduce emissions and ease road network pressure. Our bespoke solution consolidated deliveries via optimal transport mode selection and just-in-time scheduling, addressing challenges such as tide variations, bridge passage height constraints, traffic congestion, and fluctuating material requirements. The approach integrated GIS modelling, visual operational dependency dashboards, and a custom simulation-optimisation library to enhance decision-making and overall performance.
+  collaborators: Laing O'Rourke
+  collaborator_icons:
+    - name: Thames Tideway
+      image: images/collaborators/tideway.png
+    - name: Laing O'Rourke
+      image: images/collaborators/laing-o-rourke.png
+  tags:
+    - logistics
+    - simulation
+    - optimization
+    - construction
+
+- title: Prefabrication Optimization Toolkit for Hinkley Point C
+  image: images/projects/hpc-crane.jpeg
+  description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Our solution integrated with existing CAD systems and construction timetabling tools, enabling rapid recalculation of plans in response to operational changes. 
+  collaborators: Bouygues Construction, Laing O' Rourke
+  collaborator_icons:
+    - name: BYLOR
+      image: images/collaborators/bouygues.png
+    - name: Laing O'Rourke
+      image: images/collaborators/laing-o-rourke.png
+  tags:
+    - optimization
+    - construction
+    - logistics
