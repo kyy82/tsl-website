@@ -55,7 +55,10 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 
 {% include list.html component="card" data="themes" filters="group: theme" style="small" %}
 
+{% include section.html %}
 
+#### Project Highlights
+{% include project-carousel.html %}
 
 {% include section.html %}
 
