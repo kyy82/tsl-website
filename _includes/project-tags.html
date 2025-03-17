@@ -1,5 +1,5 @@
 {% comment %}
-  Generate tags from projects data
+  Generate tags from projects data and sort by frequency
   Usage: {% include project-tags.html %}
 {% endcomment %}
 
@@ -9,11 +9,43 @@
     {% assign all_tags = all_tags | concat: project.tags %}
   {% endif %}
 {% endfor %}
-{% assign unique_tags = all_tags | uniq | sort %}
+
+{% comment %}
+  Count frequency of each tag and create tag objects with name and count
+{% endcomment %}
+{% assign tag_counts = "" | split: "," %}
+{% assign unique_tags = all_tags | uniq %}
+
+{% for tag in unique_tags %}
+  {% assign count = 0 %}
+  {% for t in all_tags %}
+    {% if t == tag %}
+      {% assign count = count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+  
+  {% capture tag_with_count %}{{ count }}:{{ tag }}{% endcapture %}
+  {% assign tag_counts = tag_counts | push: tag_with_count %}
+{% endfor %}
+
+{% comment %}
+  Sort tags by count (descending)
+{% endcomment %}
+{% assign sorted_tag_counts = tag_counts | sort | reverse %}
+
+{% comment %}
+  Extract just the tag names in frequency order
+{% endcomment %}
+{% assign frequency_sorted_tags = "" | split: "," %}
+{% for tag_with_count in sorted_tag_counts %}
+  {% assign parts = tag_with_count | split: ":" %}
+  {% assign tag_name = parts[1] %}
+  {% assign frequency_sorted_tags = frequency_sorted_tags | push: tag_name %}
+{% endfor %}
 
 <div class="section">
   <h3>Filter Projects by Tags</h3>
-  {% include tags.html tags=unique_tags %}
+  {% include tags.html tags=frequency_sorted_tags %}
 </div>
 
 <!-- Include the project filtering script -->

@@ -2,8 +2,8 @@
 ---
 
 .project-card {
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 .project-title {
@@ -34,6 +34,7 @@ div[style*="grid"] > div:first-child > p {
 
 .project-tags {
   margin-bottom: 15px;
+  text-align: left; 
 }
 
 .project-tag {
@@ -57,13 +58,14 @@ div[style*="grid"] > div:first-child > p {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 5px;
+  margin-bottom: 10px;
   align-items: center;
 }
 
 .collaborator-icon {
   height: 40px;
   width: auto;
-  max-width: 180px;
+  max-width: 140px;
   object-fit: contain;
   opacity: 0.9;
 }
@@ -84,7 +86,7 @@ div[style*="grid"] > div:first-child > p {
 }
 
 .project-divider {
-  margin: 40px 0;
+  margin: 20px 0;
   border: none;
   height: 1px;
   background-color: var(--light-gray);
@@ -104,6 +106,7 @@ div[style*="grid"] > div:first-child > p {
     grid-row: 1;
     justify-self: center;
     max-width: 250px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 }

@@ -15,20 +15,20 @@
       <p class="project-collaborators">
         <em>Collaborators: {{ include.project.collaborators }}</em>
       </p>
-      
-      {% if include.project.collaborator_icons %}
-        <div class="collaborator-icons">
-          {% for icon in include.project.collaborator_icons %}
-            <img src="{{ icon.image | relative_url }}" alt="{{ icon.name }}" title="{{ icon.name }}" class="collaborator-icon">
-          {% endfor %}
-        </div>
-      {% endif %}
     </div>
     
     <div class="project-image-container">
       <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}" class="project-image">
     </div>
   </div>
+  
+  {% if include.project.collaborator_icons %}
+    <div class="collaborator-icons">
+      {% for icon in include.project.collaborator_icons %}
+        <img src="{{ icon.image | relative_url }}" alt="{{ icon.name }}" title="{{ icon.name }}" class="collaborator-icon">
+      {% endfor %}
+    </div>
+  {% endif %}
   
   <hr class="project-divider">
 </div>

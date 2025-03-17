@@ -1,31 +1,124 @@
-
-
-
-- title: Wuhan Logistics Cluster Masterplan
-  image: images/projects/wuhan-project.jpg
-  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster, commissioned by China's National Development and Reform Commission. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
-  collaborators: National Development and Reform Commission (NDRC) China
+- title: LLM-Based Commodity Market Sentiment Analysis
+  image: images/projects/lng-carrier.png
+  description: >
+    We are developing a fine-tuned LLM-based approach to extract commodity supply and demand market sentiment from news articles. This methodology significantly improves upon current approaches by enhancing applicability across a diverse range of commodities. Our solution uses advanced natural language processing techniques to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and market analysts with more accurate and comprehensive insights for decision-making.
+  collaborators: Prof Eugenia Passari (Dauphine University)
   collaborator_icons:
-    - name: NDRC China
-      image: images/collaborators/ndrc-logo.png
+    - name: Dauphine University
+      image: images/collaborators/dauphine.png
   tags:
-    - logistics
+    - machine learning
+    - trade
     - maritime
+
+- title: Scenario Gym - Lightweigh Autonomous Driving Simulation
+  image: images/projects/scenariogym.png
+  description: >
+    TSL collaborated with dRisk and Hitachi to develop Scenario Gym, a lightweight autonomous driving simulation tool that enables fast execution of unconfined, complex scenarios with diverse road users. Scenario Gym defines a flexible in-memory scenario representation compatible with OpenSCENARIO and OpenDRIVE standards. The tool supports both predefined trajectories and intelligent self-controlling entities with high-level goals, facilitating efficient development and testing of autonomous vehicle technologies across various traffic scenarios.
+  collaborators: dRISK, Hitachi Europe
+  collaborator_icons:
+    - name: dRISK
+      image: images/collaborators/drisk.png
+    - name: Hitachi
+      image: images/collaborators/hitachi.png
+  tags:
+    - autonomy
+    - simulation
+    - machine learning
+    - reinforcement learning
+
+- title: EV Impact Analysis for Major Retail Properties
+  image: images/projects/brent-cross.jpg
+  description: >
+    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using Brent Cross as a case study, we developed a dashboard that helped Hammerson understand how the shifting transport landscape affects shopping patterns, car park utilization, retailer logistics, and ultimately profitability. We delivered a bespoke interactive dashboard that quantified current values, projected ranges of variation, and indicated the scale of impact on investment returns. 
+  collaborators: Hammerson
+  collaborator_icons:
+    - name: Hammerson
+      image: images/collaborators/hammerson.png
+  tags:
+    - electric vehicles
+    - infrastructure
+
+- title: D-RISK - De-risking autonomous vehicle deployments
+  image: images/projects/d-risk.png
+  description: >
+    TSL partnered with dRISK, Claytex, and DG Cities on a project funded by the UK's Centre for Connected & Autonomous Vehicles (CCAV). This project developed a novel safety framework and validation platform for autonomous vehicles that addresses the challenges of urban testing environments. This was used to identify realistic edge-case scenarios from real/simulated data, adaptively synthesizing meaningful test scenarios that were used to quantifies overall risk of autonomous vehicle deployments. 
+  collaborators: dRISK, Claytex, DG Cities, CCAV
+  collaborator_icons:
+    - name: CCAV
+      image: images/collaborators/ccav.png
+    - name: dRISK
+      image: images/collaborators/drisk.png
+    - name: Claytex
+      image: images/collaborators/claytex.png
+    - name: DG Cities
+      image: images/collaborators/dgcities.png
+  tags:
+    - autonomy
+    - simulation
+    - safety
+    - machine learning
+
+- title: Parametric Urban Planning - Smart City Simulation
+  image: images/projects/parametric-planning.jpg
+  description: >
+      TSL collaborated with DG Cities to develop parametric planning and simulation framework to addressing emerging challenges in the urban planning sector. The aim of this project was to help urban planners move beyond simply anticipating trends to proactively designing policies and regulatory frameworks that support sustainable smart city concepts. The software helps evaluate impacts of emerging technologies like autonomous vehicles, demand-side management solutions, and flexible infrastructure services.
+
+  collaborators: DG Cities
+  collaborator_icons:
+    - name: DG Cities
+      image: images/collaborators/dgcities.png
+  tags:
+    - simulation
+    - sustainability
+
+- title: Intelligent Urban Mobility (IUMO) - Modelling Radical On-Demand Autonomous Transportation
+  image: images/projects/iumo.jpg
+  description: >
+    TSL advised PLP Architecture in their development of the Intelligent Urban Mobility (IUMO) concept, featuring demand-responsive autonomous electric vehicles operating within a segregated track transport system. The effort was supported by an Epic Games MegaGrant, that allowed the team to create engaging visualizations of the IUMO infrastructure  utilized the Unreal Engine. 
+  collaborators: PLP Architecture, Reed Mobility
+  collaborator_icons:
+    - name: PLP Architecture
+      image: images/collaborators/plp.png
+    - name: Reed Mobility
+      image: images/collaborators/reed.png
+
+  tags:
+    - autonomy
+    - simulation
+
+- title: SHIFT - Autonomous Ridesharing Platforms
+  image: images/projects/ride-public.png
+  description: >
+    The SHIFT consortium was funded by a £2m InnovateUK grant with the aim to model the deployment of autonomous vehicles in London and their integration with existing public transport systems. As part of the project, we developed Delos—a bespoke simulation framework for public transport and ridesharing—which now underpins much of our subsequent autonomy research. Our partners at Oxa utilised Delos to evaluate fleet performance under a variety of operational conditions and to stress-test their fleet management platform. Additionally, our team supported TfL in assessing how autonomous vehicle fleets could enhance first/last mile connectivity, thereby extending the reach of London's public transport network.
+  collaborators: Oxa, Bosch, Transport for London (TfL)
+  collaborator_icons:
+    - name: Oxbotica
+      image: images/collaborators/oxa.png
+    - name: Bosch
+      image: images/collaborators/bosch.png
+    - name: TfL
+      image: images/collaborators/tfl.png
+  tags:
+    - autonomy
+    - simulation
 
 - title: Electrification of Public Transport
   image: images/projects/bus_electric.JPG
   description: We developed a stochastic optimisation model for designing city-wide wireless charging infrastructure for electric buses. Our solution addressed the limitations of electric buses—limited driving range and long recharge times—by proposing Wireless Charging Lanes (WCL) that recharge buses while in motion. The model optimized infrastructure deployment considering various energy consumption scenarios and demonstrated potential annual cost reductions of 24% compared to stationary charging solutions.
-  collaborators: DTE Network+, Cardiff University
+  collaborators: DTE Network+, Transport for London (TfL)
   collaborator_icons:
     - name: DTE Network+
       image: images/collaborators/dte_network.jpg
+    - name: TfL
+      image: images/collaborators/tfl.png
   tags:
     - infrastructure
     - sustainability
     - optimization
 
 - title: Thames Tideway Intermodal Logistics Optimisation
-  image: images/projects/thames_tideway.jpg
+  image: images/projects/thames_tideway.png
   description: >
     TSL was contracted to develop an optimisation model for a multi-modal logistics strategy for the Thames Tideway tunnelling works, meeting a regulatory requirement to prioritise river barge movements over trucks to reduce emissions and ease road network pressure. Our bespoke solution consolidated deliveries via optimal transport mode selection and just-in-time scheduling, addressing challenges such as tide variations, bridge passage height constraints, traffic congestion, and fluctuating material requirements. The approach integrated GIS modelling, visual operational dependency dashboards, and a custom simulation-optimisation library to enhance decision-making and overall performance.
   collaborators: Laing O'Rourke
@@ -39,6 +132,18 @@
     - simulation
     - optimization
     - construction
+
+- title: Wuhan Logistics Cluster Masterplan
+  image: images/projects/wuhan-project.jpg
+  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster, commissioned by China's National Development and Reform Commission. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
+  collaborators: National Development and Reform Commission (NDRC) China
+  collaborator_icons:
+    - name: NDRC China
+      image: images/collaborators/ndrc-logo.png
+  tags:
+    - logistics
+    - trade
+    - maritime
 
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
   image: images/projects/hpc-crane.jpeg
