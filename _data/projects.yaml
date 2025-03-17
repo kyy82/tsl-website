@@ -1,86 +1,35 @@
 # _data/projects.yaml
 # This file contains all project data to be displayed on the projects page
 
-- title: Autonomous Vehicle Fleet Management
-  subtitle: Risk-aware frameworks for autonomous systems
-  group: featured
-  image: images/jetracer.jpg
-  description: Our research focuses on designing efficient, safe and robust control systems for autonomous vehicle fleets. We develop novel algorithms that optimize routing, scheduling, and operational management while ensuring compliance with safety standards. A key strength of our approach is the development of risk-aware frameworks that combine model-based collision prediction with reinforcement learning.
-  collaborators: Prof Yiannis Demiris, Prof Washington Ochieng, Dr. Mohammed Quddus, Komatsu Ltd., Oxa
-  collaborator_icons:
-    - name: Imperial College London
-      image: images/collaborators/imperial.png
-    - name: Komatsu Ltd.
-      image: images/collaborators/komatsu.png
-    - name: Oxa
-      image: images/collaborators/oxa.png
-  tags:
-    - autonomy
-    - reinforcement learning
-    - risk management
+# Add this to _data/projects.yaml
 
-- title: Urban Freight Logistics Optimization
-  subtitle: Last-mile delivery solutions
-  group: featured
-  image: images/freight.jpg
-  description: Last-mile logistics operations present significant challenges in urban environments due to increasing congestion and emissions concerns. Our research develops innovative routing and scheduling algorithms that improve operational efficiency while reducing environmental impact. We study both traditional delivery models and emerging technologies like mobile parcel lockers and autonomous delivery robots.
-  collaborators: Dr. Jose Escribano-Macias, Yubin Liu, Keyang Zhang, DHL, Royal Mail
+- title: Wuhan Logistics Cluster Masterplan
+  subtitle: Strategic Planning for China's OBOR Initiative
+  group: theme
+  image: images/projects/wuhan-project.jpg
+  description: TSL developed a Logistics Masterplan for the Wuhan Logistics Cluster (WLC), commissioned by China's National Development and Reform Commission. Wuhan constitutes an important gateway to Hubei and surrounding regions, with recent infrastructure developments enhancing its role as a vital intermodal node in national and international supply chains. The study explored Wuhan's potential to evolve from a regional hinterland port into a major international hub with a significant role in the One-Belt One-Road (OBOR) initiative, connecting directly to European railroad networks.
+  collaborators: National Development and Reform Commission (NDRC) China
   collaborator_icons:
-    - name: DHL
-      image: images/collaborators/dhl.png
-    - name: Royal Mail
-      image: images/collaborators/royal-mail.png
+    - name: NDRC China
+      image: images/collaborators/ndrc-logo.png
   tags:
     - logistics
-    - optimization
-    - last-mile
-    - sustainability
-
-- title: Maritime Transport Networks
-  subtitle: Resilient shipping operations
-  group: featured
-  image: images/maritime.jpg
-  description: Maritime transport is vital to global trade but faces challenges from supply chain disruptions and environmental regulations. Our research focuses on optimizing container shipping networks, evaluating disruption impacts, and developing strategies for maritime decarbonization. We use advanced network modeling techniques to identify vulnerable components and improve system resilience.
-  collaborators: CMA CGM, Prof Michael Bell, Port of London Authority
-  collaborator_icons:
-    - name: CMA CGM
-      image: images/collaborators/cma-cgm.png
-    - name: Port of London Authority
-      image: images/collaborators/pla.png
-  tags:
     - maritime
-    - networks
-    - resilience
+
+# Add this to _data/projects.yaml
+
+- title: Electrification of Public Transport
+  subtitle: Optimizing Wireless Charging Infrastructure for Electric Buses
+  group: theme
+  image: images/projects/bus_electric.JPG
+  description: As part of our involvement in the DTE Network+ project, we developed a stochastic mathematical model for designing city-wide wireless charging infrastructure for electric buses. Our solution addressed the limitations of electric buses—limited driving range and long recharge times—by proposing Wireless Charging Lanes (WCL) that recharge buses while in motion. Using a two-stage stochastic programming model, we've optimized infrastructure deployment considering various energy consumption scenarios and demonstrated potential annual cost reductions of 24% compared to stationary charging solutions.
+  collaborators: DTE Network+, Cardiff University
+  collaborator_icons:
+    - name: DTE Network+
+      image: images/collaborators/dte_network.jpg
+  tags:
+    - infrastructure
+    - fleet operations
     - sustainability
-
-- title: Agent-based Transport Modeling
-  subtitle: Microscopic traffic simulation
-  group: theme
-  image: images/agent.jpg
-  description: Our group develops agent-based models for transport systems that can simulate complex emergent behaviors from the interactions of many individual agents. These models help policymakers understand the impacts of new technologies, regulations, and infrastructure investments before implementation.
-  collaborators: Transport for London, Imperial Centre for Complexity Science
-  collaborator_icons:
-    - name: Transport for London
-      image: images/collaborators/tfl.png
-    - name: Imperial College London
-      image: images/collaborators/imperial.png
-  tags:
-    - simulation
-    - complexity
-    - policy
-
-- title: Digital Twins for Infrastructure
-  subtitle: Real-time monitoring and simulation
-  group: theme
-  image: images/digital-twin.jpg
-  description: We create digital twin models of transport infrastructure that combine real-time data with simulation capabilities. These tools help infrastructure managers detect problems early, optimize maintenance schedules, and improve operational efficiency across transport networks.
-  collaborators: Zhengyu Wu, ICL Dyson School of Design Engineering, Microsoft
-  collaborator_icons:
-    - name: Microsoft
-      image: images/collaborators/microsoft.png
-    - name: Imperial College London
-      image: images/collaborators/imperial.png
-  tags:
-    - digital twins
-    - IoT
-    - maintenance
+    - optimization
+    

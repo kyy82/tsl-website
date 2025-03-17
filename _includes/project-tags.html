@@ -11,4 +11,10 @@
 {% endfor %}
 {% assign unique_tags = all_tags | uniq | sort %}
 
-{% include tags.html tags=unique_tags %}
+<div class="section">
+  <h3>Filter Projects by Tags</h3>
+  {% include tags.html tags=unique_tags %}
+</div>
+
+<!-- Include the project filtering script -->
+<script src="{{ '/project-filtering.js' | relative_url }}"></script>

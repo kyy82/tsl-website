@@ -1,7 +1,7 @@
 ---
-title: Research Projects
+title: Research
 nav:
-  order: 3
+  order: 2
   tooltip: Our research projects
 ---
 
@@ -14,3 +14,5 @@ Our research at the Transport Systems & Logistics Laboratory focuses on innovati
 {% for project in site.data.projects %}
     {% include project-card.html project=project %}
 {% endfor %}
+
+<script src="{{ '/project-filtering.js' | relative_url }}"></script>

@@ -1,6 +1,14 @@
-/* _styles/projects.scss */
+/*
+  _styles/projects.scss
+  Make sure this file has the correct YAML front matter and location
+*/
 ---
 ---
+
+/* 
+  Project Cards - Ensure this gets compiled properly by Jekyll 
+  Check if this file is being processed by looking for it in your _site directory
+*/
 
 /* Project cards */
 .project-card {
@@ -28,6 +36,15 @@
   /* Left column content */
 }
 
+/* Fix for project description (important to target all possible selectors) */
+.project-card p,
+.project-text p,
+.project-description,
+div[style*="grid"] > div:first-child > p {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Tags styling */
 .project-tags {
   margin-bottom: 15px;
@@ -41,11 +58,6 @@
   margin-right: 10px;
   margin-bottom: 5px;
   font-size: 0.9rem;
-}
-
-/* Project description */
-.project-description {
-  margin-top: 0;
 }
 
 /* Collaborators section */
