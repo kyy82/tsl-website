@@ -2,7 +2,6 @@
 title: Team
 nav:
   order: 2
-  tooltip: About our team
 redirect_from: 
   - people
   - author
