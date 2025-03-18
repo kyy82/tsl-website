@@ -1,7 +1,7 @@
 - title: Large Language Models for Commodity Market Sentiment Analysis
   image: images/projects/lng-carrier.png
   description: >
-    We are developing a fine-tuned LLM-based approach to extract commodity supply and demand market sentiment from news articles. This methodology significantly improves upon current approaches by enhancing applicability across a diverse range of commodities. Our solution uses advanced natural language processing techniques to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and market analysts with more accurate and comprehensive insights for decision-making.
+    Working in close collaboration with our partners in the Faculty of Finance at Dauphine University we are developing a LLM-based apprach to assess commodity supply and demand market sentiment from news articles. The methodology developed represents a significant improvement upon current approaches with applicability across a diverse range of commodities. Our model seeks to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and supply chain analysts with additional insights for decision-making.
   collaborators: Prof Eugenia Passari (Dauphine University)
   collaborator_icons:
     - name: Dauphine University
@@ -14,7 +14,7 @@
 - title: Scenario Gym - Lightweigh Autonomous Driving Simulation
   image: images/projects/scenariogym.png
   description: >
-    TSL collaborated with dRisk and Hitachi to develop Scenario Gym, a lightweight autonomous driving simulation tool that enables fast execution of unconfined, complex scenarios with diverse road users. Scenario Gym defines a flexible in-memory scenario representation compatible with OpenSCENARIO and OpenDRIVE standards. The tool supports both predefined trajectories and intelligent self-controlling entities with high-level goals, facilitating efficient development and testing of autonomous vehicle technologies across various traffic scenarios.
+    TSL collaborated with dRisk.ai and Hitachi to develop Scenario Gym, a lightweight autonomous driving simulation model that can execute unconfined, complex scenarios with diverse road users. Scenario Gym is built using Python and utilises an in-memory scenario representation compatible with OpenSCENARIO and OpenDRIVE standards. It is built with extensibility in mind and can support both predefined trajectories and intelligent self-controlling entities with high-level goals.
   collaborators: dRISK, Hitachi Europe
   collaborator_icons:
     - name: dRISK
@@ -25,24 +25,69 @@
     - autonomy
     - simulation
     - machine learning
-    - reinforcement learning
+
+- title: Development Data Partnership
+  image: images/projects/data-partnership.jpg
+  description: >
+    TSL leads Imperial College London's participation in the Development Data Partnership, a groundbreaking collaboration between international organizations and technology companies. The partnership aims to transform proprietary datasets into sharable insights for improving public sector services and infrastructure. 
+
+    Our researchers and MSc Transport and Data Science students gain invaluable experience in global development and infrastructure management by working directly with World Bank project teams. Projects carried out to-date have focused in trade, infrastructure development, disaster response, healthcare logistics and supply chain management.
+
+  collaborators: The World Bank, Development Data Partnership
+  collaborator_icons:
+    - name: World Bank
+      image: images/collaborators/worldbank.jpg
+  tags:
+    - data science
+    - infrastructure
+    - global development
+    - machine learning
 
 - title: EV Impact Analysis for Major Retail Properties
   image: images/projects/brent-cross.jpg
   description: >
-    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using Brent Cross as a case study, we developed a dashboard that helped Hammerson understand how the shifting transport landscape affects shopping patterns, car park utilization, retailer logistics, and ultimately profitability. We delivered a bespoke interactive dashboard that quantified current values, projected ranges of variation, and indicated the scale of impact on investment returns. 
+    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using Brent Cross as a case study, we developed an agent-based tool of customer behaviours that helped Hammerson understand how the shifting transport landscape affects shopping patterns, car park utilisation, retailer logistics, and ultimately profitability. The accompanying interactive dashboard could be used to design custom adoption scenarios and timelines, model EV charger deployment in parking facilities and assess the scale of investment returns. 
   collaborators: Hammerson
   collaborator_icons:
     - name: Hammerson
       image: images/collaborators/hammerson.png
   tags:
-    - electric vehicles
+    - sustainability
+    - simulation
     - infrastructure
+
+- title: Future of Mobility Review for UK Government Office of Science
+  image: images/projects/mobilityreview.png
+  description: >
+    We supported the UK Government Office of Science (GoS) in their Future of Mobility review, part of the Foresight Programme. We conducted an analysis of mechanisms used to quantify the supply and demand for transport services across the United Kingdom. We delivered strategic recommendations to help the government leverage new technologies for transport data collection, monitor evolving transport needs, facilitate dynamic inter-modal routing services, and promote peer-to-peer sharing services to further grow the sharing economy.
+  collaborators: HM Government Office of Science (GoS), Foresight Programme
+  collaborator_icons:
+    - name: Government Office of Science
+      image: images/collaborators/ukgos.svg
+  tags:
+    - policy
+    - mobility
+    - autonomy
+    - infrastructure
+
+- title: Maritime 2050 Strategy Panel
+  image: images/projects/maritime2050.jpg
+  description: >
+    Dr. Panagiotis Angeloudis was appointed by the UK Transport Secretary to serve on the Expert Panel for the landmark Maritime 2050 review exercise. The panel collaborated with industry leaders, academic institutions, and policy makers to develop a comprehensive long-term strategy that would maintain the UK's leadership position in the global shipping industry. The review focused particularly on digital advancements that could enhance shipping efficiency and the evolving role of digital services in the maritime sector.
+  collaborators:  UK Government, Department for Transport (DfT)
+  collaborator_icons:
+    - name: HM Government, Department for Transport
+      image: images/collaborators/dft.svg
+  tags:
+    - policy
+    - maritime
+    - digitalisation
+    - strategy
 
 - title: D-RISK - De-risking autonomous vehicle deployments
   image: images/projects/d-risk.png
   description: >
-    TSL partnered with dRISK, Claytex, and DG Cities on a project funded by the UK's Centre for Connected & Autonomous Vehicles (CCAV). This project developed a novel safety framework and validation platform for autonomous vehicles that addresses the challenges of urban testing environments. This was used to identify realistic edge-case scenarios from real/simulated data, adaptively synthesizing meaningful test scenarios that were used to quantifies overall risk of autonomous vehicle deployments. 
+    TSL partnered with dRISK, Claytex, and DG Cities on a project funded by the UK's Centre for Connected & Autonomous Vehicles (CCAV). This project developed a novel safety framework and validation platform for autonomous vehicles that addresses the challenges of urban testing environments. TSL's focus was on the use of graph theory to identify critical edge-case conditions from a knowledge graph of real and simulated accident scenarios, to assess risk profile of proposed AV platforms. 
   collaborators: dRISK, Claytex, DG Cities, CCAV
   collaborator_icons:
     - name: CCAV
@@ -62,7 +107,7 @@
 - title: Parametric Urban Planning - Smart City Simulation
   image: images/projects/parametric-planning.jpg
   description: >
-      TSL collaborated with DG Cities to develop parametric planning and simulation framework to addressing emerging challenges in the urban planning sector. The aim of this project was to help urban planners move beyond simply anticipating trends to proactively designing policies and regulatory frameworks that support sustainable smart city concepts. The software helps evaluate impacts of emerging technologies like autonomous vehicles, demand-side management solutions, and flexible infrastructure services.
+      TSL collaborated with DG Cities to develop parametric planning and simulation framework to addressing emerging challenges in the urban planning sector. The aim of this project was to help urban planners move beyond simply anticipating trends to proactively designing policies and regulatory frameworks that support sustainable smart city concepts. The software helped evaluate the impacts of emerging technologies like autonomous vehicles, demand-side management solutions, and flexible infrastructure services.
 
   collaborators: DG Cities
   collaborator_icons:
@@ -85,6 +130,7 @@
 
   tags:
     - autonomy
+    - safety
     - simulation
 
 - title: SHIFT - Autonomous Ridesharing Platforms
@@ -117,6 +163,19 @@
     - sustainability
     - optimization
 
+- title: Strategic Maritime Container Network Design Under Competition
+  image: images/projects/containership.jpg
+  description: >
+    TSL collaborated with the Department of Economics at the University of Padova to develop a game-theoretic model for maritime container network design with competing shipping lines. Liner shipping firms in the model make sequential decisions about fleet investment, network design, and freight rates. Our approach combines network optimization techniques with microeconomic principles to characterize market equilibria and evaluate how competition shapes maritime transport networks. This work provides strategic insights for shipping companies operating in competitive environments and has implications for maritime policy and regulation.
+  collaborators: Prof Luciano Greco, University of Padova
+  collaborator_icons:
+    - name: University of Padova
+      image: images/collaborators/unipd.png
+  tags:
+    - maritime
+    - optimization
+    - trade
+
 - title: Thames Tideway Intermodal Logistics Optimisation
   image: images/projects/thames_tideway.png
   description: >
@@ -147,7 +206,7 @@
 
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
   image: images/projects/hpc-crane.jpeg
-  description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Our solution integrated with existing CAD systems and construction timetabling tools, enabling rapid recalculation of plans in response to operational changes. 
+  description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Given the scale of the challenge, we used evolutionary optimisation models that would extract component layouts from BIM models, and integrated with construction timetabling tools, to detrmine optimal component casting schedules and respond rapidly to changes in operational timelines. 
   collaborators: Bouygues Construction, Laing O' Rourke
   collaborator_icons:
     - name: BYLOR
@@ -157,4 +216,5 @@
   tags:
     - optimization
     - construction
+    - safety
     - logistics

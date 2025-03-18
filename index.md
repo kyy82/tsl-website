@@ -36,7 +36,12 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 
 {% include section.html %}
 
-#### Latest News
+#### Our research
+{% include project-carousel.html %}
+
+{% include section.html %}
+
+#### Latest news
 
 {% include news-list.html style="simple" limit=5 prefix="home-" hide_hidden=true %}
 
@@ -57,10 +62,6 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 
 {% include section.html %}
 
-#### Project Highlights
-{% include project-carousel.html %}
-
-{% include section.html %}
 
 ### Publication highlights
 
