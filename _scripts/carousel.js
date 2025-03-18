@@ -33,9 +33,10 @@
     
     // Function to update carousel position
     function updateCarousel(index) {
-      // Keep index within bounds
-      if (index < 0) index = 0;
-      if (index > maxIndex) index = maxIndex;
+      // When reaching beyond the last item, loop back to the beginning
+      if (index > maxIndex) index = 0;
+      // When going before first item, loop to the end
+      if (index < 0) index = maxIndex;
       
       currentIndex = index;
       const translateX = -currentIndex * itemTotalWidth;
@@ -50,15 +51,28 @@
         }
       });
       
-      // Update button states
+      // Since we now allow looping, buttons should always be active
       if (prevButton) {
-        prevButton.style.opacity = currentIndex === 0 ? "0.5" : "1";
-        prevButton.disabled = currentIndex === 0;
+        prevButton.style.opacity = "1";
       }
       if (nextButton) {
-        nextButton.style.opacity = currentIndex >= maxIndex ? "0.5" : "1";
-        nextButton.disabled = currentIndex >= maxIndex;
+        nextButton.style.opacity = "1";
       }
+    }
+
+    // Click events for controls
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        resetAutoplay();
+        updateCarousel(currentIndex - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        resetAutoplay();
+        updateCarousel(currentIndex + 1);
+      });
     }
     
     // Initialize

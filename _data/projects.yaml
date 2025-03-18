@@ -63,11 +63,7 @@
 - title: EV Impact Analysis for Major Retail Properties
   image: images/projects/brent-cross.jpg
   description: >
-    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using Brent Cross as a case study, we developed an agent-based tool of customer behaviours that helped Hammerson understand how the shifting transport landscape affects shopping patterns, car park utilisation, retailer logistics, and ultimately profitability. The accompanying interactive dashboard could be used to design custom adoption scenarios and timelines, model EV charger deployment in parking facilities and assess the scale of investment returns. 
-  collaborators: Hammerson
-  collaborator_icons:
-    - name: Hammerson
-      image: images/collaborators/hammerson.png
+    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using a major london shopping centre as a case study, we developed an agent-based tool of customer behaviours that helped the asset owners understand how the shifting transport landscape affects shopping patterns, car park utilisation, retailer logistics, and ultimately profitability. The accompanying interactive dashboard could be used to design custom adoption scenarios and timelines, model EV charger deployment in parking facilities and assess the scale of investment returns. 
   tags:
     - sustainability
     - simulation
@@ -224,12 +220,10 @@
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
   image: images/projects/hpc-crane.jpeg
   description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Given the scale of the challenge, we used evolutionary optimisation models that would extract component layouts from BIM models, and integrated with construction timetabling tools, to detrmine optimal component casting schedules and respond rapidly to changes in operational timelines. 
-  collaborators: Bouygues Construction, Laing O' Rourke
+  collaborators: Bouygues Construction
   collaborator_icons:
     - name: BYLOR
       image: images/collaborators/bouygues.png
-    - name: Laing O'Rourke
-      image: images/collaborators/laing-o-rourke.png
   tags:
     - optimization
     - construction
