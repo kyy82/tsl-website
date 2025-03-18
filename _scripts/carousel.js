@@ -1,4 +1,4 @@
-/* _scripts/carousel.js */
+/* Updated carousel.js */
 
 {
   const onLoad = () => {
@@ -23,7 +23,7 @@
     
     // Initialize current position and total count
     let currentIndex = 0;
-    const maxIndex = items.length - visibleItems;
+    const maxIndex = Math.max(0, items.length - visibleItems);
     let autoplayInterval;
     
     // Set first indicator as active
@@ -53,9 +53,11 @@
       // Update button states
       if (prevButton) {
         prevButton.style.opacity = currentIndex === 0 ? "0.5" : "1";
+        prevButton.disabled = currentIndex === 0;
       }
       if (nextButton) {
         nextButton.style.opacity = currentIndex >= maxIndex ? "0.5" : "1";
+        nextButton.disabled = currentIndex >= maxIndex;
       }
     }
     
@@ -121,6 +123,7 @@
     // Autoplay
     const startAutoplay = () => {
       autoplayInterval = setInterval(() => {
+        // Loop back to beginning if we reach the end
         const nextIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
         updateCarousel(nextIndex);
       }, 5000);
@@ -139,7 +142,7 @@
       // Recalculate visible items
       const newWrapperWidth = wrapper.offsetWidth;
       const newVisibleItems = Math.floor(newWrapperWidth / itemTotalWidth);
-      const newMaxIndex = items.length - newVisibleItems;
+      const newMaxIndex = Math.max(0, items.length - newVisibleItems);
       
       // Adjust current index if needed
       let newIndex = currentIndex;
@@ -163,8 +166,8 @@
     }
     
     // Pause autoplay when hovering over the carousel
-    carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-    carousel.addEventListener('mouseleave', startAutoplay);
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    wrapper.addEventListener('mouseleave', startAutoplay);
   };
   
   // After page loads

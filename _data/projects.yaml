@@ -11,7 +11,24 @@
     - trade
     - maritime
 
-- title: Scenario Gym - Lightweigh Autonomous Driving Simulation
+- title: DeepSafe - Comprehensive Risk Metrics for Autonomous Vehicles
+  image: images/projects/deepsafe.jpg
+  description: >
+    TSL participates in the DeepSafe consortium, a CCAV-funded initiative ethat addresses critical barriers to autonomous vehicle deployment. Our primary contribution focuses on developing a unified risk assessment framework that quantifies the multidimensional nature of AV risk factors, building on our research in the Autonomy, Construction and Maritime sectors.
+  collaborators: dRISK.ai, Claytex, rFpro
+  collaborator_icons:
+    - name: rFpro
+      image: images/collaborators/rfpro.png
+    - name: dRISK
+      image: images/collaborators/drisk.png
+    - name: Claytex
+      image: images/collaborators/claytex.png
+  tags:
+    - autonomy
+    - safety
+    - machine learning
+
+- title: Scenario Gym - Lightweight Autonomous Driving Simulation
   image: images/projects/scenariogym.png
   description: >
     TSL collaborated with dRisk.ai and Hitachi to develop Scenario Gym, a lightweight autonomous driving simulation model that can execute unconfined, complex scenarios with diverse road users. Scenario Gym is built using Python and utilises an in-memory scenario representation compatible with OpenSCENARIO and OpenDRIVE standards. It is built with extensibility in mind and can support both predefined trajectories and intelligent self-controlling entities with high-level goals.
@@ -38,10 +55,10 @@
     - name: World Bank
       image: images/collaborators/worldbank.jpg
   tags:
-    - data science
     - infrastructure
-    - global development
+    - trade
     - machine learning
+    - logistics
 
 - title: EV Impact Analysis for Major Retail Properties
   image: images/projects/brent-cross.jpg
@@ -56,19 +73,7 @@
     - simulation
     - infrastructure
 
-- title: Future of Mobility Review for UK Government Office of Science
-  image: images/projects/mobilityreview.png
-  description: >
-    We supported the UK Government Office of Science (GoS) in their Future of Mobility review, part of the Foresight Programme. We conducted an analysis of mechanisms used to quantify the supply and demand for transport services across the United Kingdom. We delivered strategic recommendations to help the government leverage new technologies for transport data collection, monitor evolving transport needs, facilitate dynamic inter-modal routing services, and promote peer-to-peer sharing services to further grow the sharing economy.
-  collaborators: HM Government Office of Science (GoS), Foresight Programme
-  collaborator_icons:
-    - name: Government Office of Science
-      image: images/collaborators/ukgos.svg
-  tags:
-    - policy
-    - mobility
-    - autonomy
-    - infrastructure
+
 
 - title: Maritime 2050 Strategy Panel
   image: images/projects/maritime2050.jpg
@@ -81,8 +86,7 @@
   tags:
     - policy
     - maritime
-    - digitalisation
-    - strategy
+    - infrastructure
 
 - title: D-RISK - De-risking autonomous vehicle deployments
   image: images/projects/d-risk.png
@@ -132,6 +136,19 @@
     - autonomy
     - safety
     - simulation
+
+- title: Future of Mobility Review for UK Government Office of Science
+  image: images/projects/mobilityreview.png
+  description: >
+    We supported the UK Government Office of Science (GoS) in their Future of Mobility review, part of the Foresight Programme. We conducted an analysis of mechanisms used to quantify the supply and demand for transport services across the United Kingdom. We delivered strategic recommendations to help the government leverage new technologies for transport data collection, monitor evolving transport needs, facilitate dynamic inter-modal routing services, and promote peer-to-peer sharing services to further grow the sharing economy.
+  collaborators: HM Government Office of Science (GoS), Foresight Programme
+  collaborator_icons:
+    - name: Government Office of Science
+      image: images/collaborators/ukgos.svg
+  tags:
+    - policy
+    - autonomy
+    - infrastructure
 
 - title: SHIFT - Autonomous Ridesharing Platforms
   image: images/projects/ride-public.png

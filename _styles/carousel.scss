@@ -7,11 +7,13 @@
   max-width: 900px;
   margin: 0 auto 20px auto;
   border-radius: var(--rounded);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel-wrapper {
   overflow: hidden;
+  border-radius: var(--rounded);
+  margin-bottom: 20px;
 }
 
 .carousel {
@@ -24,15 +26,17 @@
   margin: 0 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow);
   border-radius: var(--rounded);
   overflow: hidden;
 }
 
 .carousel-image-container {
   width: 100%;
-  height: 180px; /* Slightly reduced height */
+  height: 180px;
   overflow: hidden;
+  box-shadow: var(--shadow);
+  border-top-left-radius: var(--rounded);
+  border-top-right-radius: var(--rounded);
 }
 
 .carousel-image {
@@ -42,71 +46,76 @@
 }
 
 .carousel-caption {
-  background: #8f8f8f; /* Lighter background */
-  color: white;
-  padding:5px;
-  height: 50px; /* Fixed height for consistency */
+  height:  50px;
+  background: white;
+  color: black;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow);
+  border-bottom-left-radius: var(--rounded);
+  border-bottom-right-radius: var(--rounded);
 }
 
 .carousel-caption h3 {
   margin: 0;
   font-size: 1rem;
-  color: white;
+  color: var(--text);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  max-height: 2.8em;
   text-align: center;
   width: 100%;
+  font-weight: var(--semi-bold);
+  font-family: var(--heading);
 }
 
+/* Adjusted controls and indicators row */
 .carousel-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-70px); /* Adjust for reduced image height */
-  left: 0;
-  right: 0;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 15px;
+  margin-bottom: 5px;
   z-index: 10;
+  gap: 10px;
 }
 
+/* Buttons positioned close to the indicators */
 .carousel-control {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background var(--transition);
+  flex-shrink: 0;
 }
 
 .carousel-control:hover {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.carousel-control .icon {
+  font-size: 1.2em;
+  color: white;
+}
+
+/* Indicators positioned between buttons */
 .carousel-indicators {
-  position: absolute;
-  bottom: -15px; /* Position below the caption */
-  left: 0;
-  right: 0;
   display: flex;
   gap: 8px;
   justify-content: center;
-  padding: 10px 0;
-  background: rgba(0,0,0,0.03);
-  z-index: 5;
+  align-items: center;
+  padding: 0 5px;
 }
 
 .carousel-indicator {
@@ -129,7 +138,7 @@
   }
   
   .carousel-caption h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -139,11 +148,11 @@
   }
   
   .carousel-caption {
-    padding: 10px;
+    padding: 6px 8px;
   }
   
   .carousel-caption h3 {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .carousel-control {

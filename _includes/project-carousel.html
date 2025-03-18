@@ -1,4 +1,6 @@
+<!-- Updated project-carousel.html -->
 <div class="carousel-container">
+  <!-- The carousel wrapper contains the sliding content -->
   <div class="carousel-wrapper">
     <div class="carousel">
       {% for project in site.data.projects %}
@@ -16,20 +18,25 @@
     </div>
   </div>
   
+  <!-- Controls and indicators in one row, with buttons closer to indicators -->
   <div class="carousel-controls">
+    <!-- Previous button -->
     <button class="carousel-control prev" aria-label="Previous slide">
       <i class="icon fa-solid fa-angle-left"></i>
     </button>
+    
+    <!-- Indicators in middle -->
+    <div class="carousel-indicators">
+      {% for project in site.data.projects %}
+        {% if project.image %}
+          <span class="carousel-indicator" data-index="{{ forloop.index0 }}"></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <!-- Next button -->
     <button class="carousel-control next" aria-label="Next slide">
       <i class="icon fa-solid fa-angle-right"></i>
     </button>
-  </div>
-  
-  <div class="carousel-indicators">
-    {% for project in site.data.projects %}
-      {% if project.image %}
-        <span class="carousel-indicator" data-index="{{ forloop.index0 }}"></span>
-      {% endif %}
-    {% endfor %}
   </div>
 </div>
