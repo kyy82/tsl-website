@@ -21,6 +21,17 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.carousel-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.carousel-link:hover {
+  text-decoration: none;
+}
+
+
 .carousel-item {
   flex: 0 0 300px;
   margin: 0 15px;

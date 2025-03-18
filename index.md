@@ -56,7 +56,7 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 
 {% include section.html %}
 
-#### Our themes
+#### Our priorities
 
 {% include list.html component="card" data="themes" filters="group: theme" style="small" %}
 
