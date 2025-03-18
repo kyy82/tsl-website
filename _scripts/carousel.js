@@ -140,7 +140,7 @@
         // Loop back to beginning if we reach the end
         const nextIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
         updateCarousel(nextIndex);
-      }, 5000);
+      }, 8000);
     };
     
     const resetAutoplay = () => {

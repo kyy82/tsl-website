@@ -83,6 +83,17 @@
     - maritime
     - infrastructure
 
+- title: Advanced Fleet Routing for School Transportation
+  image: images/projects/schoolbus.jpeg
+  description: >
+    Our team was contracted by a UAE-based fleet solutions provider, to develop a vehicle routing and scheduling platform for school bus operations. The project involved creating a comprehensive framework that integrated pathfinding, location clustering, and vehicle routing techniques to design fleet plans for schools with over a thousand students.
+
+    Our team developed a modular microservice architecture that integrated with a cloud-based fleet and customer relationship management platform, to allow fleet managers plan routes, carry out adjustments in real-time while seeking to minimize overall travel times for students.
+  tags:
+    - optimization
+    - logistics
+    - simulation
+
 - title: D-RISK - De-risking autonomous vehicle deployments
   image: images/projects/d-risk.png
   description: >
