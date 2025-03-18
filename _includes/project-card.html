@@ -11,10 +11,13 @@
       </div>
       
       <p class="project-description">{{ include.project.description }}</p>
-      
+
+      {% if include.project.collaborators %}
       <p class="project-collaborators">
         <em>Collaborators: {{ include.project.collaborators }}</em>
       </p>
+      {% endif %}
+
     </div>
     
     <div class="project-image-container">

@@ -26,6 +26,7 @@
   tags:
     - autonomy
     - safety
+    - policy
     - machine learning
 
 - title: Scenario Gym - Lightweight Autonomous Driving Simulation
@@ -49,7 +50,6 @@
     TSL leads Imperial College London's participation in the Development Data Partnership, a groundbreaking collaboration between international organizations and technology companies. The partnership aims to transform proprietary datasets into sharable insights for improving public sector services and infrastructure. 
 
     Our researchers and MSc Transport and Data Science students gain invaluable experience in global development and infrastructure management by working directly with World Bank project teams. Projects carried out to-date have focused in trade, infrastructure development, disaster response, healthcare logistics and supply chain management.
-
   collaborators: The World Bank, Development Data Partnership
   collaborator_icons:
     - name: World Bank
@@ -63,13 +63,12 @@
 - title: EV Impact Analysis for Major Retail Properties
   image: images/projects/brent-cross.jpg
   description: >
-    TSL was contracted by Hammerson, a major retail property developer, to analyze the impacts of increasing electric vehicle adoption on shopping centers. Using a major london shopping centre as a case study, we developed an agent-based tool of customer behaviours that helped the asset owners understand how the shifting transport landscape affects shopping patterns, car park utilisation, retailer logistics, and ultimately profitability. The accompanying interactive dashboard could be used to design custom adoption scenarios and timelines, model EV charger deployment in parking facilities and assess the scale of investment returns. 
+    TSL was contracted by a major retail property developer, to analyze the impacts of increasing electric vehicle adoption in shopping center parking provision. Using a major London facility as a case study, we developed an agent-based tool of customer behaviours that helped the asset owners understand how the shifting transport landscape affects shopping patterns, car park utilisation, retailer logistics, and ultimately profitability. The accompanying interactive dashboard could be used to design custom adoption scenarios and timelines, model EV charger deployment in parking facilities and assess the scale of investment returns. 
   tags:
     - sustainability
     - simulation
+    - policy
     - infrastructure
-
-
 
 - title: Maritime 2050 Strategy Panel
   image: images/projects/maritime2050.jpg
@@ -216,6 +215,8 @@
     - logistics
     - trade
     - maritime
+    - policy
+
 
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
   image: images/projects/hpc-crane.jpeg
