@@ -1,4 +1,4 @@
-- title: LLM-Based Commodity Market Sentiment Analysis
+- title: Large Language Models for Commodity Market Sentiment Analysis
   image: images/projects/lng-carrier.png
   description: >
     We are developing a fine-tuned LLM-based approach to extract commodity supply and demand market sentiment from news articles. This methodology significantly improves upon current approaches by enhancing applicability across a diverse range of commodities. Our solution uses advanced natural language processing techniques to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and market analysts with more accurate and comprehensive insights for decision-making.
@@ -72,7 +72,7 @@
     - simulation
     - sustainability
 
-- title: Intelligent Urban Mobility (IUMO) - Modelling Radical On-Demand Autonomous Transportation
+- title: Intelligent Urban Mobility (IUMO) - On-Demand Autonomous Transportation
   image: images/projects/iumo.jpg
   description: >
     TSL advised PLP Architecture in their development of the Intelligent Urban Mobility (IUMO) concept, featuring demand-responsive autonomous electric vehicles operating within a segregated track transport system. The effort was supported by an Epic Games MegaGrant, that allowed the team to create engaging visualizations of the IUMO infrastructure  utilized the Unreal Engine. 

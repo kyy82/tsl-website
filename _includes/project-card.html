@@ -1,5 +1,5 @@
 {% capture project_markup %}
-<div class="project-card">
+<div id="project-{{ forloop.index }}" class="project-card">
   <h2 class="project-title">{{ include.project.title }}</h2>
   
   <div class="project-content">

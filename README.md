@@ -123,18 +123,13 @@ The website should now be accessible at [http://localhost:4000](http://localhost
 - `_styles/`: SCSS stylesheets
 - `_scripts/`: JavaScript files
 - `images/`: Images and media files
-  - `images/logo.svg`: Main TSL logo
-  - `images/IMPERIAL_logo_RGB_Black_2024.svg`: Imperial College London logo
-  - `images/funders/`: Logos of funding organizations
 - `_cite/`: Scripts for citation processing
 
 ## Original Documentation
 
-This website was initially built using the [Greene Lab Website Template](https://github.com/greenelab/lab-website-template). The original documentation is available here:
+This website was initially based on the [Greene Lab Website Template](https://github.com/greenelab/lab-website-template). The original documentation is available here: [**Documentation**](https://greene-lab.gitbook.io/lab-website-template-docs)
 
-[**Greene Lab Template Documentation**](https://greene-lab.gitbook.io/lab-website-template-docs)
-
-**Note:** We have made significant customizations to the template and have stopped syncing with the upstream project. Not all aspects of the original documentation apply to our implementation. Use the original documentation as a reference, but be aware of our custom modifications.
+**Note:** We have since diverged significantly from the original project, as we introduced major modifications and have stopped syncing with the upstream project. Not all aspects of the original documentation apply to our implementation. Use the original documentation as a reference.
 
 ## Team Member Photos
 - Team member profile photos should be placed in `images/team/`

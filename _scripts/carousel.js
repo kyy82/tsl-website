@@ -1,118 +1,63 @@
 /* _scripts/carousel.js */
-
 {
     const onLoad = () => {
+      console.log("Carousel script loaded and running");
       const carousel = document.querySelector('.carousel');
       if (!carousel) return;
       
       const items = carousel.querySelectorAll('.carousel-item');
       const prevButton = document.querySelector('.carousel-control.prev');
       const nextButton = document.querySelector('.carousel-control.next');
-      const indicators = document.querySelectorAll('.carousel-indicator');
       
-      let currentIndex = 0;
-      let autoplayInterval;
+      if (items.length === 0) return;
+      
+      // Number of items to scroll at once (can be adjusted)
+      const scrollCount = 1;
+      let currentPosition = 0;
       const totalItems = items.length;
       
-      // Set first indicator as active
-      if (indicators.length > 0) {
-        indicators[0].classList.add('active');
-      }
-      
       // Function to update carousel position
-      const updateCarousel = (index) => {
-        if (index < 0) index = totalItems - 1;
-        if (index >= totalItems) index = 0;
+      const updateCarousel = (direction) => {
+        // Calculate new position
+        if (direction === 'next') {
+          currentPosition = Math.min(currentPosition + scrollCount, totalItems - scrollCount);
+        } else {
+          currentPosition = Math.max(currentPosition - scrollCount, 0);
+        }
         
-        currentIndex = index;
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Calculate the scroll amount as a percentage
+        const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(items[0]).marginRight);
+        const scrollAmount = itemWidth * currentPosition;
         
-        // Update active indicator
-        indicators.forEach((indicator, i) => {
-          if (i === currentIndex) {
-            indicator.classList.add('active');
-          } else {
-            indicator.classList.remove('active');
-          }
-        });
+        // Apply the transform
+        carousel.style.transform = `translateX(-${scrollAmount}px)`;
+        
+        // Update button states
+        if (prevButton) {
+          prevButton.disabled = currentPosition === 0;
+          prevButton.style.opacity = currentPosition === 0 ? 0.5 : 1;
+        }
+        
+        if (nextButton) {
+          const isEnd = currentPosition >= totalItems - scrollCount;
+          nextButton.disabled = isEnd;
+          nextButton.style.opacity = isEnd ? 0.5 : 1;
+        }
       };
       
       // Click events for controls
       if (prevButton) {
-        prevButton.addEventListener('click', () => {
-          resetAutoplay();
-          updateCarousel(currentIndex - 1);
-        });
+        prevButton.addEventListener('click', () => updateCarousel('prev'));
       }
       
       if (nextButton) {
-        nextButton.addEventListener('click', () => {
-          resetAutoplay();
-          updateCarousel(currentIndex + 1);
-        });
+        nextButton.addEventListener('click', () => updateCarousel('next'));
       }
       
-      // Click events for indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          resetAutoplay();
-          updateCarousel(index);
-        });
-      });
-      
-      // Touch support
-      let touchStartX = 0;
-      let touchEndX = 0;
-      
-      const handleTouchStart = (e) => {
-        touchStartX = e.touches[0].clientX;
-      };
-      
-      const handleTouchEnd = (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-      };
-      
-      const handleSwipe = () => {
-        const swipeThreshold = 50;
-        if (touchStartX - touchEndX > swipeThreshold) {
-          // Swipe left
-          resetAutoplay();
-          updateCarousel(currentIndex + 1);
-        } else if (touchEndX - touchStartX > swipeThreshold) {
-          // Swipe right
-          resetAutoplay();
-          updateCarousel(currentIndex - 1);
-        }
-      };
-      
-      carousel.addEventListener('touchstart', handleTouchStart);
-      carousel.addEventListener('touchend', handleTouchEnd);
-      
-      // Autoplay
-      const startAutoplay = () => {
-        autoplayInterval = setInterval(() => {
-          updateCarousel(currentIndex + 1);
-        }, 5000); // Change slide every 5 seconds
-      };
-      
-      const resetAutoplay = () => {
-        clearInterval(autoplayInterval);
-        startAutoplay();
-      };
-      
-      // Start autoplay when the page loads
-      startAutoplay();
-      
-      // Reset autoplay when the user interacts with the page
-      window.addEventListener('focus', startAutoplay);
-      window.addEventListener('blur', () => clearInterval(autoplayInterval));
-      
-      // Pause autoplay when hovering over the carousel
-      carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-      carousel.addEventListener('mouseleave', startAutoplay);
+      // Initialize button states
+      updateCarousel('init');
     };
     
     // After page loads
     window.addEventListener('load', onLoad);
-  }
+}
