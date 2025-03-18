@@ -14,7 +14,7 @@
 - title: Vision-Language-Action Models for Autonomous Vehicle safety
   image: images/projects/vla-elm.jpg
   description: >
-    TSL is working with Elm, a leading Saudi technology solutions provider established in the UK to develop a visual-language-action model framework to for the next generation of autonomous vehicle safety systems. The project aims to use multi-modal foundation models to interpret unique situations that AVs may have to encounter, and respond to potential safety hazards in real-time. The project builts on our earlier work on AV simulation and risk metrics, which will be complemented by the VLA framework for real-time decision-making. 
+    TSL is working with Elm, a leading Saudi technology solutions provider established in the UK to develop a visual-language-action model framework to for the next generation of autonomous vehicle safety systems. The project aims to use multi-modal foundation models to interpret unique situations that AVs may have to encounter, and respond to potential safety hazards in real-time. The project builds on our earlier work on AV simulation and risk metrics, which will be complemented by the VLA framework for real-time decision-making. 
   collaborators: Elm
   collaborator_icons:
     - name: Elm
