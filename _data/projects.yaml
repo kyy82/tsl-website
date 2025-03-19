@@ -1,5 +1,5 @@
 - title: Large Language Models for Commodity Market Sentiment Analysis
-  image: images/projects/lng-carrier.png
+  image: images/projects/lng-carrier.jpg
   description: >
     Working in close collaboration with our partners in the Faculty of Finance at Dauphine University we are developing a LLM-based apprach to assess commodity supply and demand market sentiment from news articles. The methodology developed represents a significant improvement upon current approaches with applicability across a diverse range of commodities. Our model seeks to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and supply chain analysts with additional insights for decision-making.
   collaborators: Prof Eugenia Passari (Dauphine University)
@@ -14,7 +14,7 @@
 - title: Vision-Language-Action Models for Autonomous Vehicle safety
   image: images/projects/vla-elm.jpg
   description: >
-    TSL is working with Elm, a leading Saudi technology solutions provider established in the UK to develop a visual-language-action model framework to for the next generation of autonomous vehicle safety systems. The project aims to use multi-modal foundation models to interpret unique situations that AVs may have to encounter, and respond to potential safety hazards in real-time. The project builds on our earlier work on AV simulation and risk metrics, which will be complemented by the VLA framework for real-time decision-making. 
+    TSL is working with Elm Europe, the UK-based subsidiary of Elm Company, a leading Saudi technology group, to develop a visual-language-action model framework for the next generation of autonomous vehicle safety systems. Using multi-modal foundation models, the model can interpret unique situations that AVs may have to encounter, and respond to potential safety hazards in real-time. The project builds on our earlier work on AV simulation and risk metrics, which will be complemented by the VLA framework for real-time decision-making.
   collaborators: Elm
   collaborator_icons:
     - name: Elm
@@ -98,7 +98,7 @@
     - infrastructure
 
 - title: Advanced Fleet Routing for School Transportation
-  image: images/projects/schoolbus.jpeg
+  image: images/projects/schoolbus.jpg
   description: >
     Our team was contracted by a UAE-based fleet solutions provider, to develop a vehicle routing and scheduling platform for school bus operations. The project involved creating a comprehensive framework that integrated pathfinding, location clustering, and vehicle routing techniques to design fleet plans for schools with over a thousand students.
 
@@ -109,7 +109,7 @@
     - simulation
 
 - title: D-RISK - De-risking autonomous vehicle deployments
-  image: images/projects/d-risk.png
+  image: images/projects/d-risk.jpg
   description: >
     TSL partnered with dRISK, Claytex, and DG Cities on a project funded by the UK's Centre for Connected & Autonomous Vehicles (CCAV). This project developed a novel safety framework and validation platform for autonomous vehicles that addresses the challenges of urban testing environments. TSL's focus was on the use of graph theory to identify critical edge-case conditions from a knowledge graph of real and simulated accident scenarios, to assess risk profile of proposed AV platforms. 
   collaborators: dRISK, Claytex, DG Cities, CCAV
@@ -158,7 +158,7 @@
     - simulation
 
 - title: Future of Mobility Review for UK Government Office of Science
-  image: images/projects/mobilityreview.png
+  image: images/projects/mobilityreview.jpg
   description: >
     We supported the UK Government Office of Science (GoS) in their Future of Mobility review, part of the Foresight Programme. We conducted an analysis of mechanisms used to quantify the supply and demand for transport services across the United Kingdom. We delivered strategic recommendations to help the government leverage new technologies for transport data collection, monitor evolving transport needs, facilitate dynamic inter-modal routing services, and promote peer-to-peer sharing services to further grow the sharing economy.
   collaborators: HM Government Office of Science (GoS), Foresight Programme
@@ -171,7 +171,7 @@
     - infrastructure
 
 - title: SHIFT - Autonomous Ridesharing Platforms
-  image: images/projects/ride-public.png
+  image: images/projects/ride-public.jpg
   description: >
     The SHIFT consortium was funded by a £2m InnovateUK grant with the aim to model the deployment of autonomous vehicles in London and their integration with existing public transport systems. As part of the project, we developed Delos—a bespoke simulation framework for public transport and ridesharing—which now underpins much of our subsequent autonomy research. Our partners at Oxa utilised Delos to evaluate fleet performance under a variety of operational conditions and to stress-test their fleet management platform. Additionally, our team supported TfL in assessing how autonomous vehicle fleets could enhance first/last mile connectivity, thereby extending the reach of London's public transport network.
   collaborators: Oxa, Bosch, Transport for London (TfL)
@@ -214,7 +214,7 @@
     - trade
 
 - title: Thames Tideway Intermodal Logistics Optimisation
-  image: images/projects/thames_tideway.png
+  image: images/projects/thames_tideway.jpg
   description: >
     TSL was contracted to develop an optimisation model for a multi-modal logistics strategy for the Thames Tideway tunnelling works, meeting a regulatory requirement to prioritise river barge movements over trucks to reduce emissions and ease road network pressure. Our bespoke solution consolidated deliveries via optimal transport mode selection and just-in-time scheduling, addressing challenges such as tide variations, bridge passage height constraints, traffic congestion, and fluctuating material requirements. The approach integrated GIS modelling, visual operational dependency dashboards, and a custom simulation-optimisation library to enhance decision-making and overall performance.
   collaborators: Laing O'Rourke
@@ -244,7 +244,7 @@
 
 
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
-  image: images/projects/hpc-crane.jpeg
+  image: images/projects/hpc-crane.jpg
   description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Given the scale of the challenge, we used evolutionary optimisation models that would extract component layouts from BIM models, and integrated with construction timetabling tools, to detrmine optimal component casting schedules and respond rapidly to changes in operational timelines. 
   collaborators: Bouygues Construction
   collaborator_icons:
@@ -255,3 +255,4 @@
     - construction
     - safety
     - logistics
+
