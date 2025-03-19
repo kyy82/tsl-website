@@ -7,7 +7,7 @@ redirect_from:
   - author
 ---
 
-<h1><a style="text-decoration: none; color: inherit;" href="/members/angeloudis-p.html">Laboratory Director</a></h1>
+<h1><a style="text-decoration: none; color: inherit;" href="/members/angeloudis-p.html">Director</a></h1>
 
 
 
@@ -45,14 +45,16 @@ redirect_from:
 
 
 <a style="text-decoration: none; color: inherit;" href="/members/angeloudis-p.html">
-Professor Panagiotis Angeloudis leads the Transport Systems & Logistics Laboratory within the **Centre for Transport Engineering & Modelling** (CTEM) at **Imperial College London**. As a member of the Department of Civil & Environmental Engineering, his research program addresses critical challenges at the intersection of transportation technology and operations management.
+Professor Panagiotis Angeloudis leads TSL and is part of the Centre for Transport Engineering & Modelling at Imperial.
+
+His research addresses challenges at the intersection of transportation technology and operations management.
  &nbsp;&nbsp;&nbsp;
  <a href="/members/angeloudis-p.html">(more)</a>
 
 
 {% include section.html %}
 
-# Research Team
+# Team
 
 {% include list.html data="members" component="portrait" filters="role: senior" %}
 {% include list.html data="members" component="portrait" filters="role: ^(?!pi$|senior$|alumni$)" %}
