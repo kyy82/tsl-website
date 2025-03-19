@@ -1,7 +1,3 @@
-/*
-  put a wrapper around each table to allow scrolling.
-*/
-
 {
   const onLoad = () => {
     // for each top-level table
