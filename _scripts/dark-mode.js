@@ -1,7 +1,3 @@
-/*
-  manages light/dark mode.
-*/
-
 {
   // immediately load saved (or default) mode before page renders
   document.documentElement.dataset.dark =

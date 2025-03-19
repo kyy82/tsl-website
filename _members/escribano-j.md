@@ -6,8 +6,6 @@ role: senior
 education: 
   - "Imperial College London: PhD in Operations Research 2020"
   - "Imperial College London: MEng in Civil & Environmental Engineering 2015"
-aliases:
-  - Escribano
 brief-position: Aviation, Logistics, Simulation, Optimisation
 brief-desc: Lecturer
 links:

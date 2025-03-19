@@ -7,9 +7,6 @@ education:
   - "University of Bath: PhD in Mechanical Engineering (2019)"
   - "University of Bath: MSc in Mechatronics Engineering (2014)"
   - "Tongi University: BEng in Mechatronics Engineering (2013)"
-aliases:
-  - J. Smith
-  - J Smith
 brief-position: Autonomous Vehicles, Sensors, Positioning, Simulation
 brief-desc: Research Fellow
 links:

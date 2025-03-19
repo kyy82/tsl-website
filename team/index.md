@@ -9,8 +9,6 @@ redirect_from:
 
 <h1><a style="text-decoration: none; color: inherit;" href="/members/angeloudis-p.html">Director</a></h1>
 
-
-
 {% capture floatcontent %}
 
 <div class="text-center mt-5">
@@ -27,13 +25,11 @@ redirect_from:
   <div class="text-center" style="margin-top: -10px"> Professor & Lab Director </div> <br>
 </a>
 
-
 </div>
 
 {% endcapture %}
 
 {% include float.html content=floatcontent %}
-
 
 {% assign member = site.members | where: "slug", "angeloudis-p" | first %}
 
@@ -65,8 +61,6 @@ His research addresses challenges at the intersection of transportation technolo
 
 {% include list.html data="members" component="portrait" filters="role: alumni" %}
 
- 
-
 {% include section.html dark=true %}
 
  We are always looking for new members to our team. We will advertise any funded opportunities that specific to our group on LinkedIn, as well as in the UTSG and robotics-worldwide mailing lists, while several scholarship schemes and fellowships are offered by Imperial College London. 
@@ -84,5 +78,3 @@ His research addresses challenges at the intersection of transportation technolo
 {% endcapture %}
 
 {% include grid.html style="square" content=content %}
-
-

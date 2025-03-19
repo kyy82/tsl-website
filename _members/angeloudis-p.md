@@ -6,8 +6,6 @@ role: pi
 education: 
   - "Imperial College London: PhD in Transport (2005-2009)"
   - "Imperial College London: MEng in Civil & Environmental Engineering (2001-2005)"
-aliases:
-  - Angeloudis
 brief-position: Group Director, Transport Systems, Logistics
 brief-desc: Professor
 links:

@@ -6,9 +6,6 @@ role: senior
 education: 
   - "Universidad de Concepción: MSc in Indrustial Engineering (2016)"
   - "Universidad de Concepción: Dipl in Mechanical Engineering (2015)"
-aliases:
-  - L. Parada
-  - Leandro Parada
 brief-position: Autonomous Vehicles, Reinforcement Learning, Cybersecurity
 brief-desc: Research Associate
 links:

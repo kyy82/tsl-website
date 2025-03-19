@@ -6,7 +6,6 @@ role: phd
 education: 
   - "American University of Beirut: BEng in Civil & Environmental Engineering (2018)"
   - "Imperial College London: MSc in Transport (2019)"
-
 brief-position: Autonomous Vehicle Regulation, Safety & Compliance
 brief-desc: PhD Student
 links:

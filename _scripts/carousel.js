@@ -1,5 +1,3 @@
-/* Updated carousel.js */
-
 {
   const onLoad = () => {
     const carousel = document.querySelector('.carousel');
