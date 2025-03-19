@@ -9,9 +9,9 @@
 
 {% assign fulltitle = "" | split: "," %}
 {% if title and page.url != "/" %}
-  {% assign fulltitle = fulltitle | push: "TSL > " | push: title %}
+  {% assign fulltitle = fulltitle | push: title | push: " | Transport Systems & Logistics Laboratory (TSL) | Imperial College London" %}
 {% elsif page.url == "/" %}
-  {% assign fulltitle = fulltitle | push: site.title %}
+  {% assign fulltitle = fulltitle | push: "Transport Systems & Logistics Laboratory (TSL) | Imperial College London" %}
 {% endif %}
 
 {% assign subtitle = site.subtitle %}
