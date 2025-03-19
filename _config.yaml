@@ -59,6 +59,7 @@ collections:
 
 # jekyll plugins
 plugins:
+  - jekyll-loading-lazy
   - jekyll-spaceship
   - jekyll-sitemap
   - jekyll-redirect-from
