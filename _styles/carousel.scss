@@ -71,7 +71,7 @@
 
 .carousel-caption h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -82,9 +82,10 @@
   width: 100%;
   font-weight: var(--semi-bold);
   font-family: var(--heading);
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-/* Adjusted controls and indicators row */
 .carousel-controls {
   position: relative;
   display: flex;
