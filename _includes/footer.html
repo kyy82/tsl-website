@@ -9,7 +9,6 @@
   {% endif %}
   data-size="wide"
 >
-
 <div>
   {% for link in site.links %}
     {% assign key = link[0] %}
@@ -17,14 +16,11 @@
     {% include button.html type=key text="" link=value style="bare" %}
   {% endfor %}
 </div>
-
 <div>
   &copy; {{ site.time | date: "%Y" }}
   {{ site.title }}
-
   <br>
   <br>
-  
   <a href="https://www.imperial.ac.uk">
     <img src="/images/logo_imperial.png" alt="Imperial College London" />    </a>
 </div>

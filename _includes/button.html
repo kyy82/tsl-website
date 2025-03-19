@@ -1,6 +1,5 @@
 {% assign button = include %}
 {% assign button = button | hash_default: site.data.types[include.type] %}
-
 {% if button.link or button.icon or button.text %}
   <div class="button-wrapper">
     <a
