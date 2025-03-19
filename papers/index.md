@@ -31,3 +31,13 @@ Most of our recent work should be accessible on an Open Access basis. However, i
 {% include search-info.html %}
 
 {% include list.html data="citations" component="citation"  style="" %}
+
+{% capture content %}
+For a list of our research initiatives, visit our [projects page](/projects/).
+{% endcapture %}
+
+{% include more-info.html 
+  content=content 
+  icon="fa-solid fa-flask" 
+  color="#0A66C2" 
+%}

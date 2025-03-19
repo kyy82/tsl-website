@@ -1,0 +1,12 @@
+{% assign icon = include.icon | default: "fa-solid fa-info-circle" %}
+{% assign color = include.color | default: "" %}
+{% assign style = include.style | default: "" %}
+
+<div class="more-info{% if style != "" %} {{ style }}{% endif %}">
+  <p>
+    {% if icon %}
+      <i class="icon {{ icon }}" {% if color %}style="color: {{ color }};"{% endif %}></i>
+    {% endif %}
+    {{ include.content | markdownify | remove: "<p>" | remove: "</p>" }}
+  </p>
+</div>

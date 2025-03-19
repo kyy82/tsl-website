@@ -8,13 +8,11 @@
 {% endif %}
 
 {% assign fulltitle = "" | split: "," %}
-{% if title %}
-  {% assign fulltitle = fulltitle | push: title %}
-{% endif %}
-{% if site.title %}
+{% if title and page.url != "/" %}
+  {% assign fulltitle = fulltitle | push: "TSL > " | push: title %}
+{% elsif page.url == "/" %}
   {% assign fulltitle = fulltitle | push: site.title %}
 {% endif %}
-{% assign fulltitle = fulltitle | join: " | " %}
 
 {% assign subtitle = site.subtitle %}
 
@@ -43,12 +41,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ fulltitle }}</title>
+<title>{{ fulltitle | join: "" }}</title>
 
 <link rel="icon" href="{{ icon }}">
 
-<meta name="title" content="{{ title }}">
-<meta name="description" content="{{ description }}">
+<meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta name="keywords" content="{{ page.keywords | default: site.keywords | join: ', ' | escape }}">
+<meta name="author" content="{{ site.author | default: 'Transport Systems & Logistics Laboratory' }}">
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:site_title" content="{{ site.share_title }}">
@@ -85,7 +84,20 @@
       "datePublished": "{{ published }}",
       "dateModified": "{{ updated }}",
     {% else %}
-      "@type": "WebSite",
+      "@type": "ResearchOrganization",
+      "name": "{{ site.title }}",
+      "alternateName": "{{ site.title_full }}",
+      "url": "{{ site.url }}",
+      "logo": "{{ site.url }}/images/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/p-angeloudis/",
+        "https://github.com/tsl-imperial"
+      ],
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "Imperial College London",
+        "url": "https://www.imperial.ac.uk"
+      },
     {% endif %}
     "name": "{{ title }}",
     "description": "{{ description }}",
@@ -96,6 +108,6 @@
     },
     "url": "{{ url }}"
   }
-</script>
+  </script>
 
 <link rel="alternate" type="application/rss+xml" href="{{ feed }}">

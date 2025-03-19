@@ -15,3 +15,14 @@ Through both fundamental research and applied industry collaborations, we develo
 {% for project in site.data.projects %}
     {% include project-card.html project=project %}
 {% endfor %}
+
+
+{% capture content %}
+For a list of recent research ouputs, visit our [publications page](/papers/).
+{% endcapture %}
+
+{% include more-info.html 
+  content=content 
+  icon="fa-solid fa-file-lines" 
+  color="#0A66C2" 
+%}

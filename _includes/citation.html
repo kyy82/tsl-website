@@ -13,7 +13,7 @@
     {% if include.style == "rich" %}
       <a
         {% if citation.link %}
-          href="{{ citation.link | relative_url }}"
+          href="{{ citation.link | relative_url }}" target="_blank" rel="noopener"
         {% endif %}
         class="citation-image"
         aria-label="{{ citation.title | default: "citation link" }}"
@@ -34,7 +34,7 @@
       <div class="citation-details">
         <a
           {% if citation.link %}
-            href="{{ citation.link | relative_url }}"
+            href="{{ citation.link | relative_url }}" target="_blank" rel="noopener"
           {% endif %}
           class="citation-title"
         >
