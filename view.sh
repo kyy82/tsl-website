@@ -3,6 +3,9 @@
 # Transport Systems Lab - Jekyll View Script with temp directory
 
 # Create a temporary directory for the build
+
+export JEKYLL_ENV="production"
+
 TEMP_DIR=$(mktemp -d)
 echo "Building site to temporary directory: $TEMP_DIR"
 

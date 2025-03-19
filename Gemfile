@@ -7,6 +7,7 @@ gem "html-proofer", "~> 5.0"
 
 # plugins
 group :jekyll_plugins do
+  gem 'jekyll-minifier'
   gem "jekyll-spaceship"
   gem "jekyll-sitemap"
   gem "jekyll-redirect-from"
