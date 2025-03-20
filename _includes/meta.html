@@ -26,10 +26,6 @@
   {{ site.url }}{{ site.baseurl }}
 {%- endcapture %}
 
-{% assign png = "images/icon.png" | file_exists %}
-{% assign jpg = "images/icon.jpg" | file_exists %}
-{% assign icon = png | default: jpg | relative_url %}
-
 {% assign jpg = "images/share.jpg" | file_exists %}
 {% assign png = "images/share.png" | file_exists %}
 {% assign share = jpg | default: png | relative_url %}
@@ -43,8 +39,19 @@
 
 <title>{{ fulltitle | join: "" }}</title>
 
-<link rel="icon" href="{{ icon }}">
-
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+<link rel="alternate icon" href="/images/favicon/favicon.ico">
+<link rel="icon" href="/images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="/images/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="/images/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="/images/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="/images/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="/images/favicon/favicon-228.png" sizes="228x228">
+<link rel="shortcut icon" href="/images/favicon/favicon-196.png" sizes="196x196">
+<link rel="apple-touch-icon" href="/images/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="/images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="/images/favicon/favicon-180.png" sizes="180x180">
 <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta name="keywords" content="{{ page.keywords | default: site.keywords | join: ', ' | escape }}">
 <meta name="author" content="{{ site.author | default: 'Transport Systems & Logistics Laboratory' }}">
