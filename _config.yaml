@@ -75,9 +75,8 @@ highlighter: rouge
 # jekyll theme
 theme: null
 
-# sass settings
 sass:
-  sass_dir: _styles
+  style: compressed  # This compresses the output CSS
 
 # force jekyll to include certain files/folders
 include:

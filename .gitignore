@@ -23,3 +23,5 @@ _cite/report/deduplication_summary.txt
 _data/citations.yaml.bak
 todo.md.off
 website1.code-workspace
+_sass/bundle.scss
+assets/css/main.scss
