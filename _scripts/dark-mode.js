@@ -4,9 +4,16 @@
     window.localStorage.getItem("dark-mode") ?? "false";
 
   const onLoad = () => {
-    // update toggle button to match loaded mode
-    document.querySelector(".dark-toggle").checked =
-      document.documentElement.dataset.dark === "true";
+
+    const onLoad = () => {
+      // Find the toggle button
+      const darkToggle = document.querySelector(".dark-toggle");
+      
+      // Only update if the element exists
+      if (darkToggle) {
+        darkToggle.checked = document.documentElement.dataset.dark === "true";
+      }
+    };
   };
 
   // after page loads
