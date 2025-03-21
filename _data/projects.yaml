@@ -1,4 +1,4 @@
-- title: Large Language Models for Commodity Market Sentiment Analysis
+- title: Sentiment Analysis of Commodity Markets Using Transformer-based Language Models
   image: images/projects/lng-carrier.jpg
   description: >
     Working in close collaboration with our partners in the Faculty of Finance at Dauphine University we are developing a LLM-based apprach to assess commodity supply and demand market sentiment from news articles. The methodology developed represents a significant improvement upon current approaches with applicability across a diverse range of commodities. Our model seeks to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and supply chain analysts with additional insights for decision-making.
@@ -11,7 +11,7 @@
     - trade
     - maritime
 
-- title: Vision-Language-Action Models for Autonomous Vehicle safety
+- title: Vision-Language-Action Models for AV Scenario Interpretation
   image: images/projects/vla-elm.jpg
   description: >
     TSL is working with Elm Europe, the UK-based subsidiary of Elm Company, a leading Saudi technology group, to develop a visual-language-action model framework for the next generation of autonomous vehicle safety systems. Using multi-modal foundation models, the model can interpret unique situations that AVs may have to encounter, and respond to potential safety hazards in real-time. The project builds on our earlier work on AV simulation and risk metrics, which will be complemented by the VLA framework for real-time decision-making.
@@ -25,7 +25,7 @@
     - machine learning
 
 
-- title: DeepSafe - Comprehensive Risk Metrics for Autonomous Vehicles
+- title: DeepSafe - Narrowing the reality gap for AV Scenario Testing
   image: images/projects/deepsafe.jpg
   description: >
     TSL participates in the DeepSafe consortium, a CCAV-funded initiative ethat addresses critical barriers to autonomous vehicle deployment. Our primary contribution focuses on developing a unified risk assessment framework that quantifies the multidimensional nature of AV risk factors, building on our research in the Autonomy, Construction and Maritime sectors.
@@ -97,7 +97,7 @@
     - maritime
     - infrastructure
 
-- title: Advanced Fleet Routing for School Transportation
+- title: Adaptive Fleet Routing for School Transportation
   image: images/projects/schoolbus.jpg
   description: >
     Our team was contracted by a UAE-based fleet solutions provider, to develop a vehicle routing and scheduling platform for school bus operations. The project involved creating a comprehensive framework that integrated pathfinding, location clustering, and vehicle routing techniques to design fleet plans for schools with over a thousand students.

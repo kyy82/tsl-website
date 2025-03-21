@@ -36,12 +36,12 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 
 {% include section.html %}
 
-#### Our research
+#### Our work
 {% include project-carousel.html %}
 
 {% include section.html %}
 
-#### Latest news
+#### Our news
 
 {% include news-list.html style="simple" limit=5 prefix="home-" hide_hidden=true %}
 
@@ -63,7 +63,7 @@ Our group is led by [**Prof Panagiotis Angeloudis**](/members/angeloudis-p), and
 {% include section.html %}
 
 
-### Publication highlights
+#### Our publications
 
 {% include list.html data="citations"  filters="group: featured" hideyear="true" component="citation"  %}
 
@@ -104,8 +104,6 @@ Our alumni have achieved success in academia, hold influential roles in industry
 %}
 
 {% endcapture %}
-
-
 
 {% include section.html %}
 
