@@ -41,6 +41,13 @@ Using [Homebrew](https://brew.sh/):
 # Install rbenv to manage Ruby versions
 brew install rbenv
 
+# Add these to your shell configuration with higher precedence
+echo 'export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+# Reload your shell
+source ~/.zshrc
+
 # Initialize rbenv
 rbenv init
 

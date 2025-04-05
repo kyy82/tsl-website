@@ -1,5 +1,5 @@
 ---
-name: Tom He
+name: Shuo (Tom) He
 position: PhD Student
 image: images/team/he-t.jpeg
 role: phd
