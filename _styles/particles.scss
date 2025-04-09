@@ -24,7 +24,11 @@ body.home-page #particles-js {
 header {
   position: relative;
   z-index: 1;
-  background: transparent !important; /* Make header background transparent */
+}
+
+/* Only make header background transparent on home page */
+body.home-page header {
+  background: transparent !important;
 }
 
 /* Ensure header text is readable over particles */
