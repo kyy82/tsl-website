@@ -1580,6 +1580,43 @@ p {
   font-size: 1.15em;
 }
 
+/* From particles.scss */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 350px; /* Reduced height to be less prominent */
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: none; /* Hide by default */
+}
+
+/* Only show particles on front/home page */
+body.home-page #particles-js {
+  display: block;
+}
+
+/* Hide particles on mobile devices */
+@media (max-width: 768px) {
+  #particles-js {
+    display: none !important;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  background: transparent !important; /* Make header background transparent */
+}
+
+/* Ensure header text is readable over particles */
+body.home-page header a, 
+body.home-page header .title, 
+body.home-page header .subtitle {
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5); /* Lighter text shadow */
+}
+
 /* From portrait.scss */
 .portrait-wrapper {
   display: contents;
