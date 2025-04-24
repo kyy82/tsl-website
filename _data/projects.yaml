@@ -24,6 +24,17 @@
     - safety
     - machine learning
 
+- title: Scalable Autonomous Vehicle Fleet Management
+  image: images/komatsu_project.jpg
+  description: We are collaborating with Komatsu Ltd. to develop advanced algorithms for the optimal dispatching of autonomous trucks in open-pit mines. This project integrates reinforcement learning with combinatorial optimisation to enhance safety, efficiency, and sustainability in mining operations. Building on our team’s expertise in simulation-driven optimisation and autonomous vehicle safety, the research aims to establish decentralised control policies that can be deployed at scale across large autonomous truck fleets.
+  collaborators: Komatsu Ltd.
+  collaborator_icons:
+    - name: Komatsu
+      image: images/collaborators/komatsu.jpg
+  tags:
+    - optimization
+    - mining
+    - simulation
 
 - title: DeepSafe - Narrowing the reality gap for AV Scenario Testing
   image: images/projects/deepsafe.jpg
