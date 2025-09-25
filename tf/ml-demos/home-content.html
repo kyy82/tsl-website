@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Demos Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="home-container">
+            <h1>Interactive Machine Learning Demonstrations</h1>
+
+            <div class="intro">
+                <p>Welcome to our collection of interactive machine learning demos. Each demonstration allows you to experiment with different algorithms and parameters to build intuition about how they work.</p>
+            </div>
+
+            <div class="demo-grid">
+                <a href="#" onclick="parent.loadContent('lec02_linear-regression/content.html', 'Linear Regression', 'nav-linear-regression'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <div class="graph-axis"></div>
+                                    <div class="graph-axis vertical"></div>
+                                    <div class="data-points">
+                                        <div class="point"></div>
+                                        <div class="point"></div>
+                                        <div class="point"></div>
+                                        <div class="point"></div>
+                                    </div>
+                                    <div class="regression-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Linear Regression</h3>
+                            <p>Explore how linear regression finds the best line through data points. Adjust parameters and see how the line changes in real-time.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec03a_regularization/content.html', 'Regularisation', 'nav-regularization'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <div class="graph-axis"></div>
+                                    <div class="graph-axis vertical"></div>
+                                    <div class="data-points">
+                                        <div class="point" style="top: 85px; left: 35px;"></div>
+                                        <div class="point" style="top: 75px; left: 50px;"></div>
+                                        <div class="point" style="top: 45px; left: 65px;"></div>
+                                        <div class="point" style="top: 35px; left: 80px;"></div>
+                                        <div class="point" style="top: 55px; left: 95px;"></div>
+                                        <div class="point" style="top: 80px; left: 110px;"></div>
+                                    </div>
+                                    <div class="polynomial-curve" style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: transparent;
+                                        border: none;
+                                    ">
+                                        <svg width="100%" height="100%" style="position: absolute;">
+                                            <path d="M25,90 Q45,70 65,45 T95,55 Q105,65 125,75"
+                                                  stroke="rgba(255, 255, 255, 0.9)"
+                                                  stroke-width="2"
+                                                  fill="none"
+                                                  style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Regularisation</h3>
+                            <p>Experiment with polynomial basis functions and observe how model complexity affects overfitting. Control which polynomial terms to include.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec03b_classification/content.html', '1D Classification', 'nav-classification'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <div class="graph-axis"></div>
+                                    <div class="graph-axis vertical"></div>
+                                    <div class="data-points">
+                                        <div class="point circle" style="top: 80px; left: 25px; border-radius: 50%;"></div>
+                                        <div class="point circle" style="top: 80px; left: 40px; border-radius: 50%;"></div>
+                                        <div class="point circle" style="top: 80px; left: 55px; border-radius: 50%;"></div>
+                                        <div class="point square" style="top: 20px; left: 80px; border-radius: 0;"></div>
+                                        <div class="point square" style="top: 20px; left: 95px; border-radius: 0;"></div>
+                                        <div class="point square" style="top: 20px; left: 110px; border-radius: 0;"></div>
+                                    </div>
+                                    <div class="sigmoid-curve" style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: transparent;
+                                        border: none;
+                                    ">
+                                        <svg width="100%" height="100%" style="position: absolute;">
+                                            <path d="M25,90 Q50,85 75,50 Q100,15 125,20"
+                                                  stroke="rgba(255, 255, 255, 0.9)"
+                                                  stroke-width="2"
+                                                  fill="none"
+                                                  style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>1D Classification</h3>
+                            <p>Learn binary classification with a toggle to see the effect of sigmoid activation. Compare linear and sigmoid decision boundaries.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec03c_2d-classification/content.html', '2D Classification', 'nav-2d-classification'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <div class="graph-axis"></div>
+                                    <div class="graph-axis vertical"></div>
+                                    <div class="data-points">
+                                        <div class="point circle" style="top: 75px; left: 25px; border-radius: 50%;"></div>
+                                        <div class="point circle" style="top: 85px; left: 40px; border-radius: 50%;"></div>
+                                        <div class="point circle" style="top: 65px; left: 35px; border-radius: 50%;"></div>
+                                        <div class="point square" style="top: 35px; left: 90px; border-radius: 0;"></div>
+                                        <div class="point square" style="top: 45px; left: 105px; border-radius: 0;"></div>
+                                        <div class="point square" style="top: 25px; left: 100px; border-radius: 0;"></div>
+                                    </div>
+                                    <div class="decision-boundary" style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: transparent;
+                                        border: none;
+                                    ">
+                                        <svg width="100%" height="100%" style="position: absolute;">
+                                            <line x1="55" y1="20" x2="75" y2="100"
+                                                  stroke="rgba(255, 255, 255, 0.9)"
+                                                  stroke-width="2"
+                                                  style="filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>2D Classification</h3>
+                            <p>Explore binary classification in 2D space with linear decision boundaries. See how the boundary separates different classes across two dimensions.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec04a_neural-networks/content.html', 'Neural Networks', 'nav-neural-networks'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- Neural network nodes - Input layer (3 nodes) -->
+                                    <div style="position: absolute; top: 35px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+                                    <div style="position: absolute; top: 55px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+                                    <div style="position: absolute; top: 75px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+
+                                    <!-- Hidden layer (4 nodes) -->
+                                    <div style="position: absolute; top: 25px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 45px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 65px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 85px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+
+                                    <!-- Output layer (1 node) -->
+                                    <div style="position: absolute; top: 55px; left: 110px; width: 10px; height: 10px; border-radius: 50%; background: #e8f5e8; border: 2px solid #388e3c;"></div>
+
+                                    <!-- Network connections - Fully connected -->
+                                    <svg width="100%" height="100%" style="position: absolute;">
+                                        <!-- Input to Hidden connections -->
+                                        <line x1="20" y1="40" x2="60" y2="30" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="50" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="70" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="90" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+
+                                        <line x1="20" y1="60" x2="60" y2="30" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="50" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="70" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="90" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+
+                                        <line x1="20" y1="80" x2="60" y2="30" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="50" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="70" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="90" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1"/>
+
+                                        <!-- Hidden to Output connections -->
+                                        <line x1="70" y1="30" x2="110" y2="60" stroke="rgba(255, 255, 255, 0.8)" stroke-width="1.5"/>
+                                        <line x1="70" y1="50" x2="110" y2="60" stroke="rgba(255, 255, 255, 0.8)" stroke-width="1.5"/>
+                                        <line x1="70" y1="70" x2="110" y2="60" stroke="rgba(255, 255, 255, 0.8)" stroke-width="1.5"/>
+                                        <line x1="70" y1="90" x2="110" y2="60" stroke="rgba(255, 255, 255, 0.8)" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Neural Networks</h3>
+                            <p>Build intuition about neural networks by interactively designing architectures, adjusting weights, and watching data flow through layers.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec04b_backpropagation/content.html', 'Backpropagation', 'nav-backpropagation'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- Neural network nodes - Input layer (3 nodes) -->
+                                    <div style="position: absolute; top: 35px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+                                    <div style="position: absolute; top: 55px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+                                    <div style="position: absolute; top: 75px; left: 10px; width: 10px; height: 10px; border-radius: 50%; background: #e3f2fd; border: 2px solid #1976d2;"></div>
+
+                                    <!-- Hidden layer (4 nodes) -->
+                                    <div style="position: absolute; top: 25px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 45px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 65px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+                                    <div style="position: absolute; top: 85px; left: 60px; width: 10px; height: 10px; border-radius: 50%; background: #f3e5f5; border: 2px solid #7b1fa2;"></div>
+
+                                    <!-- Output layer (1 node) -->
+                                    <div style="position: absolute; top: 55px; left: 110px; width: 10px; height: 10px; border-radius: 50%; background: #e8f5e8; border: 2px solid #388e3c;"></div>
+
+                                    <!-- Network connections - Fully connected with color coding -->
+                                    <svg width="100%" height="100%" style="position: absolute;">
+                                        <!-- Input to Hidden connections -->
+                                        <line x1="20" y1="40" x2="60" y2="30" stroke="hsl(120, 70%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="50" stroke="hsl(0, 60%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="70" stroke="hsl(120, 50%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="40" x2="60" y2="90" stroke="hsl(0, 80%, 40%)" stroke-width="1"/>
+
+                                        <line x1="20" y1="60" x2="60" y2="30" stroke="hsl(0, 40%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="50" stroke="hsl(120, 80%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="70" stroke="hsl(0, 90%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="60" x2="60" y2="90" stroke="hsl(120, 60%, 40%)" stroke-width="1"/>
+
+                                        <line x1="20" y1="80" x2="60" y2="30" stroke="hsl(120, 90%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="50" stroke="hsl(0, 70%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="70" stroke="hsl(120, 40%, 40%)" stroke-width="1"/>
+                                        <line x1="20" y1="80" x2="60" y2="90" stroke="hsl(0, 50%, 40%)" stroke-width="1"/>
+
+                                        <!-- Hidden to Output connections -->
+                                        <line x1="70" y1="30" x2="110" y2="60" stroke="hsl(120, 85%, 40%)" stroke-width="1.5"/>
+                                        <line x1="70" y1="50" x2="110" y2="60" stroke="hsl(0, 75%, 40%)" stroke-width="1.5"/>
+                                        <line x1="70" y1="70" x2="110" y2="60" stroke="hsl(120, 65%, 40%)" stroke-width="1.5"/>
+                                        <line x1="70" y1="90" x2="110" y2="60" stroke="hsl(0, 55%, 40%)" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Backpropagation</h3>
+                            <p>Visualize how gradients flow backwards through neural networks. Watch weights update step-by-step during optimization.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec05a_convolution-pooling/content.html', 'Convolution & Pooling', 'nav-convolution-pooling'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- Convolution visualization -->
+                                    <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; border: 2px solid #fff; background: rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;">
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.3);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.3);"></div>
+                                        <div style="background: rgba(255,255,255,0.9);"></div>
+                                        <div style="background: rgba(255,255,255,0.3);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.3);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                    </div>
+                                    <!-- Filter visualization -->
+                                    <div style="position: absolute; top: 35px; left: 95px; width: 30px; height: 30px; border: 2px solid #fff; background: rgba(255,255,255,0.2); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;">
+                                        <div style="background: rgba(255,0,0,0.7);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(0,255,0,0.7);"></div>
+                                        <div style="background: rgba(255,0,0,0.7);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(0,255,0,0.7);"></div>
+                                        <div style="background: rgba(255,0,0,0.7);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(0,255,0,0.7);"></div>
+                                    </div>
+                                    <!-- Arrow -->
+                                    <div style="position: absolute; top: 48px; left: 85px; font-size: 12px; color: #fff;">→</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Convolution & Pooling</h3>
+                            <p>Learn the fundamental operations of CNNs through interactive convolution and pooling visualizations. Design custom filters and see their effects.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec05b_cnn-architecture/content.html', 'CNN Architecture', 'nav-cnn-architecture'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- MNIST digit visualization -->
+                                    <div style="position: absolute; top: 15px; left: 15px; width: 50px; height: 50px; border: 2px solid #fff; background: rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px;">
+                                        <!-- Simple "8" pattern -->
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.8);"></div>
+                                        <div style="background: rgba(255,255,255,0.1);"></div>
+                                    </div>
+                                    <!-- CNN layers representation -->
+                                    <div style="position: absolute; top: 25px; left: 80px; width: 60px; height: 30px; display: flex; gap: 5px; align-items: center;">
+                                        <div style="width: 8px; height: 20px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 6px; height: 16px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 5px; height: 13px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 4px; height: 25px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 3px; height: 15px; background: rgba(255,255,255,0.9); border-radius: 1px;"></div>
+                                    </div>
+                                    <!-- Output -->
+                                    <div style="position: absolute; top: 45px; right: 15px; color: #fff; font-weight: bold; font-size: 16px;">8</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>CNN Architecture</h3>
+                            <p>Explore a complete convolutional neural network for handwritten digit recognition. See how CNNs learn hierarchical features through training.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec06a_rnn/content.html', 'Recurrent Neural Networks', 'nav-rnn'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- RNN sequence visualization -->
+                                    <div style="position: absolute; top: 15px; left: 15px; display: flex; gap: 8px; align-items: center;">
+                                        <!-- Input sequence -->
+                                        <div style="width: 18px; height: 18px; background: rgba(255,255,255,0.9); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: #333;">1</div>
+                                        <div style="width: 18px; height: 18px; background: rgba(255,255,255,0.7); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: #333;">2</div>
+                                        <div style="width: 18px; height: 18px; background: rgba(255,255,255,0.5); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: #333;">3</div>
+                                        <div style="width: 18px; height: 18px; background: rgba(255,255,255,0.3); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: #333;">4</div>
+                                    </div>
+                                    <!-- RNN cell -->
+                                    <div style="position: absolute; top: 45px; left: 35px; width: 40px; height: 25px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <div style="color: #fff; font-size: 10px; font-weight: bold;">RNN</div>
+                                    </div>
+                                    <!-- Recurrent connection -->
+                                    <div style="position: absolute; top: 35px; left: 55px; width: 20px; height: 15px; border: 2px solid rgba(255,255,255,0.6); border-bottom: none; border-radius: 10px 10px 0 0;"></div>
+                                    <!-- Hidden state evolution -->
+                                    <div style="position: absolute; top: 15px; right: 15px; display: flex; gap: 3px;">
+                                        <div style="width: 4px; height: 8px; background: rgba(255,255,255,0.9); border-radius: 1px;"></div>
+                                        <div style="width: 4px; height: 12px; background: rgba(255,255,255,0.8); border-radius: 1px;"></div>
+                                        <div style="width: 4px; height: 16px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 4px; height: 20px; background: rgba(255,255,255,0.6); border-radius: 1px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Recurrent Neural Networks</h3>
+                            <p>Discover how RNNs process sequential data step-by-step. Visualize hidden state evolution and understand the core mechanics of recurrent processing.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec06b_attention/content.html', 'Attention Mechanism', 'nav-attention'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="preview-placeholder">
+                                <div class="preview-graph">
+                                    <!-- Attention visualization -->
+                                    <!-- Q, K, V matrices representation -->
+                                    <div style="position: absolute; top: 15px; left: 10px; display: flex; gap: 6px;">
+                                        <div style="width: 15px; height: 15px; background: rgba(74,144,226,0.8); border-radius: 2px; font-size: 8px; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">Q</div>
+                                        <div style="width: 15px; height: 15px; background: rgba(124,179,66,0.8); border-radius: 2px; font-size: 8px; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">K</div>
+                                        <div style="width: 15px; height: 15px; background: rgba(244,67,54,0.8); border-radius: 2px; font-size: 8px; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">V</div>
+                                    </div>
+                                    <!-- Attention heatmap -->
+                                    <div style="position: absolute; top: 35px; left: 15px; display: grid; grid-template-columns: repeat(3, 12px); gap: 2px;">
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.9); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.6); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.3); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.7); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.9); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.4); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.2); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 1px;"></div>
+                                        <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.8); border-radius: 1px;"></div>
+                                    </div>
+                                    <!-- Tokens -->
+                                    <div style="position: absolute; top: 15px; right: 15px; display: flex; flex-direction: column; gap: 3px;">
+                                        <div style="padding: 2px 4px; background: rgba(255,255,255,0.9); border-radius: 3px; font-size: 8px; font-weight: bold; color: #333;">The</div>
+                                        <div style="padding: 2px 4px; background: rgba(255,255,255,0.7); border-radius: 3px; font-size: 8px; font-weight: bold; color: #333;">cat</div>
+                                        <div style="padding: 2px 4px; background: rgba(255,255,255,0.5); border-radius: 3px; font-size: 8px; font-weight: bold; color: #333;">sat</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Attention Mechanism</h3>
+                            <p>Explore how attention mechanisms work through Q, K, V computations and dot-product attention. Visualize how tokens attend to each other in sequence processing.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec07_k-means-clustering/content.html', 'K-Means Clustering', 'nav-k-means'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-visual">
+                            <div class="demo-preview" style="
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                position: relative;
+                                overflow: hidden;
+                            ">
+                                <div class="clustering-visualization" style="
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 80%;
+                                    height: 80%;
+                                ">
+                                    <!-- Cluster 1 -->
+                                    <div style="position: absolute; top: 20%; left: 20%; width: 8px; height: 8px; border: 2px solid #e74c3c; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 30%; left: 25%; width: 8px; height: 8px; border: 2px solid #e74c3c; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 25%; left: 15%; width: 8px; height: 8px; border: 2px solid #e74c3c; background: white; border-radius: 50%;"></div>
+                                    <!-- Centroid 1 -->
+                                    <div style="position: absolute; top: 25%; left: 20%; width: 10px; height: 10px; background: #e74c3c; border-radius: 50%;"></div>
+
+                                    <!-- Cluster 2 -->
+                                    <div style="position: absolute; top: 60%; left: 60%; width: 8px; height: 8px; border: 2px solid #3498db; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 70%; left: 55%; width: 8px; height: 8px; border: 2px solid #3498db; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 65%; left: 70%; width: 8px; height: 8px; border: 2px solid #3498db; background: white; border-radius: 50%;"></div>
+                                    <!-- Centroid 2 -->
+                                    <div style="position: absolute; top: 65%; left: 62%; width: 10px; height: 10px; background: #3498db; border-radius: 50%;"></div>
+
+                                    <!-- Cluster 3 -->
+                                    <div style="position: absolute; top: 40%; left: 75%; width: 8px; height: 8px; border: 2px solid #2ecc71; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 45%; left: 80%; width: 8px; height: 8px; border: 2px solid #2ecc71; background: white; border-radius: 50%;"></div>
+                                    <div style="position: absolute; top: 35%; left: 85%; width: 8px; height: 8px; border: 2px solid #2ecc71; background: white; border-radius: 50%;"></div>
+                                    <!-- Centroid 3 -->
+                                    <div style="position: absolute; top: 40%; left: 80%; width: 10px; height: 10px; background: #2ecc71; border-radius: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>K-Means Clustering</h3>
+                            <p>Interactive clustering demonstration with step-by-step k-means algorithm visualization. Add your own points and watch how centroids move to minimize within-cluster distances.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" onclick="parent.loadContent('lec08_multi-armed-bandit/content.html', 'Multi-Armed Bandit', 'nav-multi-armed-bandit'); return false;" class="demo-card-link">
+                    <div class="demo-card">
+                        <div class="demo-preview" style="background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);">
+                            <div class="preview-placeholder">
+                                <div class="bandit-arms">
+                                    <div class="arm-slot" style="position: absolute; top: 30%; left: 20%; width: 15px; height: 40px; background: #e74c3c; border-radius: 8px;"></div>
+                                    <div class="arm-slot" style="position: absolute; top: 30%; left: 42.5%; width: 15px; height: 40px; background: #3498db; border-radius: 8px;"></div>
+                                    <div class="arm-slot" style="position: absolute; top: 30%; left: 65%; width: 15px; height: 40px; background: #2ecc71; border-radius: 8px;"></div>
+                                    <div style="position: absolute; top: 75%; left: 20%; font-size: 10px; color: #fff; text-align: center; width: 15px;">0.0</div>
+                                    <div style="position: absolute; top: 75%; left: 42.5%; font-size: 10px; color: #fff; text-align: center; width: 15px;">0.4</div>
+                                    <div style="position: absolute; top: 75%; left: 65%; font-size: 10px; color: #fff; text-align: center; width: 15px;">0.5</div>
+                                    <div style="position: absolute; top: 15%; left: 30%; font-size: 12px; color: #fff; font-weight: bold;">ε-greedy</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3>Multi-Armed Bandit</h3>
+                            <p>Explore the exploration vs exploitation tradeoff with interactive slot machines. Watch the epsilon-greedy algorithm learn optimal strategies through trial and reward.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to equalize card heights
+        function equalizeCardHeights() {
+            const cards = document.querySelectorAll('.demo-card');
+
+            // Reset heights to auto to measure natural height
+            cards.forEach(card => {
+                card.style.height = 'auto';
+            });
+
+            // Find the maximum height
+            let maxHeight = 0;
+            cards.forEach(card => {
+                const cardHeight = card.offsetHeight;
+                if (cardHeight > maxHeight) {
+                    maxHeight = cardHeight;
+                }
+            });
+
+            // Apply the maximum height to all cards
+            cards.forEach(card => {
+                card.style.height = maxHeight + 'px';
+            });
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for fonts and styles to load
+            setTimeout(equalizeCardHeights, 100);
+        });
+
+        // Run on window resize
+        window.addEventListener('resize', equalizeCardHeights);
+    </script>
+</body>
+</html>

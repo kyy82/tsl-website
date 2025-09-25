@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convolution & Pooling</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Select different <em>filter types</em> to see various convolution effects<br>
+            • Adjust <em>filter values</em> manually using the custom filter editor<br>
+            • Choose different <em>input images</em> (simple pattern, vertical/horizontal edges, checkerboard, gradient)<br>
+            • Experiment with <em>pooling operations</em> (max pooling, average pooling)<br>
+            • Change <em>pooling window size</em> (2×2, 3×3, 4×4) to see different downsampling effects<br>
+            • <em>Hover over cells</em> in convolution or pooling outputs to highlight corresponding input regions<br><br>
+
+            <strong>Convolution Fundamentals:</strong><br>
+            • <em>Filters (Kernels):</em> 3×3 matrices that detect specific features (edges, blur, sharpen)<br>
+            • <em>Feature Maps:</em> Convolution output showing where features were detected<br>
+            • <em>Interactive Highlighting:</em> Hover over outputs to see which input pixels contributed<br><br>
+
+            <strong>Pooling Operations:</strong><br>
+            • <em>Max Pooling:</em> Takes maximum value in each pooling window<br>
+            • <em>Average Pooling:</em> Takes average value in each pooling window<br>
+            • <em>Purpose:</em> Reduces spatial dimensions while preserving important features<br>
+            • <em>Window Size:</em> Controls how much downsampling occurs
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <div>
+                        <h3>Input Image</h3>
+                        <canvas id="input-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                    </div>
+                    <div>
+                        <h3>Convolution Output</h3>
+                        <canvas id="conv-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                    </div>
+                    <div>
+                        <h3>Pooling Output</h3>
+                        <canvas id="pool-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; display: flex; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3>Filter Visualization</h3>
+                        <canvas id="filter-canvas" width="150" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Input Image:</label>
+                    <select id="input-select">
+                        <option value="simple">Simple Pattern</option>
+                        <option value="vertical-edges">Vertical Edges</option>
+                        <option value="horizontal-edges">Horizontal Edges</option>
+                        <option value="checkerboard">Checkerboard</option>
+                        <option value="gradient">Gradient</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Filter Type:</label>
+                    <select id="filter-select">
+                        <option value="edge-vertical">Vertical Edge</option>
+                        <option value="edge-horizontal">Horizontal Edge</option>
+                        <option value="blur">Blur</option>
+                        <option value="sharpen">Sharpen</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <div class="control-group" id="filter-editor">
+                    <label>Custom Filter (3×3):</label>
+                    <div id="filter-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 150px;">
+                        <input type="number" id="f00" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f01" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f02" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f10" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f11" step="0.1" value="1" style="width: 45px;">
+                        <input type="number" id="f12" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f20" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f21" step="0.1" value="0" style="width: 45px;">
+                        <input type="number" id="f22" step="0.1" value="0" style="width: 45px;">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Pooling Type:</label>
+                    <select id="pooling-select">
+                        <option value="max">Max Pooling</option>
+                        <option value="average">Average Pooling</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Pooling Size: <span id="pooling-size-display">2×2</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="pooling-size" min="2" max="4" value="2" step="1">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

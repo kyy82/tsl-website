@@ -1,0 +1,4740 @@
+{
+  "environment": {
+    "num_arms": 3,
+    "arms": [
+      {
+        "arm_index": 0,
+        "rewards": [
+          -1,
+          1
+        ],
+        "probabilities": [
+          0.5,
+          0.5
+        ],
+        "true_mean": 0.0,
+        "name": "Arm 1"
+      },
+      {
+        "arm_index": 1,
+        "rewards": [
+          1,
+          0
+        ],
+        "probabilities": [
+          0.4,
+          0.6
+        ],
+        "true_mean": 0.4,
+        "name": "Arm 2"
+      },
+      {
+        "arm_index": 2,
+        "rewards": [
+          2,
+          -1,
+          0
+        ],
+        "probabilities": [
+          0.3,
+          0.1,
+          0.6
+        ],
+        "true_mean": 0.5,
+        "name": "Arm 3"
+      }
+    ],
+    "optimal_arm": 2,
+    "true_means": [
+      0.0,
+      0.4,
+      0.5
+    ]
+  },
+  "exploration_simulation": {
+    "simulation_steps": [
+      {
+        "step": 0,
+        "arm": 0,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values_before": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "arm_counts_before": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "total_reward": -1,
+        "average_reward": -1.0
+      },
+      {
+        "step": 1,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "total_reward": -1,
+        "average_reward": -0.5
+      },
+      {
+        "step": 2,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.5,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "total_reward": 0,
+        "average_reward": 0.0
+      },
+      {
+        "step": 3,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -1.0,
+          0.5,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.33333333333333337,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          3.0,
+          0.0
+        ],
+        "total_reward": 0,
+        "average_reward": 0.0
+      },
+      {
+        "step": 4,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -1.0,
+          0.33333333333333337,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          3.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.25,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          4.0,
+          0.0
+        ],
+        "total_reward": 0,
+        "average_reward": 0.0
+      },
+      {
+        "step": 5,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -1.0,
+          0.25,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          4.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.2,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          5.0,
+          0.0
+        ],
+        "total_reward": 0,
+        "average_reward": 0.0
+      },
+      {
+        "step": 6,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          -1.0,
+          0.2,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          5.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.33333333333333337,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          6.0,
+          0.0
+        ],
+        "total_reward": 1,
+        "average_reward": 0.14285714285714285
+      },
+      {
+        "step": 7,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -1.0,
+          0.33333333333333337,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          6.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.28571428571428575,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          7.0,
+          0.0
+        ],
+        "total_reward": 1,
+        "average_reward": 0.125
+      },
+      {
+        "step": 8,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 1,
+        "arm_values_before": [
+          -1.0,
+          0.28571428571428575,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          7.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.375,
+          0.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          8.0,
+          0.0
+        ],
+        "total_reward": 2,
+        "average_reward": 0.2222222222222222
+      },
+      {
+        "step": 9,
+        "arm": 2,
+        "action_type": "explore",
+        "reward": 2,
+        "arm_values_before": [
+          -1.0,
+          0.375,
+          0.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          8.0,
+          0.0
+        ],
+        "arm_values_after": [
+          -1.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_after": [
+          1.0,
+          8.0,
+          1.0
+        ],
+        "total_reward": 4,
+        "average_reward": 0.4
+      },
+      {
+        "step": 10,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          -1.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_before": [
+          1.0,
+          8.0,
+          1.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_after": [
+          2.0,
+          8.0,
+          1.0
+        ],
+        "total_reward": 5,
+        "average_reward": 0.45454545454545453
+      },
+      {
+        "step": 11,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_before": [
+          2.0,
+          8.0,
+          1.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_after": [
+          2.0,
+          8.0,
+          2.0
+        ],
+        "total_reward": 7,
+        "average_reward": 0.5833333333333334
+      },
+      {
+        "step": 12,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": -1,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          2.0
+        ],
+        "arm_counts_before": [
+          2.0,
+          8.0,
+          2.0
+        ],
+        "arm_values_after": [
+          -0.3333333333333333,
+          0.375,
+          2.0
+        ],
+        "arm_counts_after": [
+          3.0,
+          8.0,
+          2.0
+        ],
+        "total_reward": 6,
+        "average_reward": 0.46153846153846156
+      },
+      {
+        "step": 13,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          -0.3333333333333333,
+          0.375,
+          2.0
+        ],
+        "arm_counts_before": [
+          3.0,
+          8.0,
+          2.0
+        ],
+        "arm_values_after": [
+          -0.3333333333333333,
+          0.375,
+          1.3333333333333335
+        ],
+        "arm_counts_after": [
+          3.0,
+          8.0,
+          3.0
+        ],
+        "total_reward": 6,
+        "average_reward": 0.42857142857142855
+      },
+      {
+        "step": 14,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          -0.3333333333333333,
+          0.375,
+          1.3333333333333335
+        ],
+        "arm_counts_before": [
+          3.0,
+          8.0,
+          3.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          1.3333333333333335
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          3.0
+        ],
+        "total_reward": 7,
+        "average_reward": 0.4666666666666667
+      },
+      {
+        "step": 15,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          1.3333333333333335
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          3.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          1.0
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          4.0
+        ],
+        "total_reward": 7,
+        "average_reward": 0.4375
+      },
+      {
+        "step": 16,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          1.0
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          4.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          1.2
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          5.0
+        ],
+        "total_reward": 9,
+        "average_reward": 0.5294117647058824
+      },
+      {
+        "step": 17,
+        "arm": 2,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          1.2
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          5.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          1.0
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          6.0
+        ],
+        "total_reward": 9,
+        "average_reward": 0.5
+      },
+      {
+        "step": 18,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          1.0
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          6.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          0.8571428571428572
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          7.0
+        ],
+        "total_reward": 9,
+        "average_reward": 0.47368421052631576
+      },
+      {
+        "step": 19,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          0.8571428571428572
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          7.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          0.75
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          8.0
+        ],
+        "total_reward": 9,
+        "average_reward": 0.45
+      },
+      {
+        "step": 20,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          0.75
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          8.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.375,
+          0.5555555555555556
+        ],
+        "arm_counts_after": [
+          4.0,
+          8.0,
+          9.0
+        ],
+        "total_reward": 8,
+        "average_reward": 0.38095238095238093
+      },
+      {
+        "step": 21,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.0,
+          0.375,
+          0.5555555555555556
+        ],
+        "arm_counts_before": [
+          4.0,
+          8.0,
+          9.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.4444444444444444,
+          0.5555555555555556
+        ],
+        "arm_counts_after": [
+          4.0,
+          9.0,
+          9.0
+        ],
+        "total_reward": 9,
+        "average_reward": 0.4090909090909091
+      },
+      {
+        "step": 22,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.0,
+          0.4444444444444444,
+          0.5555555555555556
+        ],
+        "arm_counts_before": [
+          4.0,
+          9.0,
+          9.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.5555555555555556
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          9.0
+        ],
+        "total_reward": 10,
+        "average_reward": 0.43478260869565216
+      },
+      {
+        "step": 23,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.5555555555555556
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          9.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.7
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          10.0
+        ],
+        "total_reward": 12,
+        "average_reward": 0.5
+      },
+      {
+        "step": 24,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.7
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          10.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          11.0
+        ],
+        "total_reward": 12,
+        "average_reward": 0.48
+      },
+      {
+        "step": 25,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          11.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.75
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          12.0
+        ],
+        "total_reward": 14,
+        "average_reward": 0.5384615384615384
+      },
+      {
+        "step": 26,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.75
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          12.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.6923076923076923
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          13.0
+        ],
+        "total_reward": 14,
+        "average_reward": 0.5185185185185185
+      },
+      {
+        "step": 27,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.6923076923076923
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          13.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5,
+          0.6428571428571428
+        ],
+        "arm_counts_after": [
+          4.0,
+          10.0,
+          14.0
+        ],
+        "total_reward": 14,
+        "average_reward": 0.5
+      },
+      {
+        "step": 28,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.0,
+          0.5,
+          0.6428571428571428
+        ],
+        "arm_counts_before": [
+          4.0,
+          10.0,
+          14.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5454545454545454,
+          0.6428571428571428
+        ],
+        "arm_counts_after": [
+          4.0,
+          11.0,
+          14.0
+        ],
+        "total_reward": 15,
+        "average_reward": 0.5172413793103449
+      },
+      {
+        "step": 29,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.0,
+          0.5454545454545454,
+          0.6428571428571428
+        ],
+        "arm_counts_before": [
+          4.0,
+          11.0,
+          14.0
+        ],
+        "arm_values_after": [
+          0.0,
+          0.5454545454545454,
+          0.7333333333333333
+        ],
+        "arm_counts_after": [
+          4.0,
+          11.0,
+          15.0
+        ],
+        "total_reward": 17,
+        "average_reward": 0.5666666666666667
+      },
+      {
+        "step": 30,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.0,
+          0.5454545454545454,
+          0.7333333333333333
+        ],
+        "arm_counts_before": [
+          4.0,
+          11.0,
+          15.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5454545454545454,
+          0.7333333333333333
+        ],
+        "arm_counts_after": [
+          5.0,
+          11.0,
+          15.0
+        ],
+        "total_reward": 18,
+        "average_reward": 0.5806451612903226
+      },
+      {
+        "step": 31,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5454545454545454,
+          0.7333333333333333
+        ],
+        "arm_counts_before": [
+          5.0,
+          11.0,
+          15.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5454545454545454,
+          0.8125
+        ],
+        "arm_counts_after": [
+          5.0,
+          11.0,
+          16.0
+        ],
+        "total_reward": 20,
+        "average_reward": 0.625
+      },
+      {
+        "step": 32,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5454545454545454,
+          0.8125
+        ],
+        "arm_counts_before": [
+          5.0,
+          11.0,
+          16.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5454545454545454,
+          0.7647058823529411
+        ],
+        "arm_counts_after": [
+          5.0,
+          11.0,
+          17.0
+        ],
+        "total_reward": 20,
+        "average_reward": 0.6060606060606061
+      },
+      {
+        "step": 33,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": -1,
+        "arm_values_before": [
+          0.2,
+          0.5454545454545454,
+          0.7647058823529411
+        ],
+        "arm_counts_before": [
+          5.0,
+          11.0,
+          17.0
+        ],
+        "arm_values_after": [
+          2.7755575615628914e-17,
+          0.5454545454545454,
+          0.7647058823529411
+        ],
+        "arm_counts_after": [
+          6.0,
+          11.0,
+          17.0
+        ],
+        "total_reward": 19,
+        "average_reward": 0.5588235294117647
+      },
+      {
+        "step": 34,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          2.7755575615628914e-17,
+          0.5454545454545454,
+          0.7647058823529411
+        ],
+        "arm_counts_before": [
+          6.0,
+          11.0,
+          17.0
+        ],
+        "arm_values_after": [
+          2.7755575615628914e-17,
+          0.5833333333333333,
+          0.7647058823529411
+        ],
+        "arm_counts_after": [
+          6.0,
+          12.0,
+          17.0
+        ],
+        "total_reward": 20,
+        "average_reward": 0.5714285714285714
+      },
+      {
+        "step": 35,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          2.7755575615628914e-17,
+          0.5833333333333333,
+          0.7647058823529411
+        ],
+        "arm_counts_before": [
+          6.0,
+          12.0,
+          17.0
+        ],
+        "arm_values_after": [
+          2.7755575615628914e-17,
+          0.5833333333333333,
+          0.7222222222222222
+        ],
+        "arm_counts_after": [
+          6.0,
+          12.0,
+          18.0
+        ],
+        "total_reward": 20,
+        "average_reward": 0.5555555555555556
+      },
+      {
+        "step": 36,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          2.7755575615628914e-17,
+          0.5833333333333333,
+          0.7222222222222222
+        ],
+        "arm_counts_before": [
+          6.0,
+          12.0,
+          18.0
+        ],
+        "arm_values_after": [
+          2.7755575615628914e-17,
+          0.6153846153846153,
+          0.7222222222222222
+        ],
+        "arm_counts_after": [
+          6.0,
+          13.0,
+          18.0
+        ],
+        "total_reward": 21,
+        "average_reward": 0.5675675675675675
+      },
+      {
+        "step": 37,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          2.7755575615628914e-17,
+          0.6153846153846153,
+          0.7222222222222222
+        ],
+        "arm_counts_before": [
+          6.0,
+          13.0,
+          18.0
+        ],
+        "arm_values_after": [
+          2.7755575615628914e-17,
+          0.6153846153846153,
+          0.6842105263157895
+        ],
+        "arm_counts_after": [
+          6.0,
+          13.0,
+          19.0
+        ],
+        "total_reward": 21,
+        "average_reward": 0.5526315789473685
+      },
+      {
+        "step": 38,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          2.7755575615628914e-17,
+          0.6153846153846153,
+          0.6842105263157895
+        ],
+        "arm_counts_before": [
+          6.0,
+          13.0,
+          19.0
+        ],
+        "arm_values_after": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6842105263157895
+        ],
+        "arm_counts_after": [
+          7.0,
+          13.0,
+          19.0
+        ],
+        "total_reward": 22,
+        "average_reward": 0.5641025641025641
+      },
+      {
+        "step": 39,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6842105263157895
+        ],
+        "arm_counts_before": [
+          7.0,
+          13.0,
+          19.0
+        ],
+        "arm_values_after": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.65
+        ],
+        "arm_counts_after": [
+          7.0,
+          13.0,
+          20.0
+        ],
+        "total_reward": 22,
+        "average_reward": 0.55
+      },
+      {
+        "step": 40,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.65
+        ],
+        "arm_counts_before": [
+          7.0,
+          13.0,
+          20.0
+        ],
+        "arm_values_after": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.7142857142857143
+        ],
+        "arm_counts_after": [
+          7.0,
+          13.0,
+          21.0
+        ],
+        "total_reward": 24,
+        "average_reward": 0.5853658536585366
+      },
+      {
+        "step": 41,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.7142857142857143
+        ],
+        "arm_counts_before": [
+          7.0,
+          13.0,
+          21.0
+        ],
+        "arm_values_after": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6818181818181819
+        ],
+        "arm_counts_after": [
+          7.0,
+          13.0,
+          22.0
+        ],
+        "total_reward": 24,
+        "average_reward": 0.5714285714285714
+      },
+      {
+        "step": 42,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6818181818181819
+        ],
+        "arm_counts_before": [
+          7.0,
+          13.0,
+          22.0
+        ],
+        "arm_values_after": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6521739130434783
+        ],
+        "arm_counts_after": [
+          7.0,
+          13.0,
+          23.0
+        ],
+        "total_reward": 24,
+        "average_reward": 0.5581395348837209
+      },
+      {
+        "step": 43,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.14285714285714288,
+          0.6153846153846153,
+          0.6521739130434783
+        ],
+        "arm_counts_before": [
+          7.0,
+          13.0,
+          23.0
+        ],
+        "arm_values_after": [
+          0.25,
+          0.6153846153846153,
+          0.6521739130434783
+        ],
+        "arm_counts_after": [
+          8.0,
+          13.0,
+          23.0
+        ],
+        "total_reward": 25,
+        "average_reward": 0.5681818181818182
+      },
+      {
+        "step": 44,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.25,
+          0.6153846153846153,
+          0.6521739130434783
+        ],
+        "arm_counts_before": [
+          8.0,
+          13.0,
+          23.0
+        ],
+        "arm_values_after": [
+          0.25,
+          0.6153846153846153,
+          0.625
+        ],
+        "arm_counts_after": [
+          8.0,
+          13.0,
+          24.0
+        ],
+        "total_reward": 25,
+        "average_reward": 0.5555555555555556
+      },
+      {
+        "step": 45,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values_before": [
+          0.25,
+          0.6153846153846153,
+          0.625
+        ],
+        "arm_counts_before": [
+          8.0,
+          13.0,
+          24.0
+        ],
+        "arm_values_after": [
+          0.25,
+          0.6153846153846153,
+          0.56
+        ],
+        "arm_counts_after": [
+          8.0,
+          13.0,
+          25.0
+        ],
+        "total_reward": 24,
+        "average_reward": 0.5217391304347826
+      },
+      {
+        "step": 46,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": -1,
+        "arm_values_before": [
+          0.25,
+          0.6153846153846153,
+          0.56
+        ],
+        "arm_counts_before": [
+          8.0,
+          13.0,
+          25.0
+        ],
+        "arm_values_after": [
+          0.1111111111111111,
+          0.6153846153846153,
+          0.56
+        ],
+        "arm_counts_after": [
+          9.0,
+          13.0,
+          25.0
+        ],
+        "total_reward": 23,
+        "average_reward": 0.48936170212765956
+      },
+      {
+        "step": 47,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.1111111111111111,
+          0.6153846153846153,
+          0.56
+        ],
+        "arm_counts_before": [
+          9.0,
+          13.0,
+          25.0
+        ],
+        "arm_values_after": [
+          0.1111111111111111,
+          0.5714285714285714,
+          0.56
+        ],
+        "arm_counts_after": [
+          9.0,
+          14.0,
+          25.0
+        ],
+        "total_reward": 23,
+        "average_reward": 0.4791666666666667
+      },
+      {
+        "step": 48,
+        "arm": 1,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.1111111111111111,
+          0.5714285714285714,
+          0.56
+        ],
+        "arm_counts_before": [
+          9.0,
+          14.0,
+          25.0
+        ],
+        "arm_values_after": [
+          0.1111111111111111,
+          0.5333333333333333,
+          0.56
+        ],
+        "arm_counts_after": [
+          9.0,
+          15.0,
+          25.0
+        ],
+        "total_reward": 23,
+        "average_reward": 0.46938775510204084
+      },
+      {
+        "step": 49,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.1111111111111111,
+          0.5333333333333333,
+          0.56
+        ],
+        "arm_counts_before": [
+          9.0,
+          15.0,
+          25.0
+        ],
+        "arm_values_after": [
+          0.1111111111111111,
+          0.5333333333333333,
+          0.6153846153846154
+        ],
+        "arm_counts_after": [
+          9.0,
+          15.0,
+          26.0
+        ],
+        "total_reward": 25,
+        "average_reward": 0.5
+      },
+      {
+        "step": 50,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.1111111111111111,
+          0.5333333333333333,
+          0.6153846153846154
+        ],
+        "arm_counts_before": [
+          9.0,
+          15.0,
+          26.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6153846153846154
+        ],
+        "arm_counts_after": [
+          10.0,
+          15.0,
+          26.0
+        ],
+        "total_reward": 26,
+        "average_reward": 0.5098039215686274
+      },
+      {
+        "step": 51,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6153846153846154
+        ],
+        "arm_counts_before": [
+          10.0,
+          15.0,
+          26.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6666666666666667
+        ],
+        "arm_counts_after": [
+          10.0,
+          15.0,
+          27.0
+        ],
+        "total_reward": 28,
+        "average_reward": 0.5384615384615384
+      },
+      {
+        "step": 52,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6666666666666667
+        ],
+        "arm_counts_before": [
+          10.0,
+          15.0,
+          27.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6428571428571429
+        ],
+        "arm_counts_after": [
+          10.0,
+          15.0,
+          28.0
+        ],
+        "total_reward": 28,
+        "average_reward": 0.5283018867924528
+      },
+      {
+        "step": 53,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6428571428571429
+        ],
+        "arm_counts_before": [
+          10.0,
+          15.0,
+          28.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6206896551724138
+        ],
+        "arm_counts_after": [
+          10.0,
+          15.0,
+          29.0
+        ],
+        "total_reward": 28,
+        "average_reward": 0.5185185185185185
+      },
+      {
+        "step": 54,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6206896551724138
+        ],
+        "arm_counts_before": [
+          10.0,
+          15.0,
+          29.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6
+        ],
+        "arm_counts_after": [
+          10.0,
+          15.0,
+          30.0
+        ],
+        "total_reward": 28,
+        "average_reward": 0.509090909090909
+      },
+      {
+        "step": 55,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5333333333333333,
+          0.6
+        ],
+        "arm_counts_before": [
+          10.0,
+          15.0,
+          30.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.6
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          30.0
+        ],
+        "total_reward": 28,
+        "average_reward": 0.5
+      },
+      {
+        "step": 56,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.6
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          30.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.6451612903225806
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          31.0
+        ],
+        "total_reward": 30,
+        "average_reward": 0.5263157894736842
+      },
+      {
+        "step": 57,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.6451612903225806
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          31.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.625
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          32.0
+        ],
+        "total_reward": 30,
+        "average_reward": 0.5172413793103449
+      },
+      {
+        "step": 58,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.625
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          32.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.6060606060606061
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          33.0
+        ],
+        "total_reward": 30,
+        "average_reward": 0.5084745762711864
+      },
+      {
+        "step": 59,
+        "arm": 2,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.6060606060606061
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          33.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.5882352941176471
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          34.0
+        ],
+        "total_reward": 30,
+        "average_reward": 0.5
+      },
+      {
+        "step": 60,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.5882352941176471
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          34.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.5714285714285714
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          35.0
+        ],
+        "total_reward": 30,
+        "average_reward": 0.4918032786885246
+      },
+      {
+        "step": 61,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.5714285714285714
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          35.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.611111111111111
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          36.0
+        ],
+        "total_reward": 32,
+        "average_reward": 0.5161290322580645
+      },
+      {
+        "step": 62,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.611111111111111
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          36.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.5945945945945945
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          37.0
+        ],
+        "total_reward": 32,
+        "average_reward": 0.5079365079365079
+      },
+      {
+        "step": 63,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.5945945945945945
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          37.0
+        ],
+        "arm_values_after": [
+          0.19999999999999998,
+          0.5,
+          0.5789473684210525
+        ],
+        "arm_counts_after": [
+          10.0,
+          16.0,
+          38.0
+        ],
+        "total_reward": 32,
+        "average_reward": 0.5
+      },
+      {
+        "step": 64,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.19999999999999998,
+          0.5,
+          0.5789473684210525
+        ],
+        "arm_counts_before": [
+          10.0,
+          16.0,
+          38.0
+        ],
+        "arm_values_after": [
+          0.2727272727272727,
+          0.5,
+          0.5789473684210525
+        ],
+        "arm_counts_after": [
+          11.0,
+          16.0,
+          38.0
+        ],
+        "total_reward": 33,
+        "average_reward": 0.5076923076923077
+      },
+      {
+        "step": 65,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.2727272727272727,
+          0.5,
+          0.5789473684210525
+        ],
+        "arm_counts_before": [
+          11.0,
+          16.0,
+          38.0
+        ],
+        "arm_values_after": [
+          0.2727272727272727,
+          0.47058823529411764,
+          0.5789473684210525
+        ],
+        "arm_counts_after": [
+          11.0,
+          17.0,
+          38.0
+        ],
+        "total_reward": 33,
+        "average_reward": 0.5
+      },
+      {
+        "step": 66,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2727272727272727,
+          0.47058823529411764,
+          0.5789473684210525
+        ],
+        "arm_counts_before": [
+          11.0,
+          17.0,
+          38.0
+        ],
+        "arm_values_after": [
+          0.2727272727272727,
+          0.47058823529411764,
+          0.564102564102564
+        ],
+        "arm_counts_after": [
+          11.0,
+          17.0,
+          39.0
+        ],
+        "total_reward": 33,
+        "average_reward": 0.4925373134328358
+      },
+      {
+        "step": 67,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": -1,
+        "arm_values_before": [
+          0.2727272727272727,
+          0.47058823529411764,
+          0.564102564102564
+        ],
+        "arm_counts_before": [
+          11.0,
+          17.0,
+          39.0
+        ],
+        "arm_values_after": [
+          0.16666666666666663,
+          0.47058823529411764,
+          0.564102564102564
+        ],
+        "arm_counts_after": [
+          12.0,
+          17.0,
+          39.0
+        ],
+        "total_reward": 32,
+        "average_reward": 0.47058823529411764
+      },
+      {
+        "step": 68,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.16666666666666663,
+          0.47058823529411764,
+          0.564102564102564
+        ],
+        "arm_counts_before": [
+          12.0,
+          17.0,
+          39.0
+        ],
+        "arm_values_after": [
+          0.16666666666666663,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_after": [
+          12.0,
+          17.0,
+          40.0
+        ],
+        "total_reward": 34,
+        "average_reward": 0.4927536231884058
+      },
+      {
+        "step": 69,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.16666666666666663,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_before": [
+          12.0,
+          17.0,
+          40.0
+        ],
+        "arm_values_after": [
+          0.23076923076923073,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_after": [
+          13.0,
+          17.0,
+          40.0
+        ],
+        "total_reward": 35,
+        "average_reward": 0.5
+      },
+      {
+        "step": 70,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.23076923076923073,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_before": [
+          13.0,
+          17.0,
+          40.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_after": [
+          14.0,
+          17.0,
+          40.0
+        ],
+        "total_reward": 36,
+        "average_reward": 0.5070422535211268
+      },
+      {
+        "step": 71,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.5999999999999999
+        ],
+        "arm_counts_before": [
+          14.0,
+          17.0,
+          40.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.6341463414634145
+        ],
+        "arm_counts_after": [
+          14.0,
+          17.0,
+          41.0
+        ],
+        "total_reward": 38,
+        "average_reward": 0.5277777777777778
+      },
+      {
+        "step": 72,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.6341463414634145
+        ],
+        "arm_counts_before": [
+          14.0,
+          17.0,
+          41.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.619047619047619
+        ],
+        "arm_counts_after": [
+          14.0,
+          17.0,
+          42.0
+        ],
+        "total_reward": 38,
+        "average_reward": 0.5205479452054794
+      },
+      {
+        "step": 73,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 1,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.47058823529411764,
+          0.619047619047619
+        ],
+        "arm_counts_before": [
+          14.0,
+          17.0,
+          42.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.5,
+          0.619047619047619
+        ],
+        "arm_counts_after": [
+          14.0,
+          18.0,
+          42.0
+        ],
+        "total_reward": 39,
+        "average_reward": 0.527027027027027
+      },
+      {
+        "step": 74,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.5,
+          0.619047619047619
+        ],
+        "arm_counts_before": [
+          14.0,
+          18.0,
+          42.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.5,
+          0.6511627906976744
+        ],
+        "arm_counts_after": [
+          14.0,
+          18.0,
+          43.0
+        ],
+        "total_reward": 41,
+        "average_reward": 0.5466666666666666
+      },
+      {
+        "step": 75,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.5,
+          0.6511627906976744
+        ],
+        "arm_counts_before": [
+          14.0,
+          18.0,
+          43.0
+        ],
+        "arm_values_after": [
+          0.2857142857142857,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_after": [
+          14.0,
+          18.0,
+          44.0
+        ],
+        "total_reward": 41,
+        "average_reward": 0.5394736842105263
+      },
+      {
+        "step": 76,
+        "arm": 0,
+        "action_type": "explore",
+        "reward": -1,
+        "arm_values_before": [
+          0.2857142857142857,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_before": [
+          14.0,
+          18.0,
+          44.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          44.0
+        ],
+        "total_reward": 40,
+        "average_reward": 0.5194805194805194
+      },
+      {
+        "step": 77,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6363636363636364
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          44.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6222222222222222
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          45.0
+        ],
+        "total_reward": 40,
+        "average_reward": 0.5128205128205128
+      },
+      {
+        "step": 78,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6222222222222222
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          45.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6086956521739131
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          46.0
+        ],
+        "total_reward": 40,
+        "average_reward": 0.5063291139240507
+      },
+      {
+        "step": 79,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6086956521739131
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          46.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5957446808510639
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          47.0
+        ],
+        "total_reward": 40,
+        "average_reward": 0.5
+      },
+      {
+        "step": 80,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5957446808510639
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          47.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5833333333333334
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          48.0
+        ],
+        "total_reward": 40,
+        "average_reward": 0.49382716049382713
+      },
+      {
+        "step": 81,
+        "arm": 2,
+        "action_type": "explore",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5833333333333334
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          48.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6122448979591837
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          49.0
+        ],
+        "total_reward": 42,
+        "average_reward": 0.5121951219512195
+      },
+      {
+        "step": 82,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6122448979591837
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          49.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          50.0
+        ],
+        "total_reward": 42,
+        "average_reward": 0.5060240963855421
+      },
+      {
+        "step": 83,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          50.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5882352941176471
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          51.0
+        ],
+        "total_reward": 42,
+        "average_reward": 0.5
+      },
+      {
+        "step": 84,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5882352941176471
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          51.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.576923076923077
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          52.0
+        ],
+        "total_reward": 42,
+        "average_reward": 0.49411764705882355
+      },
+      {
+        "step": 85,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.576923076923077
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          52.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5660377358490567
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          53.0
+        ],
+        "total_reward": 42,
+        "average_reward": 0.4883720930232558
+      },
+      {
+        "step": 86,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5660377358490567
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          53.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5925925925925927
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          54.0
+        ],
+        "total_reward": 44,
+        "average_reward": 0.5057471264367817
+      },
+      {
+        "step": 87,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5925925925925927
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          54.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5818181818181819
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          55.0
+        ],
+        "total_reward": 44,
+        "average_reward": 0.5
+      },
+      {
+        "step": 88,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5818181818181819
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          55.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6071428571428572
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          56.0
+        ],
+        "total_reward": 46,
+        "average_reward": 0.5168539325842697
+      },
+      {
+        "step": 89,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6071428571428572
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          56.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5964912280701755
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          57.0
+        ],
+        "total_reward": 46,
+        "average_reward": 0.5111111111111111
+      },
+      {
+        "step": 90,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5964912280701755
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          57.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.6206896551724139
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          58.0
+        ],
+        "total_reward": 48,
+        "average_reward": 0.5274725274725275
+      },
+      {
+        "step": 91,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.6206896551724139
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          58.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5932203389830509
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          59.0
+        ],
+        "total_reward": 47,
+        "average_reward": 0.5108695652173914
+      },
+      {
+        "step": 92,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5932203389830509
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          59.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5833333333333334
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          60.0
+        ],
+        "total_reward": 47,
+        "average_reward": 0.5053763440860215
+      },
+      {
+        "step": 93,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5833333333333334
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          60.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5737704918032788
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          61.0
+        ],
+        "total_reward": 47,
+        "average_reward": 0.5
+      },
+      {
+        "step": 94,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5737704918032788
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          61.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5645161290322581
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          62.0
+        ],
+        "total_reward": 47,
+        "average_reward": 0.49473684210526314
+      },
+      {
+        "step": 95,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5645161290322581
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          62.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.5,
+          0.5873015873015873
+        ],
+        "arm_counts_after": [
+          15.0,
+          18.0,
+          63.0
+        ],
+        "total_reward": 49,
+        "average_reward": 0.5104166666666666
+      },
+      {
+        "step": 96,
+        "arm": 1,
+        "action_type": "explore",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.5,
+          0.5873015873015873
+        ],
+        "arm_counts_before": [
+          15.0,
+          18.0,
+          63.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.4736842105263158,
+          0.5873015873015873
+        ],
+        "arm_counts_after": [
+          15.0,
+          19.0,
+          63.0
+        ],
+        "total_reward": 49,
+        "average_reward": 0.5051546391752577
+      },
+      {
+        "step": 97,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.4736842105263158,
+          0.5873015873015873
+        ],
+        "arm_counts_before": [
+          15.0,
+          19.0,
+          63.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.4736842105263158,
+          0.609375
+        ],
+        "arm_counts_after": [
+          15.0,
+          19.0,
+          64.0
+        ],
+        "total_reward": 51,
+        "average_reward": 0.5204081632653061
+      },
+      {
+        "step": 98,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values_before": [
+          0.2,
+          0.4736842105263158,
+          0.609375
+        ],
+        "arm_counts_before": [
+          15.0,
+          19.0,
+          64.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.4736842105263158,
+          0.6
+        ],
+        "arm_counts_after": [
+          15.0,
+          19.0,
+          65.0
+        ],
+        "total_reward": 51,
+        "average_reward": 0.5151515151515151
+      },
+      {
+        "step": 99,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values_before": [
+          0.2,
+          0.4736842105263158,
+          0.6
+        ],
+        "arm_counts_before": [
+          15.0,
+          19.0,
+          65.0
+        ],
+        "arm_values_after": [
+          0.2,
+          0.4736842105263158,
+          0.6212121212121212
+        ],
+        "arm_counts_after": [
+          15.0,
+          19.0,
+          66.0
+        ],
+        "total_reward": 53,
+        "average_reward": 0.53
+      }
+    ],
+    "summary": {
+      "total_steps": 100,
+      "final_arm_values": [
+        0.2,
+        0.4736842105263158,
+        0.6212121212121212
+      ],
+      "final_arm_counts": [
+        15.0,
+        19.0,
+        66.0
+      ],
+      "total_reward": 53,
+      "average_reward": 0.53,
+      "epsilon": 0.3
+    }
+  },
+  "trained_simulation": {
+    "simulation_steps": [
+      {
+        "step": 0,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 1,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 2,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 3,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 4,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 5,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 6,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 7,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 8,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 9,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 10,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 11,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 12,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 13,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 14,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 15,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 16,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 17,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 18,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 19,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 20,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 21,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 22,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 23,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 24,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 25,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 26,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 27,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 28,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 29,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 30,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 31,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 32,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 33,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 34,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 35,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 36,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 37,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 38,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 39,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 40,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 41,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 42,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 43,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 44,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 45,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 46,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 47,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 48,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 49,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 50,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 51,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 52,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 53,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 54,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 55,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 56,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 57,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 58,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 59,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 60,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 61,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 62,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 63,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 64,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 65,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 66,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 67,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 68,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 69,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 70,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 71,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 72,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 73,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 74,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 75,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 76,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 77,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 78,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 79,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 80,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 81,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 82,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 83,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 84,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 85,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 86,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 87,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 88,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 89,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 90,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 91,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": -1,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 92,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 93,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 94,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 95,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 96,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 97,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 98,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 0,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      },
+      {
+        "step": 99,
+        "arm": 2,
+        "action_type": "exploit",
+        "reward": 2,
+        "arm_values": [
+          -0.01628664495114008,
+          0.40098522167487693,
+          0.4973496197280477
+        ],
+        "arm_counts": [
+          307.0,
+          1015.0,
+          8678.0
+        ],
+        "confidence": "high"
+      }
+    ],
+    "summary": {
+      "total_steps": 100,
+      "initial_arm_values": [
+        -0.01628664495114008,
+        0.40098522167487693,
+        0.4973496197280477
+      ],
+      "initial_arm_counts": [
+        307.0,
+        1015.0,
+        8678.0
+      ],
+      "optimal_arm_selections": 100,
+      "optimal_percentage": 100.0,
+      "epsilon": 0.0,
+      "performance": "pure_greedy"
+    }
+  },
+  "sample_sessions": [
+    {
+      "name": "random_exploration",
+      "description": "Random arm selection",
+      "final_statistics": {
+        "total_pulls": 20,
+        "max_pulls": 20,
+        "arm_pulls": [
+          6,
+          4,
+          10
+        ],
+        "arm_rewards": [
+          0,
+          0,
+          6
+        ],
+        "arm_means": [
+          0.0,
+          0.0,
+          0.6
+        ],
+        "pull_history": [
+          [
+            1,
+            -1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "max_pulls": 20
+    },
+    {
+      "name": "greedy_approach",
+      "description": "Explore then exploit best arm",
+      "final_statistics": {
+        "total_pulls": 20,
+        "max_pulls": 20,
+        "arm_pulls": [
+          1,
+          17,
+          2
+        ],
+        "arm_rewards": [
+          -1,
+          7,
+          0
+        ],
+        "arm_means": [
+          -1.0,
+          0.412,
+          0.0
+        ],
+        "pull_history": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      "max_pulls": 20
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "description": "Multi-armed bandit demo data for frontend-only implementation",
+    "algorithms": [
+      "epsilon-greedy",
+      "pure-greedy"
+    ],
+    "max_user_pulls": 50,
+    "exploration_epsilon": 0.3,
+    "trained_epsilon": 0.0
+  }
+}

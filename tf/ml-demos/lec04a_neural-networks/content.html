@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Networks</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .network-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-node {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+            font-family: monospace;
+        }
+
+        .network-node:hover {
+            transform: scale(1.1);
+            border-width: 3px;
+        }
+
+        .network-node.input {
+            background: #e3f2fd;
+            border-color: #1976d2;
+            color: #1976d2;
+        }
+
+        .network-node.hidden {
+            background: #f3e5f5;
+            border-color: #7b1fa2;
+            color: #7b1fa2;
+        }
+
+        .network-node.output {
+            background: #e8f5e8;
+            border-color: #388e3c;
+            color: #388e3c;
+        }
+
+        .network-edge {
+            position: absolute;
+            height: 2px;
+            background: #666;
+            transform-origin: left center;
+            pointer-events: none;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+        }
+
+        .network-edge.active {
+            opacity: 1;
+            background: #ff4444;
+            height: 3px;
+        }
+
+        .pre-activation-label {
+            position: absolute;
+            font-size: 10px;
+            font-weight: bold;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 2px 4px;
+            color: #666;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .network-layer-label {
+            position: absolute;
+            font-weight: bold;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .input-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group label {
+            width: 60px;
+            font-weight: bold;
+        }
+
+        .layer-controls {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .layer-control-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .layer-control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .add-layer-btn, .remove-layer-btn {
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            background: white;
+        }
+
+        .add-layer-btn {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+
+        .add-layer-btn:disabled {
+            background: #cccccc;
+            color: #666666;
+            border-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .remove-layer-btn {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .remove-layer-btn:disabled {
+            background: #cccccc;
+            color: #666666;
+            border-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+
+        .weight-input {
+            width: 80px;
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Adjust the <em>input values</em> using the sliders or enter custom values<br>
+            • <em>Click on any node</em> to view and modify its incoming weights<br>
+            • Use <em>Add Layer</em> and <em>Remove Layer</em> buttons to change network architecture<br>
+            • Change the <em>number of units</em> in each hidden layer using the controls<br>
+            • Select different <em>activation functions</em> for each layer to see their effects<br>
+            • Watch how values propagate through the network in real-time<br>
+            • Use <em>"Generate Random Inputs"</em> to test with different input combinations<br>
+            • Observe both <em>pre-activation values (small labels)</em> and <em>post-activation values (in nodes)</em><br><br>
+
+            <strong>Layer Types:</strong><br>
+            • <strong style="color: #1976d2;">Input Layer (Blue):</strong> 3 input values that you control<br>
+            • <strong style="color: #7b1fa2;">Hidden Layers (Purple):</strong> Transform inputs using weights and activation functions<br>
+            • <strong style="color: #388e3c;">Output Layer (Green):</strong> Single output value representing the network's prediction<br><br>
+
+            <strong>Activation Functions:</strong><br>
+            • <em>Linear:</em> f(x) = x (no transformation)<br>
+            • <em>ReLU:</em> f(x) = max(0, x) (clips negative values to 0)<br>
+            • <em>Sigmoid:</em> f(x) = 1/(1 + e^(-x)) (outputs between 0 and 1)<br>
+            • <em>Tanh:</em> f(x) = tanh(x) (outputs between -1 and 1)<br><br>
+
+            <strong>Network Visualization:</strong><br>
+            • <em>Node background intensity</em> represents value magnitudes (brighter = larger values)<br>
+            • <em>Node colors</em> distinguish positive (cooler hues) vs negative (warmer hues) values<br>
+            • <em>Node borders</em> are green for positive, red for negative values<br>
+            • <em>Text color</em> automatically adjusts for readability (white on dark backgrounds)<br>
+            • <em>Pre-activation labels</em> are green for positive, red for negative values<br>
+            • <em>Connection thickness</em> represents weight magnitudes<br>
+            • <em>Values display</em> shows both pre-activation → post-activation for each neuron
+        </div>
+
+        <div class="demo-area">
+            <div class="controls" style="flex: 1; margin-right: 20px;">
+
+                <!-- Input Controls -->
+                <div class="control-group">
+                    <label>Input Values</label>
+                    <div class="input-controls">
+                        <div class="input-group">
+                            <label>Input 1:</label>
+                            <input type="range" id="input1" min="-5" max="5" step="0.1" value="1.0">
+                            <input type="number" id="input1-num" min="-10" max="10" step="0.1" value="1.0" style="width: 80px;">
+                        </div>
+                        <div class="input-group">
+                            <label>Input 2:</label>
+                            <input type="range" id="input2" min="-5" max="5" step="0.1" value="0.5">
+                            <input type="number" id="input2-num" min="-10" max="10" step="0.1" value="0.5" style="width: 80px;">
+                        </div>
+                        <div class="input-group">
+                            <label>Input 3:</label>
+                            <input type="range" id="input3" min="-5" max="5" step="0.1" value="-1.0">
+                            <input type="number" id="input3-num" min="-10" max="10" step="0.1" value="-1.0" style="width: 80px;">
+                        </div>
+                        <button class="generate-data-btn" id="random-inputs-btn">Generate Random Inputs</button>
+                    </div>
+                </div>
+
+                <!-- Network Architecture Controls -->
+                <div class="control-group">
+                    <label>Network Architecture</label>
+                    <div class="layer-controls" id="layer-controls">
+                        <!-- Dynamic layer controls will be inserted here -->
+                    </div>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <button class="add-layer-btn" id="add-layer-btn">+ Add Layer</button>
+                        <button class="remove-layer-btn" id="remove-layer-btn">- Remove Layer</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="plot-container" style="flex: 2;">
+                <div class="network-container" id="network-container">
+                    <!-- Network diagram will be rendered here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Weight editing modal -->
+        <div class="modal" id="weight-modal">
+            <div class="modal-content">
+                <h3 id="modal-title">Edit Weights</h3>
+                <div id="modal-weights">
+                    <!-- Weight inputs will be dynamically generated -->
+                </div>
+                <div style="text-align: right; margin-top: 20px;">
+                    <button onclick="closeWeightModal()">Close</button>
+                    <button onclick="randomizeWeights()" style="margin-left: 10px;">Randomize</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

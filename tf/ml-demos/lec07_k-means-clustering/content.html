@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Means Clustering</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mtml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Adjust the number of clusters (K) using the slider to see how it affects clustering<br>
+            • Toggle "Enable Adding Data Points" and click anywhere on the plot to add new data points<br>
+            • Drag centroids (solid circles) to manually position them and see how it affects clustering<br>
+            • Use "Step Forward" to run one iteration of the k-means algorithm<br>
+            • Click "Final Results" to run the algorithm until convergence<br>
+            • "Reset Training" resets only the algorithm state (keeps current data points)<br>
+            • "Generate New Data" creates a fresh set of 20 random data points<br>
+            • Toggle "Show All Distance Lines" to always display all cluster connections, or leave unchecked to only show lines when hovering over centroids<br><br>
+
+            <strong>Algorithm:</strong><br>
+            1. <em>Initialize:</em> Place K centroids randomly in the data space<br>
+            2. <em>Assign:</em> Assign each point to the nearest centroid<br>
+            3. <em>Update:</em> Move centroids to the center of their assigned points<br>
+            4. <em>Repeat:</em> Steps 2-3 until centroids stop moving (convergence)<br><br>
+
+            <strong>Visualization:</strong><br>
+            • <em>Hollow circles:</em> Data points, colored by cluster assignment<br>
+            • <em>Solid circles:</em> Centroids, showing cluster centers<br>
+            • Different colors represent different clusters<br>
+            • Objective: Minimize within-cluster sum of squared distances
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <canvas id="plot" width="600" height="400"></canvas>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="k-clusters">Number of Clusters (K)</label>
+                    <div class="slider-container">
+                        <input type="range" id="k-clusters" min="2" max="10" step="1" value="3">
+                        <div class="value-display" id="k-value">3</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="show-distances" style="margin-right: 8px;">
+                        Show All Distance Lines
+                    </label>
+                </div>
+
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="add-data-mode" style="margin-right: 8px;" checked>
+                        Enable Adding Data Points
+                    </label>
+                </div>
+
+                <div class="control-group">
+                    <div class="plot-buttons">
+                        <button id="step-btn" class="generate-data-btn">Step Forward</button>
+                        <button id="final-btn" class="solution-btn">Final Results</button>
+                        <button id="reset-btn" class="clear-data-btn">Reset Training</button>
+                        <button id="generate-data-btn" class="generate-data-btn">Generate New Data</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="display-group">
+                        <div class="display-item">
+                            <label>Current Iteration:</label>
+                            <span id="iteration-display" class="value-display">0</span>
+                        </div>
+                        <div class="display-item">
+                            <label>Status:</label>
+                            <span id="status-display" class="value-display">Ready</span>
+                        </div>
+                        <div class="display-item">
+                            <label>Data Points:</label>
+                            <span id="points-count" class="value-display">20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="equation">
+                        Objective: $\min \sum_{i=1}^{k} \sum_{x \in C_i} ||x - \mu_i||^2$
+                    </div>
+                    <div class="equation-description">
+                        Minimize within-cluster sum of squared distances
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

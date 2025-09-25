@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attention Mechanism</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .attention-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 300px;
+        }
+
+        .sequence-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .vertical-sequence-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 150px;
+        }
+
+        .token {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f8ff;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            padding: 10px;
+            min-width: 80px;
+        }
+
+        .vertical-sequence-container .token {
+            min-width: 120px;
+            align-items: flex-start;
+            padding: 4px 8px;
+            min-height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .token.selected {
+            background: #e6f3ff;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 10px rgba(44, 90, 160, 0.5);
+        }
+
+        .token-text {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 2px;
+            color: #2c5aa0;
+        }
+
+        .token-embedding {
+            font-size: 8px;
+            font-family: monospace;
+            color: #666;
+            text-align: left;
+            line-height: 1.1;
+        }
+
+        .matrix-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .matrix-section {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .vertical-matrix-section {
+            flex: 1;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .matrix-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .matrix-title.query { background: #4a90e2; }
+        .matrix-title.key { background: #7cb342; }
+        .matrix-title.value { background: #f44336; }
+
+        .matrix-display {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .attention-heatmap {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .step {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .step.active {
+            background: #4a90e2;
+            color: white;
+            border-color: #4a90e2;
+        }
+
+        .step.completed {
+            background: #7cb342;
+            color: white;
+            border-color: #7cb342;
+        }
+
+        .math-explanation {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .dimension-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .weight-matrix-controls {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .weight-controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Select a sequence from the dropdown to see how attention processes different inputs<br>
+            • Hover over input tokens to see their corresponding Q, K, V vectors highlighted<br>
+            • Hover over output embeddings to trace how they were computed from attention weights and values<br>
+            • Click "Randomize Weights" to see different random weight initializations<br>
+            • All computations follow: $\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$<br><br>
+
+            <strong>Educational Purpose:</strong><br>
+            • This demo shows <em>untrained attention with random initialization</em><br>
+            • Designed to build <em>visual intuition</em> for attention mechanics, not realistic outputs<br>
+            • Uses causal masking (lower triangular) typical in language models<br>
+            • Fixed dimensions: $d_{model} = 4$, $d_k = 4$ for clear visualization<br><br>
+
+            <strong>Visualization:</strong><br>
+            • <em style="color: #4a90e2;">Blue (Q):</em> Query vectors - what each token "asks for"<br>
+            • <em style="color: #7cb342;">Green (K):</em> Key vectors - what each token "offers"<br>
+            • <em style="color: #f44336;">Red (V):</em> Value vectors - information each token contains<br>
+            • <em>Attention Weights:</em> Shows which tokens attend to which (causal mask applied)<br>
+            • <em style="color: #4dbeee;">Light Blue (O):</em> Output embeddings - final attention results
+        </div>
+
+        <!-- Horizontal Controls -->
+        <div class="horizontal-controls" style="display: flex; gap: 20px; align-items: center; justify-content: center; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="sequence-select" style="font-weight: bold; white-space: nowrap;">Input Sequence:</label>
+                <select id="sequence-select" style="padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="simple">The cat sat</option>
+                    <option value="greeting">Hello world today</option>
+                    <option value="question">What is attention</option>
+                    <option value="longer">The quick brown fox jumps</option>
+                </select>
+            </div>
+
+            <button class="generate-data-btn" id="randomize-weights-btn" style="white-space: nowrap;">Randomize Weights</button>
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container" style="width: 100%;">
+
+                <!-- Input Sequence & QKV Matrices -->
+                <div class="attention-container">
+                    <h4 style="margin: 0 0 15px 0; text-align: center; color: #2c3e50;">Input Sequence & Query, Key, Value Matrices</h4>
+                    <div style="display: flex; align-items: flex-start; gap: 30px;">
+                        <!-- Input Sequence -->
+                        <div style="flex: 0 0 200px;">
+                            <h5 style="margin: 0 0 10px 0; color: #2c3e50; text-align: center;">Input Tokens</h5>
+                            <div class="vertical-sequence-container" id="input-sequence">
+                                <!-- Tokens will be dynamically generated -->
+                            </div>
+                        </div>
+
+                        <!-- QKV Matrices -->
+                        <div style="flex: 1; display: flex; gap: 20px;">
+                            <div class="vertical-matrix-section">
+                                <div class="matrix-title query">Query (Q)</div>
+                                <canvas id="q-canvas" width="160" height="220"></canvas>
+                            </div>
+                            <div class="vertical-matrix-section">
+                                <div class="matrix-title key">Key (K)</div>
+                                <canvas id="k-canvas" width="160" height="220"></canvas>
+                            </div>
+                            <div class="vertical-matrix-section">
+                                <div class="matrix-title value">Value (V)</div>
+                                <canvas id="v-canvas" width="160" height="220"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="math-explanation" id="qkv-explanation">
+                        $Q = XW_Q$, $K = XW_K$, $V = XW_V$ where $X$ is the input embedding matrix
+                    </div>
+                </div>
+
+                <!-- Attention Weights, Values & Output -->
+                <div class="attention-container" id="attention-container">
+                    <h4 style="margin: 0 0 15px 0; text-align: center; color: #2c3e50;">Attention Weights, Values & Output</h4>
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="flex: 0 0 31%; text-align: center;">
+                            <div class="matrix-title" style="background: #666; color: white; font-weight: bold; margin-bottom: 10px; padding: 5px; border-radius: 4px;">Attention Weights (A)</div>
+                            <canvas id="attention-canvas" width="350" height="350" style="width: 100%; max-width: 350px;"></canvas>
+                        </div>
+                        <div style="flex: 0 0 31%; text-align: center;">
+                            <div class="matrix-title value">Values (V)</div>
+                            <canvas id="v-attention-canvas" width="350" height="350" style="width: 100%; max-width: 350px;"></canvas>
+                        </div>
+                        <div style="flex: 0 0 31%; text-align: center;">
+                            <div class="matrix-title" style="background: rgb(77, 190, 238); color: white; font-weight: bold; margin-bottom: 10px; padding: 5px; border-radius: 4px;">Output (O)</div>
+                            <div class="vertical-sequence-container" id="output-sequence">
+                                <!-- Output tokens will be dynamically generated -->
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <div class="math-explanation" id="attention-explanation" style="width: 31%; margin: 10px 0 0 0;">
+                            Attention weights: $A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)$ where each row sums to 1
+                        </div>
+                        <div class="math-explanation" id="output-explanation" style="width: 62%; margin: 10px 0 0 0;">
+                            Output: $O = AV$ - weighted combination of value vectors
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpropagation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .network-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-node {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 3px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            background: white;
+            font-family: monospace;
+            z-index: 10;
+        }
+
+        .network-node.input {
+            background: #e3f2fd;
+            border-color: #1976d2;
+            color: #1976d2;
+        }
+
+        .network-node.hidden {
+            background: #f3e5f5;
+            border-color: #7b1fa2;
+            color: #7b1fa2;
+        }
+
+        .network-node.output {
+            background: #e8f5e8;
+            border-color: #388e3c;
+            color: #388e3c;
+        }
+
+        .network-edge {
+            position: absolute;
+            height: 2px;
+            background: #666;
+            transform-origin: left center;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .weight-label {
+            position: absolute;
+            font-size: 11px;
+            font-weight: bold;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 3px 5px;
+            color: #333;
+            pointer-events: none;
+            z-index: 15;
+            max-width: 80px;
+            text-align: center;
+        }
+
+        .gradient-label {
+            position: absolute;
+            font-size: 10px;
+            font-weight: bold;
+            font-family: monospace;
+            background: rgba(255, 248, 220, 0.95);
+            border: 1px solid #ffa500;
+            border-radius: 4px;
+            padding: 2px 4px;
+            color: #ff6600;
+            pointer-events: none;
+            z-index: 15;
+            max-width: 100px;
+            text-align: center;
+        }
+
+        .network-layer-label {
+            position: absolute;
+            font-weight: bold;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .loss-display {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .loss-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #dc3545;
+            font-family: monospace;
+        }
+
+        .step-info {
+            font-size: 16px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .input-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .input-group label {
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .optimization-controls {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .step-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .step-button:hover {
+            background: #0056b3;
+        }
+
+        .step-button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .reset-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .reset-button:hover {
+            background: #545b62;
+        }
+
+        .loss-graph {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            height: 240px;
+            position: relative;
+        }
+
+        .graph-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+
+        .right-panel-tables {
+            margin-top: 15px;
+        }
+
+        .right-panel-tables h3 {
+            color: #495057;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .gradients-table {
+            margin-top: 15px;
+        }
+
+        .weights-table, .gradients-table {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .weights-table h4, .gradients-table h4 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .table-content {
+            font-family: monospace;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .layer-section {
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        .layer-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .connection-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-bottom: 2px;
+        }
+
+        .connection-row:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .connection-label {
+            color: #6c757d;
+        }
+
+        .connection-value {
+            font-weight: bold;
+        }
+
+        .positive-value {
+            color: #28a745;
+        }
+
+        .negative-value {
+            color: #dc3545;
+        }
+
+
+        .weights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .column-header {
+            font-weight: bold;
+            color: #495057;
+            padding: 4px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .column-data {
+            padding: 4px;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            background: white;
+        }
+
+        .weight-row, .gradient-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 5px;
+            margin-bottom: 1px;
+            font-size: 10px;
+        }
+
+        .weight-row:nth-child(even), .gradient-row:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .weight-row:hover, .gradient-row:hover {
+            background: #e3f2fd !important;
+            border-left: 3px solid #1976d2;
+            border-radius: 3px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .weight-row:hover .connection-value,
+        .gradient-row:hover .connection-value {
+            font-weight: bold;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Set <em>input values</em> and <em>target output</em><br>
+            • Adjust <em>learning rate</em> to control step size<br>
+            • Click <em>"Step Optimization"</em> to update weights<br>
+            • Hover over table entries to highlight connections<br>
+            • Watch loss decrease over time<br><br>
+
+            <strong>Network:</strong> 2 inputs → 3 hidden (ReLU) → 1 output (linear)<br>
+            <strong>Learning:</strong> MSE loss minimized via gradient descent
+        </div>
+
+        <div class="demo-area">
+            <div class="controls" style="flex: 1; margin-right: 20px;">
+
+                <!-- Loss Display -->
+                <div class="loss-display">
+                    <div class="loss-value" id="loss-value">0.0000</div>
+                    <div class="step-info">Step: <span id="step-count">0</span></div>
+                </div>
+
+                <!-- Input Controls -->
+                <div class="control-group">
+                    <label>Network Inputs</label>
+                    <div class="input-controls">
+                        <div class="input-group">
+                            <label>Input 1:</label>
+                            <input type="range" id="input1" min="-5" max="5" step="0.1" value="1.0">
+                            <input type="number" id="input1-num" min="-5" max="5" step="0.1" value="1.0" style="width: 80px;">
+                        </div>
+                        <div class="input-group">
+                            <label>Input 2:</label>
+                            <input type="range" id="input2" min="-5" max="5" step="0.1" value="0.5">
+                            <input type="number" id="input2-num" min="-5" max="5" step="0.1" value="0.5" style="width: 80px;">
+                        </div>
+                        <div class="input-group">
+                            <label>Target Output:</label>
+                            <input type="number" id="target" min="-5" max="5" step="0.1" value="2.0" style="width: 120px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimization Controls -->
+                <div class="control-group">
+                    <label>Optimization</label>
+                    <div class="optimization-controls">
+                        <div class="input-group" style="margin-bottom: 15px;">
+                            <label>Learning Rate:</label>
+                            <input type="range" id="learning-rate" min="0" max="1" step="0.01" value="0.01">
+                            <input type="number" id="learning-rate-num" min="0" max="1.0" step="0.01" value="0.01" style="width: 80px;">
+                        </div>
+                        <div>
+                            <button class="step-button" id="step-btn">Step Optimization</button>
+                            <button class="reset-button" id="reset-btn">Reset Weights</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loss Graph -->
+                <div class="control-group">
+                    <label>Loss History</label>
+                    <div class="loss-graph">
+                        <div class="graph-title">MSE Loss Over Time</div>
+                        <canvas id="loss-canvas" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="plot-container" style="flex: 2;">
+                <div class="network-container" id="network-container">
+                    <!-- Network diagram will be rendered here -->
+                </div>
+
+                <!-- Weights and Gradients Tables -->
+                <div class="right-panel-tables">
+                    <h3>Network Parameters</h3>
+                    <div class="weights-table">
+                        <h4>Weights</h4>
+                        <div class="table-content" id="weights-table">
+                            <!-- Weights table will be generated here -->
+                        </div>
+                    </div>
+                    <div class="gradients-table">
+                        <h4>Gradients</h4>
+                        <div class="table-content" id="gradients-table">
+                            <!-- Gradients table will be generated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN Architecture</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Use the <em>numpad</em> to select MNIST digits and see real CNN processing<br>
+            • Click <em>"Draw Your Own"</em> to draw custom digits for classification<br>
+            • Watch <em>feature maps</em> update as data flows through each layer<br>
+            • Start at <em>epoch 0</em> (random weights) and step through training<br>
+            • Click <em>"Train Epoch"</em> to advance one training epoch at a time<br>
+            • Observe how feature maps evolve as the network learns<br><br>
+
+            <strong>CNN Architecture:</strong><br>
+            • <em>Input Layer:</em> 28×28 grayscale digit images<br>
+            • <em>Conv Layer 1:</em> 4 filters (3×3) → ReLU activation<br>
+            • <em>Max Pool 1:</em> 2×2 pooling → reduces spatial size<br>
+            • <em>Conv Layer 2:</em> 8 filters (3×3) → ReLU activation<br>
+            • <em>Max Pool 2:</em> 2×2 pooling → further size reduction<br>
+            • <em>Flatten:</em> Convert 2D feature maps to 1D vector<br>
+            • <em>Dense Layer:</em> 128 neurons → ReLU activation<br>
+            • <em>Output Layer:</em> 10 neurons → Softmax (digit probabilities)<br><br>
+
+            <strong>Training Process:</strong><br>
+            • <em>Real Model States:</em> Each epoch uses actual trained weights<br>
+            • <em>Loss Function:</em> Cross-entropy loss for multi-class classification<br>
+            • <em>Optimizer:</em> Adam optimizer with learning rate 0.001<br>
+            • <em>Performance:</em> Watch accuracy improve from 10% to 95%+
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Input and Architecture Visualization -->
+                    <div style="display: flex; gap: 20px; align-items: flex-start;">
+                        <div>
+                            <h3>Input Image</h3>
+                            <canvas id="input-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                            <div id="prediction-display" style="margin-top: 10px; font-weight: bold; text-align: center;">
+                                Prediction: <span id="predicted-digit">-</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>CNN Architecture</h3>
+                            <canvas id="architecture-canvas" width="500" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Feature Maps Visualization -->
+                    <div>
+                        <h3>Feature Maps at Different Layers</h3>
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <!-- Convolutional and Pooling Layers -->
+                            <div>
+                                <!-- Row 1: Conv1 and Pool1 -->
+                                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                                    <div>
+                                        <h4>After Conv1 (4 filters)</h4>
+                                        <canvas id="conv1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                    </div>
+                                    <div>
+                                        <h4>After Pool1</h4>
+                                        <canvas id="pool1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                    </div>
+                                </div>
+                                <!-- Row 2: Conv2 and Pool2 -->
+                                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                    <div>
+                                        <h4>After Conv2 (8 filters)</h4>
+                                        <canvas id="conv2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                    </div>
+                                    <div>
+                                        <h4>After Pool2</h4>
+                                        <canvas id="pool2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FC1 Layer -->
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+                                <h4>FC1 (128 units)</h4>
+                                <canvas id="fc1-canvas" width="40" height="320" style="border: 2px solid #ddd; border-radius: 8px; image-rendering: pixelated;"></canvas>
+                            </div>
+
+                            <!-- Output Layer -->
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <h4>Output Probabilities</h4>
+                                <div id="output-probabilities" style="display: flex; flex-direction: column; font-family: monospace; font-size: 12px; line-height: 1.2;">
+                                    <div>0: <span id="prob-0">0.00</span></div>
+                                    <div>1: <span id="prob-1">0.00</span></div>
+                                    <div>2: <span id="prob-2">0.00</span></div>
+                                    <div>3: <span id="prob-3">0.00</span></div>
+                                    <div>4: <span id="prob-4">0.00</span></div>
+                                    <div>5: <span id="prob-5">0.00</span></div>
+                                    <div>6: <span id="prob-6">0.00</span></div>
+                                    <div>7: <span id="prob-7">0.00</span></div>
+                                    <div>8: <span id="prob-8">0.00</span></div>
+                                    <div>9: <span id="prob-9">0.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Sample Digit:</label>
+                    <div id="digit-numpad" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; max-width: 150px;">
+                        <button class="digit-btn" data-digit="1" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">1</button>
+                        <button class="digit-btn" data-digit="2" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">2</button>
+                        <button class="digit-btn" data-digit="3" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">3</button>
+                        <button class="digit-btn" data-digit="4" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">4</button>
+                        <button class="digit-btn" data-digit="5" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">5</button>
+                        <button class="digit-btn" data-digit="6" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">6</button>
+                        <button class="digit-btn" data-digit="7" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">7</button>
+                        <button class="digit-btn" data-digit="8" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">8</button>
+                        <button class="digit-btn" data-digit="9" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">9</button>
+                        <button class="digit-btn" data-digit="0" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px; grid-column: span 3;">0</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <button id="draw-btn" class="solution-btn">Draw Your Own</button>
+                </div>
+
+
+                <div class="control-group">
+                    <label>Training Simulation:</label>
+                    <button id="train-btn" class="solution-btn">Simulate Training</button>
+                    <button id="reset-training-btn" class="solution-btn">Reset Training</button>
+                </div>
+
+
+                <div class="control-group">
+                    <label>Current Training Stats:</label>
+                    <div class="equation" style="font-size: 18px;">
+                        Epoch: <span id="current-epoch">0</span>/20<br>
+                        Loss: <span id="current-loss">2.303</span><br>
+                        Accuracy: <span id="current-accuracy">10.0%</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="cnn-inference.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

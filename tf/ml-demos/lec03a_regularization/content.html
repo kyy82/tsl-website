@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regularisation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Adjust the polynomial degree slider to control model complexity<br>
+            • Use L1 regularisation (Lasso) to encourage sparse coefficients<br>
+            • Use L2 regularisation (Ridge) to shrink coefficient magnitudes<br>
+            • Click anywhere on the plot to add new data points<br>
+            • Use <em>"Generate New Data"</em> to create 5 random points<br>
+            • Use <em>"Clear All Data"</em> to remove all points<br>
+            • Observe how regularisation helps prevent overfitting
+        </div>
+
+        <div class="equation" id="equation" style="margin: 20px 0;">
+            y = a₀ + a₁x
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <canvas id="plot" width="600" height="400"></canvas>
+                <div class="plot-buttons">
+                    <button class="generate-data-btn" id="generate-data-btn">Generate New Data</button>
+                    <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="degree">Polynomial Degree (Max Power)</label>
+                    <div class="slider-container">
+                        <input type="range" id="degree" min="0" max="9" step="1" value="1">
+                        <div class="value-display" id="degree-value">1</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Regularisation Parameters</label>
+                    <div class="regularization-row">
+                        <div class="reg-slider-group">
+                            <label for="l1-reg">L1 Regularisation ($\lambda_1$)</label>
+                            <div class="slider-container">
+                                <input type="range" id="l1-reg" min="0" max="1" step="0.1" value="0">
+                                <div class="value-display" id="l1-value">0.0</div>
+                            </div>
+                        </div>
+                        <div class="reg-slider-group">
+                            <label for="l2-reg">L2 Regularisation ($\lambda_2$)</label>
+                            <div class="slider-container">
+                                <input type="range" id="l2-reg" min="0" max="1" step="0.1" value="0">
+                                <div class="value-display" id="l2-value">0.0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equation" id="mse" style="background: #f3e5f5; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 15px;">
+                    MSE = 0.0
+                </div>
+
+                <div class="equation" id="mae" style="background: #e8f5e8; color: #2e7d32; border-left-color: #4caf50; margin-top: 10px;">
+                    MAE = 0.0
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Adjust the $\alpha$ slider to change the slope of the line<br>
+            • Adjust the $\beta$ slider to move the line up or down<br>
+            • Click anywhere on the plot to add new data points<br>
+            • Use <em>"Generate New Data"</em> to create 10 random points<br>
+            • Use <em>"Clear All Data"</em> to remove all points
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <canvas id="plot" width="600" height="400"></canvas>
+                <div class="plot-buttons">
+                    <button class="generate-data-btn" id="generate-data-btn">Generate New Data</button>
+                    <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="alpha">$\alpha$ (Gradient/Slope)</label>
+                    <div class="slider-container">
+                        <input type="range" id="alpha" min="-10" max="10" step="0.1" value="1">
+                        <div class="value-display" id="alpha-value">1.0</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="beta">$\beta$ (Intercept)</label>
+                    <div class="slider-container">
+                        <input type="range" id="beta" min="-100" max="100" step="5" value="0">
+                        <div class="value-display" id="beta-value">0</div>
+                    </div>
+                </div>
+
+                <div class="equation" id="equation">
+                    y = 1.0x + 0
+                </div>
+
+                <div class="equation" id="mse" style="background: #f3e5f5; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 15px;">
+                    MSE = 0.0
+                </div>
+
+                <div class="equation" id="mae" style="background: #e8f5e8; color: #2e7d32; border-left-color: #4caf50; margin-top: 10px;">
+                    MAE = 0.0
+                </div>
+
+                <button class="solution-btn" id="solution-btn">Find Optimal Solution</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
