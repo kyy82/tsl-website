@@ -24,7 +24,6 @@
     <rect x="12" y="4" width="4" height="4" fill="#3498db"/>
     <rect x="16" y="4" width="4" height="4" fill="#2ecc71"/>
 
-    <text x="10" y="30" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Input</text>
   </g>
 
   <!-- Convolution arrow -->
@@ -36,7 +35,6 @@
     <rect x="0" y="0" width="3" height="3" fill="#ff6b6b"/>
     <rect x="3" y="0" width="3" height="3" fill="#4ecdc4"/>
     <rect x="6" y="0" width="3" height="3" fill="#45b7d1"/>
-    <text x="4.5" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Filter</text>
   </g>
 
   <!-- Convolution arrow -->
@@ -51,13 +49,11 @@
     <rect x="2" y="6" width="3" height="3" fill="rgba(255,255,255,0.6)"/>
     <rect x="6" y="6" width="3" height="3" fill="rgba(255,255,255,0.9)"/>
     <rect x="10" y="6" width="3" height="3" fill="rgba(255,255,255,0.4)"/>
-    <text x="8" y="28" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Feature Map</text>
   </g>
 
   <!-- Pooling indicator -->
   <g transform="translate(80,45)">
     <rect x="0" y="0" width="8" height="8" fill="rgba(231,76,60,0.8)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
     <rect x="2" y="2" width="4" height="4" fill="rgba(255,255,255,0.9)"/>
-    <text x="4" y="18" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Pooled</text>
   </g>
 </svg>

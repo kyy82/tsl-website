@@ -12,16 +12,10 @@
   <!-- Q, K, V matrices -->
   <g transform="translate(10,15)">
     <rect x="0" y="0" width="12" height="12" fill="rgba(74,144,226,0.8)" rx="1"/>
-    <text x="6" y="7" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">Q</text>
-    <text x="6" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Query</text>
 
     <rect x="15" y="0" width="12" height="12" fill="rgba(124,179,66,0.8)" rx="1"/>
-    <text x="21" y="7" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">K</text>
-    <text x="21" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Key</text>
 
     <rect x="30" y="0" width="12" height="12" fill="rgba(244,67,54,0.8)" rx="1"/>
-    <text x="36" y="7" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="bold">V</text>
-    <text x="36" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Value</text>
   </g>
 
   <!-- Attention heatmap -->
@@ -38,21 +32,16 @@
     <rect x="10" y="20" width="8" height="8" fill="rgba(255,255,255,0.5)" rx="1"/>
     <rect x="20" y="20" width="8" height="8" fill="rgba(255,255,255,0.8)" rx="1"/>
 
-    <text x="14" y="40" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Attention</text>
   </g>
 
   <!-- Input tokens -->
   <g transform="translate(90,20)">
     <rect x="0" y="0" width="16" height="6" fill="rgba(255,255,255,0.9)" rx="2"/>
-    <text x="8" y="4" font-family="Arial, sans-serif" font-size="5" fill="#333" text-anchor="middle" font-weight="bold">The</text>
 
     <rect x="0" y="8" width="16" height="6" fill="rgba(255,255,255,0.7)" rx="2"/>
-    <text x="8" y="12" font-family="Arial, sans-serif" font-size="5" fill="#333" text-anchor="middle" font-weight="bold">cat</text>
 
     <rect x="0" y="16" width="16" height="6" fill="rgba(255,255,255,0.5)" rx="2"/>
-    <text x="8" y="20" font-family="Arial, sans-serif" font-size="5" fill="#333" text-anchor="middle" font-weight="bold">sat</text>
 
-    <text x="8" y="32" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Tokens</text>
   </g>
 
   <!-- Arrows showing attention flow -->
@@ -63,6 +52,5 @@
   <g transform="translate(15,50)">
     <rect x="0" y="0" width="80" height="4" fill="rgba(255,255,255,0.2)" rx="2"/>
     <rect x="0" y="0" width="60" height="4" fill="rgba(255,255,0,0.8)" rx="2"/>
-    <text x="40" y="12" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Attention Weights</text>
   </g>
 </svg>

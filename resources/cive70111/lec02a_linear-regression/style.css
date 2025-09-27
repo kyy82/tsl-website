@@ -1,73 +1,18 @@
-.equation-label {
-    position: absolute;
-    bottom: 4px;
-    right: 8px;
-    font-size: 12px;
-    opacity: 0.7;
-    font-style: italic;
-    text-align: right;
-}
-
-.dataset-buttons-section {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
-    width: 600px;
-}
-
-.dataset-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-/* Dataset button styles moved to demo-common.css */
-
-@media (max-width: 600px) {
-    .dataset-buttons {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Demo-specific overrides */
+.dataset-buttons-section,
 .dataset-info-box {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 0;
     width: 600px;
-    box-sizing: border-box;
-    display: none;
-    animation: slideDown 0.3s ease-out;
 }
 
-.dataset-info-box.show {
-    display: block;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Custom dataset info styling for linear regression */
 .dataset-info-title {
-    font-weight: bold;
     color: #2c3e50;
-    margin-bottom: 8px;
     font-size: 14px;
 }
 
 .dataset-info-description {
     color: #555;
     font-size: 13px;
-    line-height: 1.4;
-    margin-bottom: 8px;
 }
 
 .dataset-info-variables {
@@ -77,51 +22,47 @@
 }
 
 .dataset-section-label {
-    font-weight: bold;
     font-size: 14px;
     color: #333;
-    margin-bottom: 10px;
-    display: block;
 }
 
 .mae-equation {
     background: #e8f5e8;
     color: #2e7d32;
-    border-left-color: #4caf50;
-    margin-top: 15px;
-    position: relative;
+    border: 1px solid #c8e6c9;
+    border-left: 4px solid #4caf50;
 }
 
 .mse-equation {
     background: #f3e5f5;
     color: #7b1fa2;
-    border-left-color: #9c27b0;
-    margin-top: 10px;
-    position: relative;
+    border: 1px solid #e1bee7;
+    border-left: 4px solid #9c27b0;
 }
 
 .r2-equation {
-    margin-top: 10px;
-    position: relative;
     transition: all 0.3s ease;
 }
 
 .r2-poor {
     background: #ffebee;
     color: #d32f2f;
-    border-left-color: #f44336;
+    border: 1px solid #ffcdd2;
+    border-left: 4px solid #f44336;
 }
 
 .r2-moderate {
     background: #fff8e1;
     color: #f57c00;
-    border-left-color: #ff9800;
+    border: 1px solid #ffe0b2;
+    border-left: 4px solid #ff9800;
 }
 
 .r2-good {
     background: #e8f5e8;
     color: #388e3c;
-    border-left-color: #4caf50;
+    border: 1px solid #c8e6c9;
+    border-left: 4px solid #4caf50;
 }
 
 .checkbox-container {
@@ -164,12 +105,7 @@
     height: 16px;
 }
 
-.equation {
-    position: relative;
-    min-height: 40px;
-    padding-top: 10px;
-    text-align: center;
-}
+/* .equation base styling now handled by global styles.css */
 
 
 .leaderboard-panel {
@@ -281,4 +217,10 @@
     font-weight: bold;
     padding: 8px;
     margin: 4px 0;
+}
+
+/* Make solution button full width */
+.solution-btn {
+    width: 100%;
+    margin-top: 15px;
 }

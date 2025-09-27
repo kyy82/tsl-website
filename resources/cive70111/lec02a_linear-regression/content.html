@@ -9,6 +9,48 @@
         window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            chtml: {
+                displayAlign: 'center',
+                displayIndent: '0',
+                mtextInheritFont: true,
+                merrorInheritFont: true,
+                mathmlSpacing: false,
+                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
+                exFactor: 0.5,
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                scale: 1.2,
+                minScale: 0.8,
+                matchFontHeight: false,
+                fontURL: '[mathjax]/output/chtml/fonts/woff-v2'
+            },
+            startup: {
+                ready() {
+                    MathJax.startup.defaultReady();
+                    // Override MathJax CSS after it loads
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        mjx-container[jax="CHTML"] {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            line-height: inherit !important;
+                        }
+                        mjx-container[jax="CHTML"][display="true"] {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            },
+            options: {
+                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
+                processHtmlClass: 'tex2jax_process',
+                ignoreHtmlClass: 'tex2jax_ignore',
+                renderActions: {
+                    addMenu: [0, '', '']
+                }
             }
         };
     </script>
@@ -62,7 +104,7 @@
                     • Everyone uses the same randomly generated dataset<br>
                     • Only manual slider adjustment allowed - no "Find Optimal Solution" button<br>
                     • Real-time leaderboard shows top performers<br>
-                    • Your anonymous name: <span id="competition-username" style="font-weight: bold; color: #3498db;">Generating...</span><br>
+                    <div id="username-display" style="display: none;">• Your anonymous name: <span id="competition-username" style="font-weight: bold; color: #3498db;"></span><br></div>
                     <br><strong>Scoring:</strong><br>
                     • Primary ranking by R² score (higher is better)<br>
                     • Secondary ranking by MSE (lower is better)<br>

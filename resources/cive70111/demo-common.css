@@ -340,3 +340,216 @@ Example: To customize colors for a specific demo, add this to the demo's style.c
     --btn-primary-active: #your-custom-active-color;
 }
 */
+
+/**
+ * Common Demo Layout Components
+ * Shared layout patterns used across multiple demos
+ */
+
+/* Control Groups */
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.control-row label {
+    min-width: 150px;
+    font-weight: 500;
+}
+
+.control-row input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+/* View Panels */
+.view-panel {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    padding: 15px;
+    min-height: 450px;
+}
+
+.view-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Readout Panels */
+.readout-panel {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    padding: 15px;
+    font-family: monospace;
+}
+
+.readout-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 2px 0;
+}
+
+.readout-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+.readout-value {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Caption Text */
+.caption-text {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    padding: 12px;
+    margin: 15px 0;
+    font-style: italic;
+    color: #6c757d;
+    line-height: 1.4;
+    min-height: 20px;
+}
+
+/* Dataset Info Box */
+.dataset-info-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0;
+    box-sizing: border-box;
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+.dataset-info-box.show {
+    display: block;
+}
+
+.dataset-info-title {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.dataset-info-description {
+    color: #6c757d;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.dataset-info-variables {
+    font-family: monospace;
+    font-size: 13px;
+    color: #495057;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Controls Bottom Grid */
+.controls-bottom {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Equation Labels */
+.equation-label {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Dataset Buttons Section */
+.dataset-buttons-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.dataset-section-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.dataset-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .dataset-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Base Equation Box Styling */
+.equation {
+    background: #f0f8ff;
+    padding: 0 15px 15px 15px;
+    border-radius: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #d0e0f0;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+    position: relative;
+    margin: 10px 0;
+    height: 60px;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+

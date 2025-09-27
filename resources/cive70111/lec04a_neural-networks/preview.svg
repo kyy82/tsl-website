@@ -43,8 +43,4 @@
   <line x1="79" y1="40" x2="96" y2="50" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
 
   <!-- Layer labels -->
-  <text x="20" y="12" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Input</text>
-  <text x="50" y="8" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Hidden</text>
-  <text x="75" y="18" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Hidden</text>
-  <text x="100" y="27" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Output</text>
 </svg>

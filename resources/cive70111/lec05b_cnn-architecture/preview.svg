@@ -18,7 +18,6 @@
     <rect x="4" y="6" width="2" height="2" fill="#333"/>
     <rect x="4" y="10" width="2" height="2" fill="#333"/>
     <rect x="6" y="4" width="2" height="4" fill="#333"/>
-    <text x="6" y="45" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">28×28</text>
   </g>
 
   <!-- Conv1 + Pool1 -->
@@ -26,8 +25,6 @@
     <rect x="0" y="0" width="8" height="8" fill="rgba(52,152,219,0.8)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
     <rect x="0" y="10" width="8" height="8" fill="rgba(52,152,219,0.6)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
     <rect x="0" y="20" width="8" height="8" fill="rgba(52,152,219,0.4)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
-    <text x="4" y="40" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">Conv1</text>
-    <text x="4" y="45" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">14×14×4</text>
   </g>
 
   <!-- Conv2 + Pool2 -->
@@ -37,8 +34,6 @@
     <rect x="0" y="16" width="6" height="6" fill="rgba(46,204,113,0.4)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
     <rect x="8" y="0" width="6" height="6" fill="rgba(46,204,113,0.9)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
     <rect x="8" y="8" width="6" height="6" fill="rgba(46,204,113,0.7)" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
-    <text x="7" y="35" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">Conv2</text>
-    <text x="7" y="40" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">5×5×8</text>
   </g>
 
   <!-- Fully Connected -->
@@ -47,8 +42,6 @@
     <circle cx="3" cy="12" r="2" fill="rgba(231,76,60,0.9)"/>
     <circle cx="3" cy="19" r="2" fill="rgba(231,76,60,0.9)"/>
     <circle cx="3" cy="26" r="2" fill="rgba(231,76,60,0.9)"/>
-    <text x="3" y="38" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">FC</text>
-    <text x="3" y="43" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">128</text>
   </g>
 
   <!-- Output -->
@@ -57,9 +50,6 @@
     <circle cx="3" cy="8" r="1.5" fill="rgba(255,255,255,0.7)"/>
     <circle cx="3" cy="13" r="1.5" fill="rgba(255,255,255,0.5)"/>
     <circle cx="3" cy="18" r="1.5" fill="rgba(255,255,255,0.3)"/>
-    <text x="8" y="8" font-family="Arial, sans-serif" font-size="5" fill="white">0</text>
-    <text x="8" y="13" font-family="Arial, sans-serif" font-size="5" fill="white">1</text>
-    <text x="3" y="30" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">10</text>
   </g>
 
   <!-- Arrows -->

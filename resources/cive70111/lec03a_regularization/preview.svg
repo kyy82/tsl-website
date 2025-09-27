@@ -36,9 +36,7 @@
   <!-- Legend -->
   <g transform="translate(75,15)">
     <line x1="0" y1="0" x2="8" y2="0" stroke="rgba(255,100,100,0.8)" stroke-width="2" stroke-dasharray="3,2"/>
-    <text x="10" y="4" font-family="Arial, sans-serif" font-size="6" fill="white">Overfitted</text>
 
     <line x1="0" y1="8" x2="8" y2="8" stroke="rgba(100,255,100,0.9)" stroke-width="2"/>
-    <text x="10" y="12" font-family="Arial, sans-serif" font-size="6" fill="white">Regularized</text>
   </g>
 </svg>

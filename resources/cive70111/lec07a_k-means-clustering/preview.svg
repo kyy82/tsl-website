@@ -19,7 +19,6 @@
 
     <!-- Centroid -->
     <circle cx="6" cy="6" r="3.5" fill="#e74c3c"/>
-    <text x="6" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 1</text>
   </g>
 
   <!-- Cluster 2 (Blue) -->
@@ -32,7 +31,6 @@
 
     <!-- Centroid -->
     <circle cx="2" cy="4" r="3.5" fill="#3498db"/>
-    <text x="2" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 2</text>
   </g>
 
   <!-- Cluster 3 (Green) -->
@@ -45,14 +43,10 @@
 
     <!-- Centroid -->
     <circle cx="0" cy="7" r="3.5" fill="#2ecc71"/>
-    <text x="0" y="25" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 3</text>
   </g>
 
   <!-- K-means algorithm steps -->
   <g transform="translate(10,55)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">1. Initialize centroids</text>
-    <text x="0" y="8" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">2. Assign points to nearest centroid</text>
-    <text x="0" y="16" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">3. Update centroid positions</text>
   </g>
 
   <!-- Distance lines (faint) -->

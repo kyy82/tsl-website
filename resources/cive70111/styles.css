@@ -518,20 +518,7 @@ input[type="range"]::-moz-range-thumb {
     margin-top: 5px;
 }
 
-.equation {
-    background: #f0f8ff;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--primary-color);
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid #d0e0f0;
-    word-break: break-all;
-    overflow-wrap: break-word;
-    line-height: 1.4;
-}
+/* .equation styling moved to demo-common.css for consistency */
 
 .info {
     margin: 20px 0;
