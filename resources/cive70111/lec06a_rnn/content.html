@@ -8,24 +8,111 @@
     <script>
         window.MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
+                inlineMath: [['$', '$'], ['\\\\(', '\\\\)']]
+            },
+            chtml: {
+                displayAlign: 'center',
+                displayIndent: '0',
+                mtextInheritFont: true,
+                merrorInheritFont: true,
+                mathmlSpacing: false,
+                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
+                exFactor: 0.5,
+                displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+                processEscapes: true,
+                scale: 1.2,
+                minScale: 0.8,
+                matchFontHeight: false,
+                fontURL: '[mathjax]/output/chtml/fonts/woff-v2'
+            },
+            startup: {
+                ready() {
+                    MathJax.startup.defaultReady();
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        mjx-container[jax="CHTML"] {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            line-height: inherit !important;
+                        }
+                        mjx-container[jax="CHTML"][display="true"] {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            },
+            options: {
+                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
+                processHtmlClass: 'tex2jax_process',
+                ignoreHtmlClass: 'tex2jax_ignore',
+                renderActions: {
+                    addMenu: [0, '', '']
+                }
             }
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
 </head>
 <body>
     <div class="iframe-content">
         <div class="container">
 
-        <div class="info">
-            <strong>Instructions:</strong><br>
-            • Select a sequence from the dropdown to see how RNN processes it step-by-step<br>
-            • Adjust weights and bias to see how they affect the hidden state evolution<br>
-            • Try different activation functions to understand their impact<br>
-            • Use "Step Forward" to manually process each timestep and observe the RNN computation<br>
-            • The RNN formula: $h_t = f(W_{input} \cdot x_t + W_{hidden} \cdot h_{t-1} + bias)$
+        <div class="info-tabs">
+            <div class="tab-header">
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" data-tab-title="Introduction">
+                    <strong>Recurrent Neural Networks (RNNs)</strong><br><br>
+                    This interactive demo shows how Recurrent Neural Networks process sequential data step-by-step. RNNs have a "memory" that allows them to use information from previous timesteps when processing current inputs.<br><br>
+                    You'll explore how the hidden state evolves over time and see how different weights and activation functions affect the network's behavior on various sequence patterns.
+                </div>
+
+                <div class="tab-panel" data-tab-title="Theory">
+                    <strong>RNN Architecture Components:</strong><br><br>
+                    • <strong>Hidden State:</strong> $h_t$ - Memory that carries information from previous timesteps<br>
+                    • <strong>Input Weight:</strong> $W_{input}$ - How much the current input affects the hidden state<br>
+                    • <strong>Hidden Weight:</strong> $W_{hidden}$ - How much the previous hidden state influences the current one<br>
+                    • <strong>Bias:</strong> Constant term added to the computation<br>
+                    • <strong>Activation Function:</strong> Non-linear transformation (tanh, ReLU, sigmoid)<br><br>
+                    <strong>RNN Formula:</strong><br>
+                    $h_t = f(W_{input} \cdot x_t + W_{hidden} \cdot h_{t-1} + bias)$<br><br>
+                    Where $f$ is the activation function, $x_t$ is the input at time $t$, and $h_{t-1}$ is the previous hidden state.
+                </div>
+
+                <div class="tab-panel" data-tab-title="Instructions">
+                    <strong>How to Use:</strong><br><br>
+                    • <em>Select a sequence</em> from the dropdown to see different patterns (Fibonacci, linear, etc.)<br>
+                    • <em>Adjust weights</em> to see how they affect hidden state evolution<br>
+                    • <em>Try different activation functions</em> to understand their impact on processing<br>
+                    • <em>Use "Step Forward"</em> to manually process each timestep<br>
+                    • <em>Watch the visualization</em> to see how information flows through the network<br><br>
+                    <strong>Sequence Types:</strong><br>
+                    • <em>Fibonacci:</em> Each number is sum of previous two<br>
+                    • <em>Linear:</em> Simple counting sequence<br>
+                    • <em>Alternating:</em> Pattern that switches between values<br>
+                    • <em>Exponential:</em> Powers of 2 sequence<br>
+                    • <em>Sine Pattern:</em> Smooth oscillating values
+                </div>
+
+                <div class="tab-panel" data-tab-title="Tips">
+                    <strong>Understanding RNN Behavior:</strong><br><br>
+                    • <strong>Input Weight ($W_{input}$):</strong> Higher values make current input more influential<br>
+                    • <strong>Hidden Weight ($W_{hidden}$):</strong> Higher values give more importance to memory<br>
+                    • <strong>Activation Functions:</strong><br>
+                      - <em>Tanh:</em> Outputs between -1 and 1, good for centered data<br>
+                      - <em>ReLU:</em> Only positive outputs, can cause exploding gradients<br>
+                      - <em>Sigmoid:</em> Outputs between 0 and 1, can suffer from vanishing gradients<br><br>
+                    <strong>Observing Patterns:</strong><br>
+                    • <strong>Memory Effect:</strong> See how previous inputs influence current outputs<br>
+                    • <strong>Weight Impact:</strong> Notice how different weights change the sequence processing<br>
+                    • <strong>Activation Choice:</strong> Different functions handle the same sequence differently
+                </div>
+            </div>
         </div>
 
         <div class="demo-area">
@@ -121,10 +208,15 @@
         </div>
     </div>
 
+    <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
     <script>
         // Initialize the demo when the page loads
         window.addEventListener('DOMContentLoaded', function() {
+            // Initialize demo tabs
+            new DemoTabController();
+
+            // Initialize the demo
             new RNNDemo();
         });
     </script>
