@@ -13,6 +13,8 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
+    <link rel="stylesheet" href="../demo-common.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,21 +23,16 @@
 
         <div class="info-tabs">
             <div class="tab-header">
-                <button class="tab-btn active" data-tab="introduction">Introduction</button>
-                <button class="tab-btn" data-tab="instructions">Instructions</button>
-                <button class="tab-btn" data-tab="challenges">Challenges</button>
-                <button class="tab-btn" data-tab="compete">Compete</button>
-                <button class="tab-btn" data-tab="tips">Tips</button>
             </div>
 
             <div class="tab-content">
-                <div class="tab-panel active" id="introduction">
+                <div class="tab-panel active" data-tab-title="Introduction">
                     <strong>Linear Regression</strong><br><br>
                     This interactive demo helps you understand linear regression, one of the fundamental concepts in machine learning and statistics. Linear regression finds the best straight line through data points to model relationships between variables.<br><br>
                     You'll explore how changing the line parameters affects the fit quality, learn about different error metrics, and work with real civil engineering datasets to see linear regression in action.
                 </div>
 
-                <div class="tab-panel" id="instructions">
+                <div class="tab-panel" data-tab-title="Instructions">
                     <strong>How to Use:</strong><br><br>
                     • Adjust the $\alpha$ slider to move the line up or down<br>
                     • Adjust the $\beta$ slider to change the slope of the line<br>
@@ -46,7 +43,7 @@
                     • Toggle visualization options to explore different aspects of the regression
                 </div>
 
-                <div class="tab-panel" id="challenges">
+                <div class="tab-panel" data-tab-title="Challenges">
                     <strong>Test Your Understanding:</strong><br><br
                     • <em>Minimize MSE below 50</em> - Can you find the best fit?<br>
                     • <em>Achieve R² above 0.75</em> - Aim for a strong correlation<br>
@@ -54,21 +51,25 @@
                     • <em>Use "Find Optimal Solution"</em> - Then try to match it manually!
                 </div>
 
-                <div class="tab-panel" id="compete">
+                <div class="tab-panel" data-tab-title="Compete">
                     <strong>Live Competition Mode</strong><br><br>
                     It's showtime! Your goal is to achieve the highest R² score in class using only manual parameter adjustment.<br><br>
+                    <span style="color: darkred; font-weight: bold;">⚠️ Keep this tab active - switching to another tab may temporarily remove you from the leaderboard</span><br><br>
+
+
                     <strong>Competition Rules:</strong><br>
+
                     • Everyone uses the same randomly generated dataset<br>
                     • Only manual slider adjustment allowed - no "Find Optimal Solution" button<br>
                     • Real-time leaderboard shows top performers<br>
-                    • Your anonymous name: <span id="competition-username" style="font-weight: bold; color: #3498db;">Generating...</span><br><br>
-                    <strong>Scoring:</strong><br>
+                    • Your anonymous name: <span id="competition-username" style="font-weight: bold; color: #3498db;">Generating...</span><br>
+                    <br><strong>Scoring:</strong><br>
                     • Primary ranking by R² score (higher is better)<br>
                     • Secondary ranking by MSE (lower is better)<br>
                     • Live updates as you adjust parameters
                 </div>
 
-                <div class="tab-panel" id="tips">
+                <div class="tab-panel" data-tab-title="Tips">
                     <strong>Understanding the Metrics:</strong><br><br>
                     • <strong>R² values:</strong> 0.0-0.3 (poor), 0.3-0.7 (moderate), 0.7+ (good fit)<br>
                     • <strong>MSE vs MAE:</strong> MSE penalizes large errors more heavily than MAE<br>
@@ -173,6 +174,7 @@
 
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <script src="../leaderboard-client.js"></script>
+    <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

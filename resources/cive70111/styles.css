@@ -550,71 +550,7 @@ input[type="range"]::-moz-range-thumb {
     display: block;
 }
 
-.solution-btn {
-    width: 100%;
-    padding: 12px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 25px 0 20px 0;
-    transition: background-color 0.2s;
-}
-
-.solution-btn:hover {
-    background: #218838;
-}
-
-.solution-btn:active {
-    background: #1e7e34;
-}
-
-.plot-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.generate-data-btn,
-.clear-data-btn {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.generate-data-btn {
-    background: #6c757d;
-    color: white;
-}
-
-.generate-data-btn:hover {
-    background: #5a6268;
-}
-
-.generate-data-btn:active {
-    background: #495057;
-}
-
-.clear-data-btn {
-    background: #dc3545;
-    color: white;
-}
-
-.clear-data-btn:hover {
-    background: #c82333;
-}
-
-.clear-data-btn:active {
-    background: #bd2130;
-}
+/* Button styles moved to demo-common.css */
 
 /* Degree description styling for polynomial regularisation demo */
 .degree-description {
@@ -676,13 +612,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Fix solution-btn sizing when used in plot-buttons flexbox */
-.plot-buttons .solution-btn {
-    width: auto;
-    flex: 1;
-    margin: 0;
-    padding: 10px;
-    font-size: 14px;
-}
+/* Button-specific overrides moved to demo-common.css */
 
 /* Locked Content & Week Management Styles */
 .nav-lecture-locked {

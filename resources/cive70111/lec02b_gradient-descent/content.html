@@ -14,31 +14,54 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
+    <link rel="stylesheet" href="../demo-common.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="iframe-content">
         <div class="container">
 
-        <div class="info">
-            <strong>Instructions:</strong><br>
-            • Initial parameters $\alpha$ (intercept) and $\beta$ (slope) are set randomly on each dataset load<br>
-            • Click <em>"Step"</em> to perform exactly one gradient descent iteration<br>
-            • Watch the regression line evolve on the normalized data plot (left)<br>
-            • Track the optimization path on the cost surface (right)<br>
-            • Use <em>"Re-initialize"</em> to generate new random starting parameters<br>
-            • Choose from sample dataset or civil engineering examples (all data is normalized)<br>
+        <div class="info-tabs">
+            <div class="tab-header">
+            </div>
 
-            <strong>Algorithm (Batch Gradient Descent):</strong><br>
-            • <em>Model:</em> $\mu(x) = \alpha + \beta x$ (on normalized data)<br>
-            • <em>Cost:</em> $\mathcal{J}(\alpha,\beta) = \frac{1}{2n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)^2$<br>
-            • <em>Update:</em> Simultaneously compute gradients and update both parameters<br>
-            • <em>Learning rate $\eta$:</em> Controls step size (default 0.1 works well for normalized data)<br><br>
+            <div class="tab-content">
+                <div class="tab-panel active" data-tab-title="Introduction">
+                    <strong>Gradient Descent</strong><br><br>
+                    This interactive demo shows how gradient descent optimizes linear regression parameters. Unlike analytical solutions, gradient descent iteratively improves parameters by following the negative gradient of the cost function.<br><br>
+                    You'll see the algorithm step-by-step, watching how the regression line evolves and tracking the optimization path on the cost surface. This is the foundation for training machine learning models.
+                </div>
 
-            <strong>Visualization:</strong><br>
-            • <em>Left panel:</em> Normalized data points, current regression line, residuals (dashed red lines)<br>
-            • <em>Right panel:</em> Cost surface contours, current position (red dot), optimization path<br>
-            • <em>Readouts:</em> Current iteration, normalized parameters, cost, and gradient norm
+                <div class="tab-panel" data-tab-title="Theory">
+                    <strong>Mathematical Foundation:</strong><br><br>
+                    • <em>Model:</em> $\mu(x) = \alpha + \beta x$ (linear regression on normalized data)<br>
+                    • <em>Cost Function:</em> $\mathcal{J}(\alpha,\beta) = \frac{1}{2n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)^2$<br>
+                    • <em>Gradients:</em> $\frac{\partial \mathcal{J}}{\partial \alpha} = \frac{1}{n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)$<br>
+                    • <em>Updates:</em> $\alpha \leftarrow \alpha - \eta \frac{\partial \mathcal{J}}{\partial \alpha}$, $\beta \leftarrow \beta - \eta \frac{\partial \mathcal{J}}{\partial \beta}$<br>
+                    • <em>Learning Rate $\eta$:</em> Controls step size (too large = overshoot, too small = slow convergence)
+                </div>
+
+                <div class="tab-panel" data-tab-title="Instructions">
+                    <strong>How to Use:</strong><br><br>
+                    • Initial parameters $\alpha$ (intercept) and $\beta$ (slope) are set randomly on each dataset load<br>
+                    • Click <em>"Step"</em> to perform exactly one gradient descent iteration<br>
+                    • Watch the regression line evolve on the normalized data plot (left)<br>
+                    • Track the optimization path on the cost surface (right)<br>
+                    • Use <em>"Re-initialize"</em> to generate new random starting parameters<br>
+                    • Choose from sample dataset or civil engineering examples (all data is normalized)<br>
+                    • Adjust learning rate $\eta$ to see different convergence behaviors
+                </div>
+
+                <div class="tab-panel" data-tab-title="Visual Guide">
+                    <strong>Visual Guide:</strong><br><br>
+                    • <em>Left panel:</em> Normalized data points, current regression line, residuals (dashed red lines showing prediction errors)<br>
+                    • <em>Right panel:</em> Cost surface contours, current position (red dot), optimization path (blue line)<br>
+                    • <em>Readouts:</em> Current iteration, normalized parameters $\alpha$ and $\beta$, cost $\mathcal{J}$, and gradient norm $||\nabla\mathcal{J}||$<br>
+                    • <em>Caption:</em> Shows what happened in each step (gradient computation, parameter updates)<br>
+                    • Watch how the cost decreases and gradient norm approaches zero at convergence
+                </div>
+            </div>
         </div>
 
         <div class="demo-area">
@@ -144,6 +167,7 @@
     </div>
     </div>
 
+    <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -13,21 +13,51 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
+    <link rel="stylesheet" href="../demo-common.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="iframe-content">
         <div class="container">
 
-        <div class="info">
-            <strong>Instructions:</strong><br>
-            • Select which housing features to include in the model using the checkboxes<br>
-            • The model automatically trains when you change feature selection<br>
-            • Compare the actual vs predicted prices in the plot below<br>
-            • Try different feature combinations to see how they affect performance<br><br>
+        <div class="info-tabs">
+            <div class="tab-header">
+            </div>
 
-            <strong>Model:</strong> $\text{Price} = \beta_0 + \beta_1 \times \text{Area} + \beta_2 \times \text{Bedrooms} + \beta_3 \times \text{Bathrooms} + \beta_4 \times \text{Stories}$<br>
-            <strong>Dataset:</strong> 525 training samples, 20 test samples (housing prices normalized for interpretable metrics)
+            <div class="tab-content">
+                <div class="tab-panel active" data-tab-title="Introduction">
+                    <strong>Multi-Linear Regression</strong><br><br>
+                    Multi-linear regression extends simple linear regression to handle multiple input features simultaneously. Instead of predicting from just one variable, we can use several features to make more accurate predictions.<br><br>
+                    In civil engineering, this is particularly valuable for projects like predicting housing costs from multiple property characteristics, estimating structural loads from various design parameters, or forecasting traffic flow from multiple environmental factors.
+                </div>
+
+                <div class="tab-panel" data-tab-title="Instructions">
+                    <strong>How to Use:</strong><br><br>
+                    • Select which housing features to include in the model using the checkboxes<br>
+                    • The model automatically trains when you change feature selection<br>
+                    • Compare the actual vs predicted prices in the plot below<br>
+                    • Try different feature combinations to see how they affect performance<br>
+                    • Observe how performance metrics change with different feature sets
+                </div>
+
+                <div class="tab-panel" data-tab-title="Theory">
+                    <strong>Mathematical Foundation:</strong><br><br>
+                    The multi-linear regression model is:<br>
+                    $\text{Price} = \beta_0 + \beta_1 \times \text{Area} + \beta_2 \times \text{Bedrooms} + \beta_3 \times \text{Bathrooms} + \beta_4 \times \text{Stories}$<br><br>
+                    Where $\beta_0$ is the intercept and $\beta_1, \beta_2, \beta_3, \beta_4$ are coefficients for each feature. The model uses ordinary least squares to minimize the sum of squared residuals.<br><br>
+                    <strong>Dataset:</strong> 525 training samples, 20 test samples (housing prices normalized for interpretable metrics)
+                </div>
+
+                <div class="tab-panel" data-tab-title="Tips">
+                    <strong>Understanding the Results:</strong><br><br>
+                    • <strong>R² values:</strong> 0.0-0.3 (poor), 0.3-0.7 (moderate), 0.7+ (good fit)<br>
+                    • <strong>MSE (Mean Squared Error):</strong> Lower values indicate better fit - measures average squared differences<br>
+                    • <strong>MAE (Mean Absolute Error):</strong> More intuitive than MSE - average absolute prediction error<br>
+                    • <strong>Feature importance:</strong> Notice which features contribute most to prediction accuracy<br>
+                    • <strong>Overfitting vs Underfitting:</strong> Too few features may underfit; all features don't always improve performance
+                </div>
+            </div>
         </div>
 
         <div class="demo-area">
@@ -85,6 +115,7 @@
         </div>
     </div>
 
+    <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
     <script>
         // Initialize the demo when the page loads

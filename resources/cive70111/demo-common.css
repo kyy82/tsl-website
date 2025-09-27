@@ -1,0 +1,342 @@
+/**
+ * Common Demo Button Styles
+ * Unified button styling system with customizable colors
+ */
+
+/* Button Color Variables - easily customizable */
+:root {
+    /* Primary Action Buttons */
+    --btn-primary-bg: #28a745;
+    --btn-primary-hover: #218838;
+    --btn-primary-active: #1e7e34;
+    --btn-primary-text: white;
+
+    /* Secondary Action Buttons */
+    --btn-secondary-bg: #6c757d;
+    --btn-secondary-hover: #5a6268;
+    --btn-secondary-active: #495057;
+    --btn-secondary-text: white;
+
+    /* Danger/Delete Buttons */
+    --btn-danger-bg: #dc3545;
+    --btn-danger-hover: #c82333;
+    --btn-danger-active: #bd2130;
+    --btn-danger-text: white;
+
+    /* Success/Step Buttons */
+    --btn-success-bg: #4caf50;
+    --btn-success-hover: #45a049;
+    --btn-success-active: #3d8b40;
+    --btn-success-text: white;
+
+    /* Warning Buttons */
+    --btn-warning-bg: #ffc107;
+    --btn-warning-hover: #e0a800;
+    --btn-warning-active: #d39e00;
+    --btn-warning-text: #212529;
+
+    /* Info Buttons */
+    --btn-info-bg: #17a2b8;
+    --btn-info-hover: #138496;
+    --btn-info-active: #117a8b;
+    --btn-info-text: white;
+
+    /* Disabled State */
+    --btn-disabled-bg: #cccccc;
+    --btn-disabled-text: #666666;
+
+    /* Button Base Styles */
+    --btn-border-radius: 0;
+    --btn-font-weight: bold;
+    --btn-transition: all 0.2s ease;
+    --btn-border: none;
+}
+
+/* Base Button Style */
+.btn,
+button:not(.tab-btn):not(.network-node) {
+    padding: 10px 16px;
+    border: var(--btn-border);
+    border-radius: var(--btn-border-radius);
+    font-weight: var(--btn-font-weight);
+    cursor: pointer;
+    transition: var(--btn-transition);
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1.2;
+    min-width: auto;
+}
+
+/* Button Variants */
+.btn-primary, .solution-btn {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.btn-primary:hover, .solution-btn:hover {
+    background: var(--btn-primary-hover);
+}
+
+.btn-primary:active, .solution-btn:active {
+    background: var(--btn-primary-active);
+}
+
+.btn-secondary, .generate-data-btn {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+.btn-secondary:hover, .generate-data-btn:hover {
+    background: var(--btn-secondary-hover);
+}
+
+.btn-secondary:active, .generate-data-btn:active {
+    background: var(--btn-secondary-active);
+}
+
+.btn-danger, .clear-data-btn, .reset-btn {
+    background: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+}
+
+.btn-danger:hover, .clear-data-btn:hover, .reset-btn:hover {
+    background: var(--btn-danger-hover);
+}
+
+.btn-danger:active, .clear-data-btn:active, .reset-btn:active {
+    background: var(--btn-danger-active);
+}
+
+.btn-success, .step-btn {
+    background: var(--btn-success-bg);
+    color: var(--btn-success-text);
+}
+
+.btn-success:hover, .step-btn:hover:not(:disabled) {
+    background: var(--btn-success-hover);
+}
+
+.btn-success:active, .step-btn:active {
+    background: var(--btn-success-active);
+}
+
+.btn-warning {
+    background: var(--btn-warning-bg);
+    color: var(--btn-warning-text);
+}
+
+.btn-warning:hover {
+    background: var(--btn-warning-hover);
+}
+
+.btn-warning:active {
+    background: var(--btn-warning-active);
+}
+
+.btn-info {
+    background: var(--btn-info-bg);
+    color: var(--btn-info-text);
+}
+
+.btn-info:hover {
+    background: var(--btn-info-hover);
+}
+
+.btn-info:active {
+    background: var(--btn-info-active);
+}
+
+/* Disabled State */
+.btn:disabled,
+.step-btn:disabled,
+button:disabled {
+    background: var(--btn-disabled-bg) !important;
+    color: var(--btn-disabled-text) !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+/* Button Sizes */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.btn-xl {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* Button Groups */
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+/* Full Width Buttons */
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+/* Special Button Containers */
+.plot-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.plot-buttons .btn {
+    flex: 1;
+}
+
+.step-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Dataset Buttons - Special styling for themed buttons */
+.dataset-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--btn-border-radius);
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    color: white;
+}
+
+.dataset-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Themed dataset button variants */
+.structures-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.structures-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+}
+
+.geotech-btn {
+    background: linear-gradient(135deg, #8e44ad, #7d3c98);
+}
+
+.geotech-btn:hover {
+    background: linear-gradient(135deg, #7d3c98, #6c3483);
+}
+
+.transport-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.transport-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #2471a3);
+}
+
+.environment-btn {
+    background: linear-gradient(135deg, #27ae60, #229954);
+}
+
+.environment-btn:hover {
+    background: linear-gradient(135deg, #229954, #1e8449);
+}
+
+/* Neural Network specific buttons */
+.add-layer-btn, .remove-layer-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: var(--btn-border-radius);
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: white;
+}
+
+.add-layer-btn {
+    background: var(--btn-success-bg);
+    color: var(--btn-success-text);
+    border-color: var(--btn-success-bg);
+}
+
+.add-layer-btn:disabled {
+    background: var(--btn-disabled-bg);
+    color: var(--btn-disabled-text);
+    border-color: var(--btn-disabled-bg);
+    cursor: not-allowed;
+}
+
+.remove-layer-btn {
+    background: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+    border-color: var(--btn-danger-bg);
+}
+
+.remove-layer-btn:disabled {
+    background: var(--btn-disabled-bg);
+    color: var(--btn-disabled-text);
+    border-color: var(--btn-disabled-bg);
+    cursor: not-allowed;
+}
+
+/* Backpropagation specific buttons */
+.step-button {
+    padding: 8px 16px;
+    background: var(--btn-success-bg);
+    color: var(--btn-success-text);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--btn-transition);
+}
+
+.step-button:hover {
+    background: var(--btn-success-hover);
+}
+
+.step-button:disabled {
+    background: var(--btn-disabled-bg);
+    color: var(--btn-disabled-text);
+    cursor: not-allowed;
+}
+
+.reset-button {
+    padding: 8px 16px;
+    background: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--btn-transition);
+}
+
+.reset-button:hover {
+    background: var(--btn-danger-hover);
+}
+
+/* Demo-specific color overrides can be done by redefining CSS variables */
+/*
+Example: To customize colors for a specific demo, add this to the demo's style.css:
+
+:root {
+    --btn-primary-bg: #your-custom-color;
+    --btn-primary-hover: #your-custom-hover-color;
+    --btn-primary-active: #your-custom-active-color;
+}
+*/

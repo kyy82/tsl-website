@@ -1,7 +1,7 @@
         .attention-container {
             background: white;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 0;
             padding: 20px;
             margin-bottom: 20px;
             min-height: 300px;
@@ -28,7 +28,7 @@
             align-items: center;
             background: #f0f8ff;
             border: 2px solid #4a90e2;
-            border-radius: 8px;
+            border-radius: 0;
             padding: 10px;
             min-width: 80px;
         }
@@ -89,7 +89,7 @@
             font-weight: bold;
             margin-bottom: 10px;
             padding: 5px;
-            border-radius: 4px;
+            border-radius: 0;
             color: white;
         }
 
@@ -99,7 +99,7 @@
 
         .matrix-display {
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0;
             background: white;
             min-height: 100px;
             display: flex;
@@ -112,7 +112,7 @@
         .attention-heatmap {
             background: white;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 0;
             padding: 20px;
             text-align: center;
         }
@@ -127,7 +127,7 @@
         .step {
             padding: 8px 16px;
             border: 2px solid #ddd;
-            border-radius: 20px;
+            border-radius: 0;
             background: white;
             font-size: 12px;
             font-weight: bold;
@@ -149,7 +149,7 @@
         .math-explanation {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
-            border-radius: 6px;
+            border-radius: 0;
             padding: 15px;
             margin: 10px 0;
             font-size: 14px;
@@ -164,7 +164,7 @@
 
         .weight-matrix-controls {
             background: #f8f9fa;
-            border-radius: 6px;
+            border-radius: 0;
             padding: 15px;
             margin: 10px 0;
         }

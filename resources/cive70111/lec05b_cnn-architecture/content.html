@@ -13,6 +13,7 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../demo-common.css">
 </head>
 <body>
     <div class="iframe-content">
@@ -51,7 +52,7 @@
                     <div style="display: flex; gap: 20px; align-items: flex-start;">
                         <div>
                             <h3>Input Image</h3>
-                            <canvas id="input-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                            <canvas id="input-canvas" width="200" height="200" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                             <div id="prediction-display" style="margin-top: 10px; font-weight: bold; text-align: center;">
                                 Prediction: <span id="predicted-digit">-</span>
                             </div>
@@ -59,7 +60,7 @@
 
                         <div>
                             <h3>CNN Architecture</h3>
-                            <canvas id="architecture-canvas" width="500" height="200" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                            <canvas id="architecture-canvas" width="500" height="200" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                         </div>
                     </div>
 
@@ -73,22 +74,22 @@
                                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
                                     <div>
                                         <h4>After Conv1 (4 filters)</h4>
-                                        <canvas id="conv1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                        <canvas id="conv1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                                     </div>
                                     <div>
                                         <h4>After Pool1</h4>
-                                        <canvas id="pool1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                        <canvas id="pool1-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                                     </div>
                                 </div>
                                 <!-- Row 2: Conv2 and Pool2 -->
                                 <div style="display: flex; gap: 20px; align-items: flex-start;">
                                     <div>
                                         <h4>After Conv2 (8 filters)</h4>
-                                        <canvas id="conv2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                        <canvas id="conv2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                                     </div>
                                     <div>
                                         <h4>After Pool2</h4>
-                                        <canvas id="pool2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 8px;"></canvas>
+                                        <canvas id="pool2-canvas" width="200" height="150" style="border: 2px solid #ddd; border-radius: 0;"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +97,7 @@
                             <!-- FC1 Layer -->
                             <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
                                 <h4>FC1 (128 units)</h4>
-                                <canvas id="fc1-canvas" width="40" height="320" style="border: 2px solid #ddd; border-radius: 8px; image-rendering: pixelated;"></canvas>
+                                <canvas id="fc1-canvas" width="40" height="320" style="border: 2px solid #ddd; border-radius: 0; image-rendering: pixelated;"></canvas>
                             </div>
 
                             <!-- Output Layer -->
@@ -125,16 +126,16 @@
                 <div class="control-group">
                     <label>Sample Digit:</label>
                     <div id="digit-numpad" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; max-width: 150px;">
-                        <button class="digit-btn" data-digit="1" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">1</button>
-                        <button class="digit-btn" data-digit="2" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">2</button>
-                        <button class="digit-btn" data-digit="3" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">3</button>
-                        <button class="digit-btn" data-digit="4" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">4</button>
-                        <button class="digit-btn" data-digit="5" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">5</button>
-                        <button class="digit-btn" data-digit="6" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">6</button>
-                        <button class="digit-btn" data-digit="7" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">7</button>
-                        <button class="digit-btn" data-digit="8" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">8</button>
-                        <button class="digit-btn" data-digit="9" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px;">9</button>
-                        <button class="digit-btn" data-digit="0" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 4px; grid-column: span 3;">0</button>
+                        <button class="digit-btn" data-digit="1" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">1</button>
+                        <button class="digit-btn" data-digit="2" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">2</button>
+                        <button class="digit-btn" data-digit="3" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">3</button>
+                        <button class="digit-btn" data-digit="4" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">4</button>
+                        <button class="digit-btn" data-digit="5" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">5</button>
+                        <button class="digit-btn" data-digit="6" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">6</button>
+                        <button class="digit-btn" data-digit="7" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">7</button>
+                        <button class="digit-btn" data-digit="8" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">8</button>
+                        <button class="digit-btn" data-digit="9" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0;">9</button>
+                        <button class="digit-btn" data-digit="0" style="padding: 10px; font-size: 16px; border: 2px solid #ddd; background: white; cursor: pointer; border-radius: 0; grid-column: span 3;">0</button>
                     </div>
                 </div>
 
@@ -165,6 +166,7 @@
         </div>
     </div>
 
+    <script src="../scripts/demotab.js"></script>
     <script src="cnn-inference.js"></script>
     <script src="script.js"></script>
 </body>

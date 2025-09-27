@@ -14,20 +14,55 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
+    <link rel="stylesheet" href="../demo-common.css">
 </head>
 <body>
     <div class="iframe-content">
         <div class="container">
 
-        <div class="info">
-            <strong>Instructions:</strong><br>
-            • Adjust the polynomial degree slider to control model complexity<br>
-            • Use L1 regularisation (Lasso) to encourage sparse coefficients<br>
-            • Use L2 regularisation (Ridge) to shrink coefficient magnitudes<br>
-            • Click anywhere on the plot to add new data points<br>
-            • Use <em>"Generate New Data"</em> to create 5 random points<br>
-            • Use <em>"Clear All Data"</em> to remove all points<br>
-            • Observe how regularisation helps prevent overfitting
+        <div class="info-tabs">
+            <div class="tab-header">
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" data-tab-title="Introduction">
+                    <strong>Regularization</strong><br><br>
+                    Regularization is a crucial technique to prevent overfitting in machine learning models. When models become too complex, they can memorize training data rather than learning generalizable patterns.<br><br>
+                    In civil engineering applications, regularization helps create more robust models for tasks like predicting structural responses, material behavior, or system performance under varying conditions.
+                </div>
+
+                <div class="tab-panel" data-tab-title="Instructions">
+                    <strong>How to Use:</strong><br><br>
+                    • Adjust the polynomial degree slider to control model complexity<br>
+                    • Use L1 regularization (Lasso) to encourage sparse coefficients<br>
+                    • Use L2 regularization (Ridge) to shrink coefficient magnitudes<br>
+                    • Click anywhere on the plot to add new data points<br>
+                    • Use <em>"Generate New Data"</em> to create 5 random points<br>
+                    • Use <em>"Clear All Data"</em> to remove all points<br>
+                    • Observe how regularization helps prevent overfitting
+                </div>
+
+                <div class="tab-panel" data-tab-title="Theory">
+                    <strong>Mathematical Foundation:</strong><br><br>
+                    <strong>L1 Regularization (Lasso):</strong> Adds $\lambda_1 \sum |\beta_i|$ to the loss function<br>
+                    • Encourages sparse solutions (some coefficients become exactly zero)<br>
+                    • Useful for feature selection<br><br>
+                    <strong>L2 Regularization (Ridge):</strong> Adds $\lambda_2 \sum \beta_i^2$ to the loss function<br>
+                    • Shrinks coefficients towards zero but doesn't make them exactly zero<br>
+                    • Helps with multicollinearity<br><br>
+                    The regularized loss becomes: $\text{Loss} = \text{MSE} + \lambda_1 \sum |\beta_i| + \lambda_2 \sum \beta_i^2$
+                </div>
+
+                <div class="tab-panel" data-tab-title="Tips">
+                    <strong>Understanding Regularization Effects:</strong><br><br>
+                    • <strong>High polynomial degree:</strong> Creates complex curves that may overfit without regularization<br>
+                    • <strong>L1 regularization:</strong> Watch coefficients become exactly zero - automatic feature selection<br>
+                    • <strong>L2 regularization:</strong> Smooths the curve and reduces oscillations<br>
+                    • <strong>Bias-variance tradeoff:</strong> Higher regularization increases bias but reduces variance<br>
+                    • <strong>Optimal balance:</strong> Find the sweet spot between underfitting and overfitting
+                </div>
+            </div>
         </div>
 
         <div class="equation" id="equation" style="margin: 20px 0;">
@@ -84,6 +119,7 @@
     </div>
     </div>
 
+    <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
