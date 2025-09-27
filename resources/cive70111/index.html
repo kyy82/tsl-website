@@ -105,15 +105,29 @@
             let contentPath = 'gallery.html';
             let title = 'CIVE70111 Machine Learning Playground';
             let navId = 'nav-home';
+            let tabHash = '';
+
+            // Check if hash contains pipe separator for tab routing
+            let demoHash = hash;
+            if (hash.includes('|')) {
+                const parts = hash.split('|');
+                demoHash = parts[0];
+                tabHash = parts[1];
+            }
 
             // Get hash map from demo loader
             if (window.demoLoader) {
                 const hashMap = window.demoLoader.getHashMap();
 
-                if (hash && hashMap[hash]) {
-                    contentPath = hashMap[hash].path;
-                    title = hashMap[hash].title;
-                    navId = hashMap[hash].navId;
+                if (demoHash && hashMap[demoHash]) {
+                    contentPath = hashMap[demoHash].path;
+                    title = hashMap[demoHash].title;
+                    navId = hashMap[demoHash].navId;
+
+                    // If there's a tab hash, append it to the content path
+                    if (tabHash) {
+                        contentPath += '#' + tabHash;
+                    }
                 }
             }
 

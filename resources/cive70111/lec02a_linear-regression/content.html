@@ -13,146 +13,95 @@
         };
     </script>
     <link rel="stylesheet" href="../styles.css">
-    <style>
-        .dataset-buttons-section {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-            width: 600px;
-        }
-
-        .dataset-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .dataset-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: white;
-        }
-
-        .dataset-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        .structures-btn {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-        }
-
-        .geotech-btn {
-            background: linear-gradient(135deg, #8e44ad, #7d3c98);
-        }
-
-        .transport-btn {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-        }
-
-        .environment-btn {
-            background: linear-gradient(135deg, #27ae60, #229954);
-        }
-
-        .structures-btn:hover {
-            background: linear-gradient(135deg, #c0392b, #a93226);
-        }
-
-        .geotech-btn:hover {
-            background: linear-gradient(135deg, #7d3c98, #6c3483);
-        }
-
-        .transport-btn:hover {
-            background: linear-gradient(135deg, #2980b9, #2471a3);
-        }
-
-        .environment-btn:hover {
-            background: linear-gradient(135deg, #229954, #1e8449);
-        }
-
-        @media (max-width: 600px) {
-            .dataset-buttons {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .dataset-info-box {
-            margin-top: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            width: 600px;
-            box-sizing: border-box;
-            display: none;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .dataset-info-box.show {
-            display: block;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .dataset-info-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .dataset-info-description {
-            color: #555;
-            font-size: 13px;
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
-
-        .dataset-info-variables {
-            color: #666;
-            font-size: 12px;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="iframe-content">
         <div class="container">
 
-        <div class="info">
-            <strong>Instructions:</strong><br>
-            • Adjust the $\alpha$ slider to move the line up or down<br>
-            • Adjust the $\beta$ slider to change the slope of the line<br>
-            • Click anywhere on the plot to add new data points<br>
-            • Use <em>"Generate New Data"</em> to create 10 random points<br>
-            • Use <em>"Clear All Data"</em> to remove all points<br>
-            • Click on one of the datasets in <em>"Load Example Datasets"</em> to see a real-life example of linear regression
+        <div class="info-tabs">
+            <div class="tab-header">
+                <button class="tab-btn active" data-tab="introduction">Introduction</button>
+                <button class="tab-btn" data-tab="instructions">Instructions</button>
+                <button class="tab-btn" data-tab="challenges">Challenges</button>
+                <button class="tab-btn" data-tab="compete">Compete</button>
+                <button class="tab-btn" data-tab="tips">Tips</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" id="introduction">
+                    <strong>Linear Regression</strong><br><br>
+                    This interactive demo helps you understand linear regression, one of the fundamental concepts in machine learning and statistics. Linear regression finds the best straight line through data points to model relationships between variables.<br><br>
+                    You'll explore how changing the line parameters affects the fit quality, learn about different error metrics, and work with real civil engineering datasets to see linear regression in action.
+                </div>
+
+                <div class="tab-panel" id="instructions">
+                    <strong>How to Use:</strong><br><br>
+                    • Adjust the $\alpha$ slider to move the line up or down<br>
+                    • Adjust the $\beta$ slider to change the slope of the line<br>
+                    • Click anywhere on the plot to add new data points<br>
+                    • Use <em>"Generate New Data"</em> to create 10 random points<br>
+                    • Use <em>"Clear All Data"</em> to remove all points<br>
+                    • Click on one of the datasets in <em>"Load Example Datasets"</em> to see real-life examples<br>
+                    • Toggle visualization options to explore different aspects of the regression
+                </div>
+
+                <div class="tab-panel" id="challenges">
+                    <strong>Test Your Understanding:</strong><br><br
+                    • <em>Minimize MSE below 50</em> - Can you find the best fit?<br>
+                    • <em>Achieve R² above 0.75</em> - Aim for a strong correlation<br>
+                    • <em>Compare different datasets</em> - Which shows the strongest linear relationship?<br>
+                    • <em>Use "Find Optimal Solution"</em> - Then try to match it manually!
+                </div>
+
+                <div class="tab-panel" id="compete">
+                    <strong>Live Competition Mode</strong><br><br>
+                    It's showtime! Your goal is to achieve the highest R² score in class using only manual parameter adjustment.<br><br>
+                    <strong>Competition Rules:</strong><br>
+                    • Everyone uses the same randomly generated dataset<br>
+                    • Only manual slider adjustment allowed - no "Find Optimal Solution" button<br>
+                    • Real-time leaderboard shows top performers<br>
+                    • Your anonymous name: <span id="competition-username" style="font-weight: bold; color: #3498db;">Generating...</span><br><br>
+                    <strong>Scoring:</strong><br>
+                    • Primary ranking by R² score (higher is better)<br>
+                    • Secondary ranking by MSE (lower is better)<br>
+                    • Live updates as you adjust parameters
+                </div>
+
+                <div class="tab-panel" id="tips">
+                    <strong>Understanding the Metrics:</strong><br><br>
+                    • <strong>R² values:</strong> 0.0-0.3 (poor), 0.3-0.7 (moderate), 0.7+ (good fit)<br>
+                    • <strong>MSE vs MAE:</strong> MSE penalizes large errors more heavily than MAE<br>
+                    • <strong>Confidence intervals:</strong> Show uncertainty in predictions (wider = less certain)<br>
+                    • <strong>α (alpha):</strong> Y-intercept - where the line crosses the Y-axis<br>
+                    • <strong>β (beta):</strong> Slope - how much Y changes for each unit of X
+                </div>
+            </div>
         </div>
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="plot" width="600" height="400"></canvas>
+                <canvas id="plot" width="600" height="455"></canvas>
                 <div class="plot-buttons">
                     <button class="generate-data-btn" id="generate-data-btn">Generate Random Data</button>
                     <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
                 </div>
 
+                <!-- Competition Leaderboard Panel - positioned immediately below graph -->
+                <div class="leaderboard-panel" id="leaderboard-panel" style="display: none;">
+                    <div class="panel-title">🏆 Live Competition Leaderboard - Top 10</div>
+                    <div class="leaderboard-status" id="leaderboard-status">
+                        <span class="status-indicator" id="status-dot"></span>
+                        <span id="status-text">Connecting...</span>
+                    </div>
+                    <div class="leaderboard-content" id="leaderboard-content">
+                        <div class="your-position" id="your-position"></div>
+                        <div class="leaderboard-list" id="leaderboard-list"></div>
+                    </div>
+                </div>
+
                 <div class="dataset-buttons-section">
-                    <label style="font-weight: bold; font-size: 14px; color: #333; margin-bottom: 10px; display: block;">Load Example Datasets:</label>
+                    <label class="dataset-section-label">Sample Datasets:</label>
                     <div class="dataset-buttons">
                         <button class="dataset-btn structures-btn" id="structures-btn">Structures</button>
                         <button class="dataset-btn geotech-btn" id="geotech-btn">Geotechnics</button>
@@ -189,20 +138,41 @@
                     y = 1.0x + 0
                 </div>
 
-                <div class="equation" id="mse" style="background: #f3e5f5; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 15px;">
+                <div class="equation mae-equation" id="mae">
+                    MAE = 0.0
+                </div>
+
+                <div class="equation mse-equation" id="mse">
                     MSE = 0.0
                 </div>
 
-                <div class="equation" id="mae" style="background: #e8f5e8; color: #2e7d32; border-left-color: #4caf50; margin-top: 10px;">
-                    MAE = 0.0
+                <div class="equation r2-equation" id="r2">
+                    R² = 0.0
+                </div>
+
+                <div class="visualization-panel">
+                    <div class="panel-title">Visualization Options</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="show-squares" class="checkbox-input">
+                            Show Squared Errors
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="show-confidence" class="checkbox-input">
+                            Show Confidence Intervals
+                        </label>
+                    </div>
                 </div>
 
                 <button class="solution-btn" id="solution-btn">Find Optimal Solution</button>
             </div>
         </div>
+
     </div>
     </div>
 
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    <script src="../leaderboard-client.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
