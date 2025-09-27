@@ -1,0 +1,46 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backpropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8e44ad;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3498db;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="120" height="80" fill="url(#backpropGradient)"/>
+
+  <!-- Neural network structure simplified for backprop -->
+  <!-- Input layer -->
+  <circle cx="25" cy="30" r="4" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="25" cy="50" r="4" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Hidden layer -->
+  <circle cx="60" cy="25" r="4" fill="rgba(52,152,219,0.9)"/>
+  <circle cx="60" cy="40" r="4" fill="rgba(52,152,219,0.9)"/>
+  <circle cx="60" cy="55" r="4" fill="rgba(52,152,219,0.9)"/>
+
+  <!-- Output layer -->
+  <circle cx="95" cy="40" r="4" fill="rgba(231,76,60,0.9)"/>
+
+  <!-- Forward connections (thinner) -->
+  <line x1="29" y1="30" x2="56" y2="25" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <line x1="29" y1="50" x2="56" y2="55" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <line x1="64" y1="40" x2="91" y2="40" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+
+  <!-- Backward gradients (thicker, colored) -->
+  <line x1="91" y1="40" x2="64" y2="40" stroke="rgba(255,100,100,0.8)" stroke-width="2"/>
+  <line x1="56" y1="25" x2="29" y2="30" stroke="rgba(255,150,100,0.7)" stroke-width="2"/>
+  <line x1="56" y1="55" x2="29" y2="50" stroke="rgba(255,150,100,0.7)" stroke-width="2"/>
+
+  <!-- Gradient flow arrows -->
+  <polygon points="85,38 85,42 88,40" fill="rgba(255,100,100,0.8)"/>
+  <polygon points="50,23 50,27 53,25" fill="rgba(255,150,100,0.7)"/>
+  <polygon points="50,53 50,57 53,55" fill="rgba(255,150,100,0.7)"/>
+
+  <!-- Error/loss indicator at output -->
+  <text x="95" y="30" font-family="Arial, sans-serif" font-size="6" fill="white" text-anchor="middle">Error</text>
+
+  <!-- Gradient labels -->
+  <text x="78" y="35" font-family="Arial, sans-serif" font-size="5" fill="rgba(255,100,100,1)">∇w</text>
+  <text x="42" y="20" font-family="Arial, sans-serif" font-size="5" fill="rgba(255,150,100,1)">∇w</text>
+</svg>

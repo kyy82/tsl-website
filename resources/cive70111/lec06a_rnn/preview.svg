@@ -1,0 +1,67 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rnnGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8e44ad;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="120" height="80" fill="url(#rnnGradient)"/>
+
+  <!-- Time steps -->
+  <g transform="translate(15,30)">
+    <!-- t=0 -->
+    <rect x="0" y="0" width="12" height="8" fill="rgba(52,152,219,0.8)" rx="2"/>
+    <circle cx="6" cy="4" r="2" fill="rgba(255,255,255,0.9)"/>
+    <text x="6" y="15" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">t=0</text>
+    <text x="6" y="-5" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">x₀</text>
+
+    <!-- Hidden state h₀ -->
+    <rect x="3" y="-15" width="6" height="6" fill="rgba(46,204,113,0.8)" rx="1"/>
+    <text x="6" y="-20" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">h₀</text>
+  </g>
+
+  <!-- Arrow to t=1 -->
+  <polygon points="35,34 43,34 41,32 41,36" fill="rgba(255,255,255,0.7)"/>
+  <path d="M30,20 Q35,15 40,20" stroke="rgba(46,204,113,0.8)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <g transform="translate(45,30)">
+    <!-- t=1 -->
+    <rect x="0" y="0" width="12" height="8" fill="rgba(52,152,219,0.8)" rx="2"/>
+    <circle cx="6" cy="4" r="2" fill="rgba(255,255,255,0.9)"/>
+    <text x="6" y="15" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">t=1</text>
+    <text x="6" y="-5" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">x₁</text>
+
+    <!-- Hidden state h₁ -->
+    <rect x="3" y="-15" width="6" height="6" fill="rgba(46,204,113,0.8)" rx="1"/>
+    <text x="6" y="-20" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">h₁</text>
+  </g>
+
+  <!-- Arrow to t=2 -->
+  <polygon points="65,34 73,34 71,32 71,36" fill="rgba(255,255,255,0.7)"/>
+  <path d="M60,20 Q65,15 70,20" stroke="rgba(46,204,113,0.8)" stroke-width="2" fill="none"/>
+
+  <g transform="translate(75,30)">
+    <!-- t=2 -->
+    <rect x="0" y="0" width="12" height="8" fill="rgba(52,152,219,0.8)" rx="2"/>
+    <circle cx="6" cy="4" r="2" fill="rgba(255,255,255,0.9)"/>
+    <text x="6" y="15" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">t=2</text>
+    <text x="6" y="-5" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">x₂</text>
+
+    <!-- Hidden state h₂ -->
+    <rect x="3" y="-15" width="6" height="6" fill="rgba(46,204,113,0.8)" rx="1"/>
+    <text x="6" y="-20" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">h₂</text>
+
+    <!-- Output -->
+    <rect x="3" y="12" width="6" height="6" fill="rgba(231,76,60,0.8)" rx="1"/>
+    <text x="6" y="25" font-family="Arial, sans-serif" font-size="4" fill="white" text-anchor="middle">y₂</text>
+  </g>
+
+  <!-- Recurrent connection arrows -->
+  <path d="M27,15 Q35,10 43,15" stroke="rgba(46,204,113,0.6)" stroke-width="1.5" fill="none"/>
+  <path d="M57,15 Q65,10 73,15" stroke="rgba(46,204,113,0.6)" stroke-width="1.5" fill="none"/>
+
+  <!-- "..." indicator -->
+  <text x="95" y="35" font-family="Arial, sans-serif" font-size="8" fill="white">...</text>
+</svg>

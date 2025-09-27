@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .dataset-buttons-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            width: 600px;
+        }
+
+        .dataset-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .dataset-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+        }
+
+        .dataset-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .structures-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .geotech-btn {
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+        }
+
+        .transport-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .environment-btn {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+
+        .structures-btn:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+        }
+
+        .geotech-btn:hover {
+            background: linear-gradient(135deg, #7d3c98, #6c3483);
+        }
+
+        .transport-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #2471a3);
+        }
+
+        .environment-btn:hover {
+            background: linear-gradient(135deg, #229954, #1e8449);
+        }
+
+        @media (max-width: 600px) {
+            .dataset-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dataset-info-box {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            width: 600px;
+            box-sizing: border-box;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .dataset-info-box.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dataset-info-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .dataset-info-description {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .dataset-info-variables {
+            color: #666;
+            font-size: 12px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Adjust the $\alpha$ slider to move the line up or down<br>
+            • Adjust the $\beta$ slider to change the slope of the line<br>
+            • Click anywhere on the plot to add new data points<br>
+            • Use <em>"Generate New Data"</em> to create 10 random points<br>
+            • Use <em>"Clear All Data"</em> to remove all points<br>
+            • Click on one of the datasets in <em>"Load Example Datasets"</em> to see a real-life example of linear regression
+        </div>
+
+        <div class="demo-area">
+            <div class="plot-container">
+                <canvas id="plot" width="600" height="400"></canvas>
+                <div class="plot-buttons">
+                    <button class="generate-data-btn" id="generate-data-btn">Generate Random Data</button>
+                    <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
+                </div>
+
+                <div class="dataset-buttons-section">
+                    <label style="font-weight: bold; font-size: 14px; color: #333; margin-bottom: 10px; display: block;">Load Example Datasets:</label>
+                    <div class="dataset-buttons">
+                        <button class="dataset-btn structures-btn" id="structures-btn">Structures</button>
+                        <button class="dataset-btn geotech-btn" id="geotech-btn">Geotechnics</button>
+                        <button class="dataset-btn transport-btn" id="transport-btn">Transport</button>
+                        <button class="dataset-btn environment-btn" id="environment-btn">Environment</button>
+                    </div>
+
+                    <div class="dataset-info-box" id="dataset-info-box">
+                        <div class="dataset-info-title" id="dataset-info-title"></div>
+                        <div class="dataset-info-description" id="dataset-info-description"></div>
+                        <div class="dataset-info-variables" id="dataset-info-variables"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="alpha">$\alpha$ (Intercept)</label>
+                    <div class="slider-container">
+                        <input type="range" id="alpha" min="-100" max="200" step="1" value="0">
+                        <div class="value-display" id="alpha-value">0</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="beta">$\beta$ (Gradient/Slope)</label>
+                    <div class="slider-container">
+                        <input type="range" id="beta" min="-10" max="30" step="0.1" value="1">
+                        <div class="value-display" id="beta-value">1.0</div>
+                    </div>
+                </div>
+
+                <div class="equation" id="equation">
+                    y = 1.0x + 0
+                </div>
+
+                <div class="equation" id="mse" style="background: #f3e5f5; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 15px;">
+                    MSE = 0.0
+                </div>
+
+                <div class="equation" id="mae" style="background: #e8f5e8; color: #2e7d32; border-left-color: #4caf50; margin-top: 10px;">
+                    MAE = 0.0
+                </div>
+
+                <button class="solution-btn" id="solution-btn">Find Optimal Solution</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

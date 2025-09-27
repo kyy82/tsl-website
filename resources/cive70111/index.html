@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVE70111 Machine Learning Playground</title>
+    <link rel="stylesheet" href="styles.css?v=15">
+    <script src="demo-loader.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="https://transport-systems.imperial.ac.uk" target="_blank" style="display: flex; align-items: center;">
+                <img src="imperial-tsl-logo.svg" alt="Imperial TSL Logo" class="logo">
+            </a>
+            <span style="display: inline-block; width: 2px; height: 30px; background-color: #ddd; margin: 0 -8px;"></span>
+            <div class="title">
+                <a href="#" class="title-main" style="color: inherit; text-decoration: none;" onclick="loadContent('gallery.html', 'CIVE70111 Machine Learning Playground')">CIVE70111 Machine Learning Playground</a>
+                <span class="title-separator" id="title-separator" style="display: none;">|</span>
+                <span class="title-sub" id="title-sub" style="display: none;"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="nav-container">
+            <div class="nav-item active nav-home-item" id="nav-home">
+                <a href="#" onclick="loadContent('gallery.html', 'CIVE70111 Machine Learning Playground', 'nav-home')">Home</a>
+            </div>
+            <!-- Dynamic content will be generated here by demo-loader.js -->
+        </div>
+        <div class="sidebar-footer">
+            <a href="https://www.imperial.ac.uk/civil-engineering/" target="_blank" style="text-decoration: none; color: inherit;">
+                <p>Department of Civil &amp; <br> Environmental Engineering<br><strong>Imperial College London</strong></p>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <iframe id="content-frame" src="gallery.html" style="width: 100%; height: calc(100vh - 80px); border: none; overflow: auto;"></iframe>
+    </div>
+
+    <script>
+        function loadContent(contentPath, title, navId, pushState = true) {
+            // Update the iframe source
+            const iframe = document.getElementById('content-frame');
+            iframe.src = contentPath;
+
+            // Update the page title
+            if (title === 'CIVE70111 Machine Learning Playground') {
+                document.title = 'CIVE70111 Machine Learning Playground';
+                document.getElementById('title-separator').style.display = 'none';
+                document.getElementById('title-sub').style.display = 'none';
+            } else {
+                document.title = title + ' - CIVE70111 ML Playground';
+                document.getElementById('title-separator').style.display = 'inline';
+                document.getElementById('title-sub').style.display = 'inline';
+                document.getElementById('title-sub').textContent = title;
+            }
+
+            // Update active navigation
+            if (navId) {
+                // Remove active class from all nav items
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active'));
+
+                // Add active class to selected item
+                const selectedNav = document.getElementById(navId);
+                if (selectedNav) {
+                    selectedNav.classList.add('active');
+                }
+            }
+
+            // Update browser history
+            if (pushState) {
+                const state = { contentPath, title, navId };
+                const url = navId === 'nav-home' ? '#' : '#' + navId.replace('nav-', '');
+                history.pushState(state, title, url);
+            }
+
+            // Prevent default link behavior
+            return false;
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            if (event.state) {
+                loadContent(event.state.contentPath, event.state.title, event.state.navId, false);
+            }
+        });
+
+        // Initialize navigation state and handle direct URL access
+        window.addEventListener('load', async function() {
+            // Wait for demo loader to initialize
+            if (window.demoLoader && window.demoLoader.config) {
+                await handleDirectURL();
+            } else {
+                // Fallback: wait for demo loader
+                document.addEventListener('DOMContentLoaded', handleDirectURL);
+            }
+        });
+
+        async function handleDirectURL() {
+            const hash = window.location.hash.slice(1);
+            let contentPath = 'gallery.html';
+            let title = 'CIVE70111 Machine Learning Playground';
+            let navId = 'nav-home';
+
+            // Get hash map from demo loader
+            if (window.demoLoader) {
+                const hashMap = window.demoLoader.getHashMap();
+
+                if (hash && hashMap[hash]) {
+                    contentPath = hashMap[hash].path;
+                    title = hashMap[hash].title;
+                    navId = hashMap[hash].navId;
+                }
+            }
+
+            // Load the appropriate content
+            loadContent(contentPath, title, navId, false);
+
+            // Set initial state
+            history.replaceState({
+                contentPath: contentPath,
+                title: title,
+                navId: navId
+            }, title, window.location.href);
+        }
+
+        // Handle iframe height adjustment for responsive content
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('content-frame');
+            if (iframe) {
+                iframe.style.height = 'calc(100vh - 80px)';
+            }
+        });
+    </script>
+</body>
+</html>

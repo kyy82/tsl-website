@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Demos Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="demo-loader.js"></script>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="home-container">
+            <h1>Interactive Machine Learning Demonstrations</h1>
+
+            <div class="intro">
+                <p>Welcome to our collection of interactive machine learning demos. Each demonstration allows you to experiment with different algorithms and parameters to build intuition about how they work.</p>
+            </div>
+
+            <div class="demo-grid">
+                <!-- Dynamic content will be generated here by demo-loader.js -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to equalize card heights
+        function equalizeCardHeights() {
+            const cards = document.querySelectorAll('.demo-card');
+
+            // Reset heights to auto to measure natural height
+            cards.forEach(card => {
+                card.style.height = 'auto';
+            });
+
+            // Find the maximum height
+            let maxHeight = 0;
+            cards.forEach(card => {
+                const cardHeight = card.offsetHeight;
+                if (cardHeight > maxHeight) {
+                    maxHeight = cardHeight;
+                }
+            });
+
+            // Apply the maximum height to all cards
+            cards.forEach(card => {
+                card.style.height = maxHeight + 'px';
+            });
+        }
+
+        // Run after dynamic content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for demo loader to generate content, then equalize heights
+            setTimeout(() => {
+                equalizeCardHeights();
+                // Re-run after a bit more time for any async image loading
+                setTimeout(equalizeCardHeights, 500);
+            }, 200);
+        });
+
+        // Run on window resize
+        window.addEventListener('resize', equalizeCardHeights);
+    </script>
+</body>
+</html>

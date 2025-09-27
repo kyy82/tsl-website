@@ -1,0 +1,61 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kmeansGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="120" height="80" fill="url(#kmeansGradient)"/>
+
+  <!-- Cluster 1 (Red) -->
+  <g transform="translate(25,20)">
+    <!-- Data points -->
+    <circle cx="0" cy="5" r="2.5" fill="white" stroke="#e74c3c" stroke-width="2"/>
+    <circle cx="8" cy="10" r="2.5" fill="white" stroke="#e74c3c" stroke-width="2"/>
+    <circle cx="5" cy="0" r="2.5" fill="white" stroke="#e74c3c" stroke-width="2"/>
+    <circle cx="12" cy="8" r="2.5" fill="white" stroke="#e74c3c" stroke-width="2"/>
+
+    <!-- Centroid -->
+    <circle cx="6" cy="6" r="3.5" fill="#e74c3c"/>
+    <text x="6" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 1</text>
+  </g>
+
+  <!-- Cluster 2 (Blue) -->
+  <g transform="translate(70,40)">
+    <!-- Data points -->
+    <circle cx="0" cy="5" r="2.5" fill="white" stroke="#3498db" stroke-width="2"/>
+    <circle cx="-5" cy="0" r="2.5" fill="white" stroke="#3498db" stroke-width="2"/>
+    <circle cx="5" cy="10" r="2.5" fill="white" stroke="#3498db" stroke-width="2"/>
+    <circle cx="8" cy="2" r="2.5" fill="white" stroke="#3498db" stroke-width="2"/>
+
+    <!-- Centroid -->
+    <circle cx="2" cy="4" r="3.5" fill="#3498db"/>
+    <text x="2" y="20" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 2</text>
+  </g>
+
+  <!-- Cluster 3 (Green) -->
+  <g transform="translate(90,15)">
+    <!-- Data points -->
+    <circle cx="0" cy="5" r="2.5" fill="white" stroke="#2ecc71" stroke-width="2"/>
+    <circle cx="5" cy="10" r="2.5" fill="white" stroke="#2ecc71" stroke-width="2"/>
+    <circle cx="-5" cy="0" r="2.5" fill="white" stroke="#2ecc71" stroke-width="2"/>
+    <circle cx="2" cy="15" r="2.5" fill="white" stroke="#2ecc71" stroke-width="2"/>
+
+    <!-- Centroid -->
+    <circle cx="0" cy="7" r="3.5" fill="#2ecc71"/>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="5" fill="white" text-anchor="middle">Cluster 3</text>
+  </g>
+
+  <!-- K-means algorithm steps -->
+  <g transform="translate(10,55)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">1. Initialize centroids</text>
+    <text x="0" y="8" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">2. Assign points to nearest centroid</text>
+    <text x="0" y="16" font-family="Arial, sans-serif" font-size="6" fill="rgba(255,255,255,0.8)">3. Update centroid positions</text>
+  </g>
+
+  <!-- Distance lines (faint) -->
+  <line x1="31" y1="26" x2="72" y2="44" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="31" y1="26" x2="90" y2="22" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="2,2"/>
+</svg>

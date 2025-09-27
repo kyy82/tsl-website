@@ -1,0 +1,44 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="regGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8e44ad;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="120" height="80" fill="url(#regGradient)"/>
+
+  <!-- Axes -->
+  <line x1="15" y1="65" x2="110" y2="65" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+  <line x1="20" y1="10" x2="20" y2="70" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+
+  <!-- Data points -->
+  <circle cx="30" cy="50" r="2" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="45" cy="40" r="2" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="60" cy="45" r="2" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="75" cy="35" r="2" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="90" cy="25" r="2" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Overfitted polynomial (high degree) -->
+  <path d="M25,55 Q35,30 45,40 Q55,60 65,45 Q75,20 85,25 Q95,40 105,30"
+        stroke="rgba(255,100,100,0.8)"
+        stroke-width="2"
+        fill="none"
+        stroke-dasharray="3,2"/>
+
+  <!-- Regularized fit (smoother) -->
+  <path d="M25,52 Q50,38 75,32 Q90,28 105,25"
+        stroke="rgba(100,255,100,0.9)"
+        stroke-width="2"
+        fill="none"/>
+
+  <!-- Legend -->
+  <g transform="translate(75,15)">
+    <line x1="0" y1="0" x2="8" y2="0" stroke="rgba(255,100,100,0.8)" stroke-width="2" stroke-dasharray="3,2"/>
+    <text x="10" y="4" font-family="Arial, sans-serif" font-size="6" fill="white">Overfitted</text>
+
+    <line x1="0" y1="8" x2="8" y2="8" stroke="rgba(100,255,100,0.9)" stroke-width="2"/>
+    <text x="10" y="12" font-family="Arial, sans-serif" font-size="6" fill="white">Regularized</text>
+  </g>
+</svg>

@@ -1,0 +1,173 @@
+{
+  "currentWeek": 3,
+  "lectures": [
+    {
+      "week": 3,
+      "lectureNumber": "02",
+      "lectureTitle": "Supervised Learning I",
+      "locked": false,
+      "demos": [
+        {
+          "id": "linear-regression",
+          "code": "lec02a",
+          "path": "lec02a_linear-regression",
+          "title": "Linear Regression",
+          "description": "Explore how linear regression finds the best line through data points. Adjust parameters and see how the line changes in real-time.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "gradient-descent",
+          "code": "lec02b",
+          "path": "lec02b_gradient-descent",
+          "title": "Gradient Descent",
+          "description": "Step through gradient descent one iteration at a time. Visualize how parameters evolve and track the optimization path on the cost surface.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "multi-linear-regression",
+          "code": "lec02c",
+          "path": "lec02c_multi-linear-regression",
+          "title": "Multi-Linear Regression",
+          "description": "Interactive demonstration of multi-linear regression with real-time feature selection. Toggle features on and off to see their impact on model predictions.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "lectureNumber": "03",
+      "lectureTitle": "Supervised Learning II",
+      "locked": false,
+      "demos": [
+        {
+          "id": "regularization",
+          "code": "lec03a",
+          "path": "lec03a_regularization",
+          "title": "Regularisation",
+          "description": "Explore how higher model capacity can cause overfitting in polynomial regression and the effects of L1 and L2 regularisation to mitigate this.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "classification",
+          "code": "lec03b",
+          "path": "lec03b_classification",
+          "title": "1D Classification",
+          "description": "Interactive logistic regression with adjustable decision boundaries. See how the sigmoid function creates smooth classification boundaries.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "2d-classification",
+          "code": "lec03c",
+          "path": "lec03c_2d-classification",
+          "title": "2D Classification",
+          "description": "Multi-class classification with various boundary types (linear, polynomial, radial basis). Experiment with different decision boundary shapes.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "lectureNumber": "04",
+      "lectureTitle": "Neural Networks",
+      "locked": false,
+      "demos": [
+        {
+          "id": "neural-networks",
+          "code": "lec04a",
+          "path": "lec04a_neural-networks",
+          "title": "Neural Networks",
+          "description": "Build and train neural networks with adjustable architecture and parameters. Experiment with different layer sizes and activation functions.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "backpropagation",
+          "code": "lec04b",
+          "path": "lec04b_backpropagation",
+          "title": "Backpropagation",
+          "description": "Step-by-step visualization of the backpropagation algorithm. Watch how gradients flow backward through the network layers.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "lectureNumber": "05",
+      "lectureTitle": "Computer Vision",
+      "locked": false,
+      "demos": [
+        {
+          "id": "convolution-pooling",
+          "code": "lec05a",
+          "path": "lec05a_convolution-pooling",
+          "title": "Convolution & Pooling",
+          "description": "Interactive exploration of CNN operations with real-time filter visualization. See how convolution and pooling operations transform images.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "cnn-architecture",
+          "code": "lec05b",
+          "path": "lec05b_cnn-architecture",
+          "title": "CNN Architecture",
+          "description": "Complete MNIST digit classification with real PyTorch backend and epoch-by-epoch training visualization.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "lectureNumber": "06",
+      "lectureTitle": "Recurrent Networks & Attention",
+      "locked": false,
+      "demos": [
+        {
+          "id": "rnn",
+          "code": "lec06a",
+          "path": "lec06a_rnn",
+          "title": "Recurrent Neural Networks",
+          "description": "Discover how RNNs process sequential data step-by-step. Visualize hidden state evolution and understand the core mechanics of recurrent processing.",
+          "preview": "preview.svg"
+        },
+        {
+          "id": "attention",
+          "code": "lec06b",
+          "path": "lec06b_attention",
+          "title": "Attention Mechanism",
+          "description": "Explore how attention mechanisms work through Q, K, V computations and dot-product attention. Visualize how tokens attend to each other in sequence processing.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "lectureNumber": "07",
+      "lectureTitle": "Unsupervised Learning",
+      "locked": false,
+      "demos": [
+        {
+          "id": "k-means",
+          "code": "lec07a",
+          "path": "lec07a_k-means-clustering",
+          "title": "K-Means Clustering",
+          "description": "Interactive clustering demonstration with step-by-step k-means algorithm visualization. Add your own points and watch how centroids move to minimize within-cluster distances.",
+          "preview": "preview.svg"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "lectureNumber": "08",
+      "lectureTitle": "Reinforcement Learning",
+      "locked": false,
+      "demos": [
+        {
+          "id": "multi-armed-bandit",
+          "code": "lec08a",
+          "path": "lec08a_multi-armed-bandit",
+          "title": "Multi-Armed Bandit",
+          "description": "Explore the exploration vs exploitation tradeoff with interactive epsilon-greedy algorithm. Watch an agent learn to balance trying new actions with exploiting known good ones.",
+          "preview": "preview.svg"
+        }
+      ]
+    }
+  ]
+}

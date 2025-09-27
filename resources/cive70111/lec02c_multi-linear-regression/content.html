@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Linear Regression</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .controls-panel {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 50%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+
+        .metrics-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .plots-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .plot-panel {
+            text-align: center;
+        }
+
+        .plot-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        /* Canvas styling */
+        canvas {
+            width: 100%;
+            height: 350px;
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .controls-panel {
+                width: 100%;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plots-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info">
+            <strong>Instructions:</strong><br>
+            • Select which housing features to include in the model using the checkboxes<br>
+            • The model automatically trains when you change feature selection<br>
+            • Compare the actual vs predicted prices in the plot below<br>
+            • Try different feature combinations to see how they affect performance<br><br>
+
+            <strong>Model:</strong> $\text{Price} = \beta_0 + \beta_1 \times \text{Area} + \beta_2 \times \text{Bedrooms} + \beta_3 \times \text{Bathrooms} + \beta_4 \times \text{Stories}$<br>
+            <strong>Dataset:</strong> 525 training samples, 20 test samples (housing prices normalized for interpretable metrics)
+        </div>
+
+        <div class="demo-area">
+            <!-- Combined Controls and Metrics Panel -->
+            <div class="controls-panel">
+                <!-- Feature Selection -->
+                <h4>Select Features:</h4>
+                <div class="feature-grid">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="area-feature" checked>
+                        Area (sq ft)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="bedrooms-feature" checked>
+                        Bedrooms
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="bathrooms-feature" checked>
+                        Bathrooms
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="stories-feature" checked>
+                        Stories
+                    </label>
+                </div>
+
+                <!-- Metrics Display -->
+                <div class="metrics-section">
+                    <h4>Model Performance (on test set):</h4>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-label">MSE</div>
+                            <div id="mse-value" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">MAE</div>
+                            <div id="mae-value" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">R²</div>
+                            <div id="r2-value" class="metric-value">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Plot -->
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <div class="plot-panel">
+                    <div class="plot-title">Actual vs Predicted Prices</div>
+                    <canvas id="prediction-plot" width="500" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize the demo when the page loads
+        window.addEventListener('load', () => {
+            new MultiLinearRegressionDemo();
+        });
+    </script>
+</body>
+</html>

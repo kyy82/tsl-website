@@ -1,0 +1,15 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Axes -->
+  <line x1="10" y1="70" x2="110" y2="70" stroke="#333" stroke-width="1"/>
+  <line x1="15" y1="10" x2="15" y2="75" stroke="#333" stroke-width="1"/>
+
+  <!-- Data points -->
+  <circle cx="25" cy="55" r="3" fill="#1976d2"/>
+  <circle cx="40" cy="45" r="3" fill="#1976d2"/>
+  <circle cx="60" cy="35" r="3" fill="#1976d2"/>
+  <circle cx="80" cy="25" r="3" fill="#1976d2"/>
+  <circle cx="95" cy="20" r="3" fill="#1976d2"/>
+
+  <!-- Regression line -->
+  <line x1="20" y1="60" x2="100" y2="18" stroke="#e53e3e" stroke-width="2"/>
+</svg>
