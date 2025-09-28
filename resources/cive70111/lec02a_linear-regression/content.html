@@ -4,56 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linear Regression</title>
+    <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            },
-            chtml: {
-                displayAlign: 'center',
-                displayIndent: '0',
-                mtextInheritFont: true,
-                merrorInheritFont: true,
-                mathmlSpacing: false,
-                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
-                exFactor: 0.5,
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                scale: 1.2,
-                minScale: 0.8,
-                matchFontHeight: false,
-                fontURL: '[mathjax]/output/chtml/fonts/woff-v2'
-            },
-            startup: {
-                ready() {
-                    MathJax.startup.defaultReady();
-                    // Override MathJax CSS after it loads
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        mjx-container[jax="CHTML"] {
-                            margin: 0 !important;
-                            padding: 0 !important;
-                            line-height: inherit !important;
-                        }
-                        mjx-container[jax="CHTML"][display="true"] {
-                            margin: 0 !important;
-                            padding: 0 !important;
-                        }
-                    `;
-                    document.head.appendChild(style);
-                }
-            },
-            options: {
-                skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'],
-                processHtmlClass: 'tex2jax_process',
-                ignoreHtmlClass: 'tex2jax_ignore',
-                renderActions: {
-                    addMenu: [0, '', '']
-                }
-            }
-        };
-    </script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
