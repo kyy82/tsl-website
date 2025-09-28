@@ -16,9 +16,9 @@ links:
   github: Felix-Feng-90
 ---
 
-Felix (Yuxiang) Feng is a Research Fellow at the Transport Systems and Logistics Laboratory in the Centre for Transport Engineering and Modelling. His current research focuses on the the use of automotive system models to facilitate the safety validation of autonomous vehicles.  
+Felix (Yuxiang) Feng is a Research Fellow at the Transport Systems and Logistics Laboratory in the Centre for Transport Engineering and Modelling. His current research focuses on the use of automotive system models to facilitate the safety validation of autonomous vehicles.  
 
-The primary aim of his work is to develop highly configurable models of automotive systems, that simulate the motions host vehicles and their interactions with other road users. 
+The primary aim of his work is to develop highly configurable models of automotive systems, that simulate the motions of host vehicles and their interactions with other road users. 
 
 Before joining TSL, Felix obtained a PhD in the Powertrain and Vehicle Research Centre at the University of Bath. He also received an MSc in Mechatronics from the same institution, and a BEng in Mechatronics from Tongji University.    
 

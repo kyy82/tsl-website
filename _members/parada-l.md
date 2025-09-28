@@ -4,8 +4,8 @@ position: Research Associate
 image: images/team/parada-l.jpg
 role: senior
 education: 
-  - "Universidad de Concepción: MSc in Indrustial Engineering (2016)"
-  - "Universidad de Concepción: Dipl in Mechanical Engineering (2015)"
+  - "Universidad de Concepción: MSc in Industrial Engineering (2016)"
+  - "Universidad de Concepción: Diploma in Mechanical Engineering (2015)"
 brief-position: Autonomous Vehicles, Reinforcement Learning, Cybersecurity
 brief-desc: Research Associate
 links:

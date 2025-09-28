@@ -3,8 +3,8 @@ name: Kenta Matsui
 position: PhD Student
 image: images/team/matsui-k.jpg
 role: phd
-education: 
-  - "Kyoto University: BEng in Electrical Engineering (2012)"
+education:
+  - "Kyoto University: BEng in Electrical Engineering (2010)"
   - "Kyoto University: MEng in Electrical Engineering (2012)"
 
 brief-position: Autonomous Vehicles, Fleet Management, Industrial Transport

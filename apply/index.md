@@ -49,7 +49,7 @@ A variety of scholarships are available, and further information on key dates an
 
 
 {% capture lorem %}
-Please keep in mind that our scholarships are in high demand, and we will only nominate applicants who graduated with summa cum laude honors (top 1-3% of their year). 
+Please keep in mind that our scholarships are in high demand, and we will only nominate applicants who graduated summa cum laude (top 1-3% of their year). 
 {% endcapture %}
 {% capture content %}{{ lorem }}{% endcapture %}
 {% include alert.html type="tip" content=content %}

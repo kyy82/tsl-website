@@ -1,7 +1,7 @@
 - title: Sentiment Analysis of Commodity Markets Using Transformer-based Language Models
   image: images/projects/lng-carrier.jpg
   description: >
-    Working in close collaboration with our partners in the Faculty of Finance at Dauphine University we are developing a LLM-based apprach to assess commodity supply and demand market sentiment from news articles. The methodology developed represents a significant improvement upon current approaches with applicability across a diverse range of commodities. Our model seeks to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and supply chain analysts with additional insights for decision-making.
+    Working in close collaboration with our partners in the Faculty of Finance at Dauphine University we are developing a LLM-based approach to assess commodity supply and demand market sentiment from news articles. The methodology developed represents a significant improvement upon current approaches with applicability across a diverse range of commodities. Our model seeks to identify subtle market signals and sentiment indicators that conventional methods often miss, providing traders and supply chain analysts with additional insights for decision-making.
   collaborators: Prof Eugenia Passari (Dauphine University)
   collaborator_icons:
     - name: Dauphine University
@@ -39,7 +39,7 @@
 - title: DeepSafe - Narrowing the reality gap for AV Scenario Testing
   image: images/projects/deepsafe.jpg
   description: >
-    TSL participates in the DeepSafe consortium, a CCAV-funded initiative ethat addresses critical barriers to autonomous vehicle deployment. Our primary contribution focuses on developing a unified risk assessment framework that quantifies the multidimensional nature of AV risk factors, building on our research in the Autonomy, Construction and Maritime sectors.
+    TSL participates in the DeepSafe consortium, a CCAV-funded initiative that addresses critical barriers to autonomous vehicle deployment. Our primary contribution focuses on developing a unified risk assessment framework that quantifies the multidimensional nature of AV risk factors, building on our research in the Autonomy, Construction and Maritime sectors.
   collaborators: dRISK.ai, Claytex, rFpro
   collaborator_icons:
     - name: rFpro
@@ -256,7 +256,7 @@
 
 - title: Prefabrication Optimization Toolkit for Hinkley Point C
   image: images/projects/hpc-crane.jpg
-  description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Given the scale of the challenge, we used evolutionary optimisation models that would extract component layouts from BIM models, and integrated with construction timetabling tools, to detrmine optimal component casting schedules and respond rapidly to changes in operational timelines. 
+  description: We delivered a specialized software tool that optimised the placement of prefabricated construction components at the Hinkley Point C site. The tool helped overcome unique project challenges relating to prefabrication operations, including site capacity constraints, crane lifting limits, and scheduling considerations. Given the scale of the challenge, we used evolutionary optimisation models that would extract component layouts from BIM models, and integrated with construction timetabling tools, to determine optimal component casting schedules and respond rapidly to changes in operational timelines. 
   collaborators: Bouygues Construction
   collaborator_icons:
     - name: BYLOR

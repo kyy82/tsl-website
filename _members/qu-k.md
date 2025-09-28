@@ -18,4 +18,4 @@ Kevin joined the Transport Systems and Logistics Laboratory (TSL) at Imperial Co
 
 Kevin is also a member of the [Imperial-TUM Joint Academy of Doctoral Studies (JADS)](https://www.imperial.ac.uk/admin-services/international-relations/tum-imperial-jads/).
 
-Kevin holds an MSc in Operations Research and Data Science, awarded with distinciton, and a first-class BEng in Mechanical Engineering, both from the University of Edinburgh. Before starting his PhD, Kevin worked as a research assistant from 2021 to 2022. In this role, he applied machine learning techniques to structural health monitoring of offshore wind turbines, focusing on environmental and operational variability.
+Kevin holds an MSc in Operations Research and Data Science, awarded with distinction, and a first-class BEng in Mechanical Engineering, both from the University of Edinburgh. Before starting his PhD, Kevin worked as a research assistant from 2021 to 2022. In this role, he applied machine learning techniques to structural health monitoring of offshore wind turbines, focusing on environmental and operational variability.

@@ -18,7 +18,7 @@ Through both fundamental research and applied industry collaborations, we develo
 
 
 {% capture content %}
-For a list of recent research ouputs, visit our [publications page](/papers/).
+For a list of recent research outputs, visit our [publications page](/papers/).
 {% endcapture %}
 
 {% include more-info.html 

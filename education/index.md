@@ -21,7 +21,7 @@ _MSc Engineering & Data Science Cluster (PG), Autumn Term &nbsp; (2024 - Present
 
 This module offers a comprehensive overview of fundamental machine learning concepts and their application to civil engineering applications. 
 
-It covers the three principal subfields of modern machine learning, ie. supervised, unsupervised and reinforcement learning methids. It also teaches students how to implement ML models using Python and specialised tools such as scikit-learn and PyTorch.
+It covers the three principal subfields of modern machine learning, i.e. supervised, unsupervised and reinforcement learning methods. It also teaches students how to implement ML models using Python and specialised tools such as scikit-learn and PyTorch.
 
 {% endcapture %}
 
