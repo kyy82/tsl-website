@@ -6,6 +6,7 @@
     <title>Multi-Linear Regression</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -55,54 +56,43 @@
         </div>
 
         <div class="demo-area">
-            <!-- Combined Controls and Metrics Panel -->
-            <div class="controls-panel">
-                <!-- Feature Selection -->
-                <h4>Select Features:</h4>
-                <div class="feature-grid">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="area-feature" checked>
-                        Area (sq ft)
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="bedrooms-feature" checked>
-                        Bedrooms
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="bathrooms-feature" checked>
-                        Bathrooms
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="stories-feature" checked>
-                        Stories
-                    </label>
-                </div>
-
-                <!-- Metrics Display -->
-                <div class="metrics-section">
-                    <h4>Model Performance (on test set):</h4>
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <div class="metric-label">MSE</div>
-                            <div id="mse-value" class="metric-value">-</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-label">MAE</div>
-                            <div id="mae-value" class="metric-value">-</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="metric-label">R²</div>
-                            <div id="r2-value" class="metric-value">-</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="plot-container">
+                <canvas id="prediction-plot" style="max-width: 600px; max-height: 400px;"></canvas>
             </div>
 
-            <!-- Visualization Plot -->
-            <div style="display: flex; justify-content: center; margin-top: 20px;">
-                <div class="plot-panel">
-                    <div class="plot-title">Actual vs Predicted Prices</div>
-                    <canvas id="prediction-plot" width="500" height="400"></canvas>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Select Features:</label>
+                    <div class="feature-selection">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="area-feature" class="checkbox-input" checked>
+                            Area (sq ft)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="bedrooms-feature" class="checkbox-input" checked>
+                            Bedrooms
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="bathrooms-feature" class="checkbox-input" checked>
+                            Bathrooms
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="stories-feature" class="checkbox-input" checked>
+                            Stories
+                        </label>
+                    </div>
+                </div>
+
+                <div class="equation mae-equation" id="mae">
+                    MAE = 0.0
+                </div>
+
+                <div class="equation mse-equation" id="mse">
+                    MSE = 0.0
+                </div>
+
+                <div class="equation r2-equation" id="r2">
+                    R² = 0.0
                 </div>
             </div>
         </div>
