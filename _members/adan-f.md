@@ -1,5 +1,14 @@
 ---
 name: Fahmy Adan
+image: images/team/adan-f.jpg
+role: alumni
+brief-position: NVIDIA
+external-page-only: https://www.linkedin.com/in/fahmy-adan-5225a3125
+---
+
+<!-- Archived:
+---
+name: Fahmy Adan
 position: PhD Student
 image: images/team/adan-f.jpg
 role: phd
@@ -18,4 +27,4 @@ During his degree, Fahmy assumed leadership roles in various departmental projec
 
 Fahmy previously led the group that won the Gravity Challenge competition hosted by Deloitte. The team proposed an intelligent solution to help improve remote worker safety in the Northern Territory of Australia.
 
-Before beginning his Ph.D., Fahmy completed his MEng degree in Civil Engineering from Imperial College London, graduating in 2018. After completing his degree, he worked at Atkins, a leading engineering consultancy, and as a Data Scientist in the energy industry.
+Before beginning his Ph.D., Fahmy completed his MEng degree in Civil Engineering from Imperial College London, graduating in 2018. After completing his degree, he worked at Atkins, a leading engineering consultancy, and as a Data Scientist in the energy industry. -->
