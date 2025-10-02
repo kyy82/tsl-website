@@ -1,5 +1,13 @@
 ---
 name: Josh Kirk
+image: images/team/kirk-j.jpg
+role: alumni
+brief-position: East Alpha
+external-page-only: https://www.linkedin.com/in/j-kirk
+---
+<!-- Archived:
+---
+name: Josh Kirk
 position: PhD Student
 image: images/team/kirk-j.jpg
 role: phd
@@ -16,4 +24,4 @@ links:
 
 Josh is a Skempton Scholar who joined the Transport Systems and Logistics (TSL) Laboratory in 2023, his research focuses on the supply chains required to implement Space Based Solar Power. This project is co-supervised by [Dr Panagiotis Angeloudis](https://www.imperial.ac.uk/people/p.angeloudis), [Prof. Washington Ochieng](https://www.imperial.ac.uk/people/w.ochieng). 
 
-Prior to joining TSL Josh worked as a data scientist at Siemens developing solutions to reduce the amount of waste-water polluting our waterways, the novelty and importance of this work was recognised with numerous industry awards.
+Prior to joining TSL Josh worked as a data scientist at Siemens developing solutions to reduce the amount of waste-water polluting our waterways, the novelty and importance of this work was recognised with numerous industry awards. -->
