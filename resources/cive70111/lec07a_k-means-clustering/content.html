@@ -6,9 +6,11 @@
     <title>K-Means Clustering</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="iframe-content">
@@ -132,7 +134,26 @@
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="plot" width="550" height="600"></canvas>
+                <div style="position: relative; width: 550px; height: 600px;">
+                    <canvas id="plot" style="width: 100%; height: 100%;"></canvas>
+                    <canvas id="overlay-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 1;"></canvas>
+                </div>
+
+                <div class="dataset-buttons-section">
+                    <label class="dataset-section-label">Sample Datasets:</label>
+                    <div class="dataset-buttons">
+                        <button class="dataset-btn structures-btn" id="structures-btn">Structures</button>
+                        <button class="dataset-btn geotech-btn" id="geotech-btn">Geotechnics</button>
+                        <button class="dataset-btn transport-btn" id="transport-btn">Transport</button>
+                        <button class="dataset-btn environment-btn" id="environment-btn">Environment</button>
+                    </div>
+
+                    <div class="dataset-info-box" id="dataset-info-box">
+                        <div class="dataset-info-title" id="dataset-info-title"></div>
+                        <div class="dataset-info-description" id="dataset-info-description"></div>
+                        <div class="dataset-info-variables" id="dataset-info-variables"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="controls">
@@ -144,12 +165,6 @@
                     </div>
                 </div>
 
-                <div class="control-group">
-                    <label>
-                        <input type="checkbox" id="show-distances" style="margin-right: 8px;">
-                        Show All Distance Lines
-                    </label>
-                </div>
 
                 <div class="control-group">
                     <label>
@@ -199,6 +214,6 @@
     </div>
 
     <script src="../scripts/demotab.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>

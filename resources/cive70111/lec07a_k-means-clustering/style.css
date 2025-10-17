@@ -1,0 +1,29 @@
+/* K-Means Clustering Demo - Specific Styles */
+
+/* Override dataset buttons section width to match plot container */
+.dataset-buttons-section,
+.dataset-info-box {
+    width: 550px;
+}
+
+/* Custom dataset info styling for k-means */
+.dataset-info-title {
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.dataset-info-description {
+    color: #555;
+    font-size: 13px;
+}
+
+.dataset-info-variables {
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.dataset-section-label {
+    font-size: 14px;
+    color: #333;
+}

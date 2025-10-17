@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backpropagation</title>
     <script src="../scripts/mathjax-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mtml-chtml.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
@@ -165,8 +166,7 @@
                 <div class="control-group">
                     <label>Loss History</label>
                     <div class="loss-graph">
-                        <div class="graph-title">MSE Loss Over Time</div>
-                        <canvas id="loss-canvas" width="400" height="200"></canvas>
+                        <canvas id="loss-canvas"></canvas>
                     </div>
                 </div>
 
