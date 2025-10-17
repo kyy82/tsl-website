@@ -553,3 +553,45 @@ Example: To customize colors for a specific demo, add this to the demo's style.c
     padding-top: 10px;
 }
 
+/* Theory Section - Full Width Box Below Demo */
+.theory-section {
+    border: 2px solid #ddd !important;
+    border-radius: 0 !important;
+    background: white !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.theory-section h3 {
+    margin: 0 !important;
+    padding: 15px 20px !important;
+    background: #f8f9fa !important;
+    color: #2c3e50 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #ddd !important;
+}
+
+.theory-section p {
+    margin: 0 !important;
+    padding: 20px !important;
+    line-height: 1.8 !important;
+    color: #333 !important;
+}
+
+.theory-section p br {
+    margin-bottom: 8px;
+}
+
+.theory-section strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.theory-section em {
+    color: #495057;
+    font-style: normal;
+    font-weight: 500;
+}
+

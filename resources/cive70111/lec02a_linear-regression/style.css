@@ -224,3 +224,45 @@
     width: 100%;
     margin-top: 15px;
 }
+
+/* Fine-tune buttons */
+.label-with-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.fine-tune-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.fine-tune-btn {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    padding: 0 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0 !important;
+    background: white !important;
+    color: #333 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.fine-tune-btn:hover {
+    background: #f0f0f0 !important;
+    border-color: #999 !important;
+}
+
+.fine-tune-btn:active {
+    background: #e0e0e0 !important;
+}

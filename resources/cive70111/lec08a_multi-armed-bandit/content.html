@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4.2.8/dist/es6-promise.auto.min.js"></script>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -229,6 +230,9 @@
                         </div>
                         <div class="algorithm-display" id="exploration-display">
                             Ready to start exploration...
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 250px; margin-top: 10px;">
+                            <canvas id="exploration-chart"></canvas>
                         </div>
                     </div>
 

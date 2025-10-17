@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applying Neural Networks</title>
+    <script src="../scripts/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="../scripts/demotab.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../scripts/demotab.css">
+    <link rel="stylesheet" href="../demo-common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="iframe-content">
+        <div class="container">
+
+        <div class="info-tabs">
+            <div class="tab-header">
+                <!-- Tab buttons will be auto-generated -->
+            </div>
+            <div class="tab-content">
+                <div class="tab-panel" data-tab-title="Introduction">
+                    <strong>Applying Neural Networks to Real Data</strong><br><br>
+                    This demo shows how neural networks can be applied to real civil engineering datasets. Unlike simple demonstrations with synthetic data, you'll work with actual multi-feature regression problems from four civil engineering domains.<br><br>
+
+                    <strong>What You'll Learn:</strong>
+                    <ul>
+                        <li>How to configure neural network architecture for regression problems</li>
+                        <li>Training neural networks epoch-by-epoch on real data</li>
+                        <li>Comparing neural network performance against linear regression baselines</li>
+                        <li>Making predictions in real-world units</li>
+                        <li>Understanding how network weights evolve during training</li>
+                    </ul>
+
+                    Each dataset includes multiple normalized features and a single target variable, allowing you to explore how neural networks capture complex non-linear relationships.
+                </div>
+
+                <div class="tab-panel" data-tab-title="Theory">
+                    <strong>Neural Network Regression:</strong><br><br>
+                    For regression tasks, a neural network learns to approximate a function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ that maps input features to a continuous output.<br><br>
+
+                    <strong>Forward Pass:</strong><br>
+                    For layer $l$ with weights $W^{(l)}$ and biases $b^{(l)}$:<br>
+                    $$z^{(l)} = W^{(l)} a^{(l-1)} + b^{(l)}$$
+                    $$a^{(l)} = f(z^{(l)})$$<br>
+                    where $f$ is the activation function and $a^{(l)}$ is the layer output.<br><br>
+
+                    <strong>Training:</strong><br>
+                    • <em>Loss Function:</em> Mean Squared Error (MSE) = $\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$<br>
+                    • <em>Optimizer:</em> Adam (adaptive learning rate optimization)<br>
+                    • <em>Backpropagation:</em> Computes gradients $\frac{\partial \mathcal{L}}{\partial W}$ to update weights<br>
+                    • <em>Epoch:</em> One complete pass through the training dataset<br><br>
+
+                    <strong>Evaluation Metrics:</strong><br>
+                    • <em>MSE:</em> Average squared prediction error<br>
+                    • <em>MAE:</em> Average absolute prediction error<br>
+                    • <em>R²:</em> Coefficient of determination (1.0 = perfect, 0.0 = baseline)
+                </div>
+
+                <div class="tab-panel" data-tab-title="Instructions">
+                    <strong>Architecture & Training Tab:</strong><br>
+                    • Select a dataset from the dropdown (Structures, Environment, Transport, Geotechnics)<br>
+                    • Configure the network: Add/remove hidden layers (max 3), adjust neurons per layer (1-10), choose activation functions<br>
+                    • Set the learning rate (default 0.01)<br>
+                    • Click "Train 1 Epoch" to train for one complete pass through the data<br>
+                    • Watch the loss decrease and network weights update in real-time<br>
+                    • Hover over edges in the network diagram to see weight values<br>
+                    • Use "Reset Weights" to restart training with the same architecture<br><br>
+
+                    <strong>Evaluate Test Set Tab:</strong><br>
+                    • Click "Evaluate on Test Set" to compare neural network vs linear regression<br>
+                    • Review metrics (MSE, MAE, R²) for both models<br>
+                    • Lower MSE/MAE and higher R² indicate better performance<br><br>
+
+                    <strong>Manual Prediction Tab:</strong><br>
+                    • Enter feature values in real-world units (e.g., kg/m³ for cement)<br>
+                    • Click "Use Sample" to auto-fill with a training example<br>
+                    • Click "Predict" to see both neural network and linear regression predictions<br>
+                    • All values are automatically normalized/denormalized for you
+                </div>
+
+                <div class="tab-panel" data-tab-title="Visual Guide">
+                    <strong>Network Diagram:</strong><br>
+                    • <strong class="text-color-input">Blue nodes:</strong> Input features<br>
+                    • <strong class="text-color-hidden">Purple nodes:</strong> Hidden layer neurons<br>
+                    • <strong class="text-color-output">Green node:</strong> Output (prediction)<br>
+                    • <em>Edge thickness:</em> Represents weight magnitude (thicker = larger absolute value)<br>
+                    • <em>Edge color:</em> Positive weights (blue), negative weights (red)<br>
+                    • <em>Hover on edges:</em> Shows exact weight value and connection<br>
+                    • <em>Hover on nodes:</em> Shows bias value (hidden and output layers only)<br><br>
+
+                    <strong>Loss Chart:</strong><br>
+                    • X-axis: Training epoch number<br>
+                    • Y-axis: Mean squared error on training data<br>
+                    • Should decrease as training progresses<br>
+                    • Flatten indicates convergence<br><br>
+
+                    <strong>Datasets:</strong><br>
+                    • <em>Structures:</em> Predict concrete strength from mix design<br>
+                    • <em>Environment:</em> Predict wastewater treatment BOD<br>
+                    • <em>Transport:</em> Predict electric vehicle pricing<br>
+                    • <em>Geotechnics:</em> Predict soil uniformity coefficient
+                </div>
+
+                <div class="tab-panel" data-tab-title="Tips">
+                    <strong>Getting Started:</strong><br>
+                    • Start with 1 hidden layer of 4-6 neurons and ReLU activation<br>
+                    • Train for 10-20 epochs to see initial convergence<br>
+                    • Compare results with linear regression baseline in Evaluate tab<br><br>
+
+                    <strong>Architecture Design:</strong><br>
+                    • More layers ≠ always better. Start simple, add complexity if needed<br>
+                    • ReLU is usually a good default activation function<br>
+                    • For these datasets, 1-2 hidden layers typically sufficient<br>
+                    • Too many neurons can lead to overfitting on small datasets<br><br>
+
+                    <strong>Training Tips:</strong><br>
+                    • Learning rate 0.01 is a good starting point<br>
+                    • If loss oscillates, try reducing learning rate (e.g., 0.001)<br>
+                    • If loss decreases very slowly, try increasing learning rate<br>
+                    • Use "Clear History" to reset the chart without resetting weights<br><br>
+
+                    <strong>Troubleshooting:</strong><br>
+                    • Loss not decreasing? Try resetting weights and retraining<br>
+                    • Loss becomes NaN? Reduce learning rate significantly<br>
+                    • Poor test performance? Network may be overfitting - try simpler architecture<br>
+                    • NN worse than linear? Dataset may have mostly linear relationships
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-area">
+            <!-- Main Content Tabs -->
+            <div class="demo-tabs">
+                <div class="demo-tab-header">
+                    <button class="demo-tab-button active" data-tab="architecture">Architecture & Training</button>
+                    <button class="demo-tab-button" data-tab="evaluate">Evaluate Test Set</button>
+                    <button class="demo-tab-button" data-tab="predict">Manual Prediction</button>
+                </div>
+
+                <!-- Architecture & Training Tab -->
+                <div class="demo-tab-content active" data-tab="architecture">
+                    <!-- Dataset Selection -->
+                    <div class="section">
+                        <h3>Dataset Selection</h3>
+                        <div class="dataset-controls">
+                            <select id="datasetSelect">
+                                <option value="structures">Structures: Concrete Compressive Strength</option>
+                                <option value="environment">Environment: Wastewater Treatment Performance</option>
+                                <option value="transport">Transport: Electric Vehicle Pricing</option>
+                                <option value="geotechnics">Geotechnics: Soil Uniformity Coefficient</option>
+                            </select>
+                            <div id="loadingIndicator" class="loading-indicator hidden">Loading dataset...</div>
+                            <div id="datasetInfo" class="dataset-info"></div>
+                        </div>
+                    </div>
+
+                    <!-- Two-Column Layout: Architecture on Left, Training on Right -->
+                    <div class="two-column-layout">
+                        <!-- Left Column: Network Architecture -->
+                        <div class="column-left">
+                            <div class="viz-panel">
+                                <h3>Network Architecture</h3>
+                                <canvas id="networkCanvas"></canvas>
+                            </div>
+
+                            <div class="section">
+                                <h3>Architecture Configuration</h3>
+                                <div class="architecture-controls">
+                                    <div class="control-row">
+                                        <button id="addLayerBtn" class="control-btn">Add Hidden Layer</button>
+                                        <button id="removeLayerBtn" class="control-btn">Remove Hidden Layer</button>
+                                        <span id="layerCount">Hidden Layers: 1</span>
+                                    </div>
+                                    <div id="layerControls" class="layer-controls-container"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Training -->
+                        <div class="column-right">
+                            <div class="viz-panel">
+                                <h3>Training Loss</h3>
+                                <div class="chart-container">
+                                    <canvas id="lossChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h3>Training Controls</h3>
+                                <div class="training-controls">
+                                    <div class="control-row">
+                                        <label>Learning Rate:</label>
+                                        <input type="number" id="learningRate" value="0.01" min="0.0001" max="1" step="0.001">
+                                        <label>Epochs:</label>
+                                        <input type="number" id="numEpochs" value="1" min="1" max="100" step="1">
+                                    </div>
+                                    <div class="control-row">
+                                        <button id="trainBtn" class="control-btn primary">Train</button>
+                                        <button id="resetBtn" class="control-btn">Reset Weights</button>
+                                        <button id="clearHistoryBtn" class="control-btn">Clear History</button>
+                                    </div>
+                                    <div class="metrics-display">
+                                        <span>Epoch: <strong id="epochDisplay">0</strong></span>
+                                        <span>Training Loss: <strong id="lossDisplay">-</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evaluate Test Set Tab -->
+                <div class="demo-tab-content" data-tab="evaluate">
+                    <div class="section">
+                        <h3>Model Evaluation</h3>
+                        <p>Compare the trained neural network against a multivariate linear regression baseline on the test set.</p>
+                        <button id="evaluateBtn" class="control-btn primary">Evaluate on Test Set</button>
+
+                        <div id="evaluationResults" class="evaluation-results">
+                            <table id="resultsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>MSE</th>
+                                        <th>MAE</th>
+                                        <th>R²</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Neural Network</strong></td>
+                                        <td id="nnMSE">-</td>
+                                        <td id="nnMAE">-</td>
+                                        <td id="nnR2">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Linear Regression</strong></td>
+                                        <td id="lrMSE">-</td>
+                                        <td id="lrMAE">-</td>
+                                        <td id="lrR2">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="evaluationNotes" class="evaluation-notes"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Prediction Tab -->
+                <div class="demo-tab-content" data-tab="predict">
+                    <div class="section">
+                        <h3>Make Predictions</h3>
+                        <p>Enter feature values in real-world units to make predictions with the trained models.</p>
+
+                        <div id="predictionInputs" class="prediction-inputs"></div>
+
+                        <div class="control-row">
+                            <button id="useSampleBtn" class="control-btn">Use Sample Data</button>
+                            <button id="predictBtn" class="control-btn primary">Predict</button>
+                        </div>
+
+                        <div id="predictionResults" class="prediction-results">
+                            <div class="result-box">
+                                <h4>Neural Network Prediction</h4>
+                                <div id="nnPrediction" class="prediction-value">-</div>
+                            </div>
+                            <div class="result-box">
+                                <h4>Linear Regression Prediction</h4>
+                                <div id="lrPrediction" class="prediction-value">-</div>
+                            </div>
+                        </div>
+                        <div id="predictionWarning" class="prediction-warning"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

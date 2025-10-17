@@ -6,6 +6,7 @@
     <title>Regularisation</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -64,7 +65,10 @@
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="plot" width="600" height="400"></canvas>
+                <div style="position: relative; width: 600px; height: 400px;">
+                    <canvas id="plot"></canvas>
+                    <canvas id="overlay-canvas" style="position: absolute; top: 0; left: 0; pointer-events: none; background: transparent; z-index: 1; visibility: hidden;"></canvas>
+                </div>
                 <div class="plot-buttons">
                     <button class="generate-data-btn" id="generate-data-btn">Generate New Data</button>
                     <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
@@ -100,13 +104,24 @@
                     </div>
                 </div>
 
-                <div class="equation" id="mse" style="background: #f3e5f5; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 15px;">
+                <div class="visualization-panel">
+                    <div class="panel-title">Visualization Options</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="show-squares" class="checkbox-input">
+                            Show Squared Errors
+                        </label>
+                    </div>
+                </div>
+
+                <div class="equation" id="mse" style="background: #e8f5e8; color: #7b1fa2; border-left-color: #9c27b0; margin-top: 10px;">
                     MSE = 0.0
                 </div>
 
                 <div class="equation" id="mae" style="background: #e8f5e8; color: #2e7d32; border-left-color: #4caf50; margin-top: 10px;">
                     MAE = 0.0
                 </div>
+
             </div>
         </div>
     </div>

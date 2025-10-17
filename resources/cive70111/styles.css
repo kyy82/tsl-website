@@ -25,6 +25,38 @@ body {
     min-height: 100vh;
 }
 
+/* Touch-friendly scrollbar styling for iPad and touch devices */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f2f5;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 7px;
+    border: 3px solid #f0f2f5;
+    min-height: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #777;
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #bbb #f0f2f5;
+}
+
 .header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -6,7 +6,7 @@
     <title>Gradient Descent</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -22,38 +22,25 @@
 
             <div class="tab-content">
                 <div class="tab-panel active" data-tab-title="Introduction">
-                    <strong>Gradient Descent</strong><br><br>
                     This interactive demo shows how gradient descent optimizes linear regression parameters. Unlike analytical solutions, gradient descent iteratively improves parameters by following the negative gradient of the cost function.<br><br>
                     You'll see the algorithm step-by-step, watching how the regression line evolves and tracking the optimization path on the cost surface. This is the foundation for training machine learning models.
                 </div>
 
-                <div class="tab-panel" data-tab-title="Theory">
-                    <strong>Mathematical Foundation:</strong><br><br>
-                    • <em>Model:</em> $\mu(x) = \alpha + \beta x$ (linear regression on normalized data)<br>
-                    • <em>Cost Function:</em> $\mathcal{J}(\alpha,\beta) = \frac{1}{2n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)^2$<br>
-                    • <em>Gradients:</em> $\frac{\partial \mathcal{J}}{\partial \alpha} = \frac{1}{n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)$<br>
-                    • <em>Updates:</em> $\alpha \leftarrow \alpha - \eta \frac{\partial \mathcal{J}}{\partial \alpha}$, $\beta \leftarrow \beta - \eta \frac{\partial \mathcal{J}}{\partial \beta}$<br>
-                    • <em>Learning Rate $\eta$:</em> Controls step size (too large = overshoot, too small = slow convergence)
-                </div>
-
                 <div class="tab-panel" data-tab-title="Instructions">
-                    <strong>How to Use:</strong><br><br>
-                    • Initial parameters $\alpha$ (intercept) and $\beta$ (slope) are set randomly on each dataset load<br>
-                    • Click <em>"Step"</em> to perform exactly one gradient descent iteration<br>
-                    • Watch the regression line evolve on the normalized data plot (left)<br>
-                    • Track the optimization path on the cost surface (right)<br>
-                    • Use <em>"Re-initialize"</em> to generate new random starting parameters<br>
-                    • Choose from sample dataset or civil engineering examples (all data is normalized)<br>
-                    • Adjust learning rate $\eta$ to see different convergence behaviors
+                    • Click <em>"Step"</em> to perform one gradient descent iteration. Watch the regression line evolve (left panel) and the optimization path on the cost surface (right panel)<br>
+                    • Use <em>"Re-initialize"</em> to start from new random parameters, or load different datasets to explore various optimization landscapes<br>
+                    • Adjust the learning rate $\eta$ to see different convergence behaviors—too small is slow, too large causes oscillation<br><br>
+
+                    <strong>What learning rate gives the fastest convergence without overshooting?</strong> Try values from 0.01 to 0.5.
                 </div>
 
                 <div class="tab-panel" data-tab-title="Visual Guide">
-                    <strong>Visual Guide:</strong><br><br>
-                    • <em>Left panel:</em> Normalized data points, current regression line, residuals (dashed red lines showing prediction errors)<br>
-                    • <em>Right panel:</em> Cost surface contours, current position (red dot), optimization path (blue line)<br>
+                    • <em>Data & Regression Line (top-left):</em> Normalized data points, current regression line, residuals (dashed red lines showing prediction errors)<br>
+                    • <em>Cost Surface (top-right):</em> Cost surface contours, current position (red dot), optimization path (yellow line)<br>
+                    • <em>Cost Improvement (bottom):</em> Bar chart showing $|\Delta\mathcal{J}|$ (absolute cost reduction) for each iteration. Watch how the improvements diminish as the algorithm converges to the optimal solution<br>
                     • <em>Readouts:</em> Current iteration, normalized parameters $\alpha$ and $\beta$, cost $\mathcal{J}$, and gradient norm $||\nabla\mathcal{J}||$<br>
-                    • <em>Caption:</em> Shows what happened in each step (gradient computation, parameter updates)<br>
-                    • Watch how the cost decreases and gradient norm approaches zero at convergence
+                    • <em>Caption:</em> Shows what happened in each step (gradient computation, parameter updates, and $\Delta\mathcal{J}$)<br>
+                    • As convergence approaches, both the gradient norm and $|\Delta\mathcal{J}|$ decrease toward zero
                 </div>
             </div>
         </div>
@@ -64,98 +51,141 @@
                 <!-- Data View -->
                 <div class="view-panel">
                     <div class="view-title">Data & Regression Line</div>
-                    <canvas id="dataCanvas" style="width: 100%; height: 350px;"></canvas>
-                </div>
-
-                <!-- Cost Surface View -->
-                <div class="view-panel">
-                    <div class="view-title">Cost Surface</div>
-                    <canvas id="costCanvas" style="width: 100%; height: 350px;"></canvas>
-                </div>
-            </div>
-
-            <!-- Caption -->
-            <div class="caption-text" id="captionText">
-                Ready to start gradient descent. Click "Step" to begin.
-            </div>
-
-            <!-- Controls Section at Bottom -->
-            <div class="controls-bottom">
-                <div class="controls-grid">
-                    <!-- Column 1: Dataset and Parameters -->
-                    <div>
-                        <div class="control-group">
-                            <label style="font-weight: bold; margin-bottom: 10px; display: block;">Dataset & Parameters</label>
-                    <div class="dataset-controls">
-                        <select id="datasetSelect">
-                            <option value="sample">Sample Dataset</option>
-                            <option value="structures">Structures Example</option>
-                            <option value="geotech">Geotechnics Example</option>
-                            <option value="transport">Transport Example</option>
-                            <option value="environment">Environment Example</option>
-                        </select>
-                    </div>
-                        <div class="control-row">
-                            <label for="alpha0">$\alpha_0$ (intercept):</label>
-                            <input type="number" id="alpha0" value="0" step="0.1">
-                        </div>
-                        <div class="control-row">
-                            <label for="beta0">$\beta_0$ (slope):</label>
-                            <input type="number" id="beta0" value="0" step="0.1">
-                        </div>
-                        <div class="control-row">
-                            <label for="eta">$\eta$ (learning rate):</label>
-                            <input type="number" id="eta" value="0.1" step="0.01" min="0.0001" max="2">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Display Options and Controls -->
-                <div>
-                    <div class="control-group">
-                        <label style="font-weight: bold; margin-bottom: 10px; display: block;">Display Options</label>
-                        <div class="control-row">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="showCaptions" checked>
-                                Show Step Captions
-                            </label>
-                        </div>
-                    </div>
+                    <canvas id="dataCanvas" style="width: 100%; height: 440px;"></canvas>
                     <div class="step-controls">
                         <button class="step-btn" id="stepBtn">Step</button>
                         <button class="reset-btn" id="resetBtn">Re-initialize</button>
                     </div>
                 </div>
 
-                <!-- Column 3: Readout Panel -->
-                <div>
-                    <div class="control-group">
-                        <label style="font-weight: bold; margin-bottom: 10px; display: block;">Current State</label>
-                        <div class="readout-panel">
-                            <div class="readout-row">
-                                <span class="readout-label">Iteration:</span>
-                                <span class="readout-value" id="iter">0</span>
+                <!-- Right column container for stacked charts -->
+                <div class="right-column">
+                    <!-- Cost Surface View -->
+                    <div class="view-panel">
+                        <div class="view-title">Cost Surface</div>
+                        <canvas id="costCanvas" style="width: 100%; height: 300px;"></canvas>
+                    </div>
+
+                    <!-- Delta J Chart -->
+                    <div class="view-panel">
+                        <div class="view-title">Cost Improvement per Step (ΔJ)</div>
+                        <canvas id="deltaJCanvas" style="width: 100%; height: 180px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optimization History Table -->
+            <div class="history-container">
+                <div class="history-title">Optimization History</div>
+                <div class="history-scroll" id="historyScroll">
+                    <table class="history-table" id="historyTable">
+                        <tbody id="historyBody">
+                            <tr class="history-row-iteration">
+                                <th>Iteration</th>
+                                <td class="current-iteration">0</td>
+                            </tr>
+                            <tr class="history-row-alpha">
+                                <th>$\alpha$</th>
+                                <td class="current-iteration">0.000</td>
+                            </tr>
+                            <tr class="history-row-beta">
+                                <th>$\beta$</th>
+                                <td class="current-iteration">0.000</td>
+                            </tr>
+                            <tr class="history-row-cost">
+                                <th>Cost $\mathcal{J}$</th>
+                                <td class="current-iteration">0.000</td>
+                            </tr>
+                            <tr class="history-row-delta">
+                                <th>$\Delta\mathcal{J}$</th>
+                                <td class="current-iteration">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Controls Section at Bottom -->
+            <div class="controls-bottom">
+                <div class="controls-grid">
+                    <!-- Column 1: Dataset Selection and Current State -->
+                    <div>
+                        <div class="control-group">
+                            <label style="font-weight: bold; margin-bottom: 10px; display: block;">Dataset Selection</label>
+                            <div class="dataset-controls">
+                                <div class="dataset-buttons">
+                                    <button class="dataset-btn structures-btn" id="structures-btn">Structures</button>
+                                    <button class="dataset-btn geotech-btn" id="geotech-btn">Geotechnics</button>
+                                    <button class="dataset-btn transport-btn" id="transport-btn">Transport</button>
+                                    <button class="dataset-btn environment-btn" id="environment-btn">Environment</button>
+                                </div>
                             </div>
-                            <div class="readout-row">
-                                <span class="readout-label">$\alpha$:</span>
-                                <span class="readout-value" id="alphaOut">0.000</span>
+                        </div>
+
+                        <div class="control-group" style="margin-top: 20px;">
+                            <label style="font-weight: bold; margin-bottom: 10px; display: block;">Current State</label>
+                            <div class="readout-panel readout-grid">
+                                <div class="readout-row">
+                                    <span class="readout-label">Iteration:</span>
+                                    <span class="readout-value" id="iter">0</span>
+                                </div>
+                                <div class="readout-row">
+                                    <span class="readout-label">$\alpha$:</span>
+                                    <span class="readout-value" id="alphaOut">0.000</span>
+                                </div>
+                                <div class="readout-row">
+                                    <span class="readout-label">Cost $\mathcal{J}$:</span>
+                                    <span class="readout-value" id="jOut">0.000</span>
+                                </div>
+                                <div class="readout-row">
+                                    <span class="readout-label">$\beta$:</span>
+                                    <span class="readout-value" id="betaOut">0.000</span>
+                                </div>
                             </div>
-                            <div class="readout-row">
-                                <span class="readout-label">$\beta$:</span>
-                                <span class="readout-value" id="betaOut">0.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Initial Parameters -->
+                    <div>
+                        <div class="control-group">
+                            <label style="font-weight: bold; margin-bottom: 10px; display: block;">Initial Parameters</label>
+                            <div class="control-group">
+                                <label for="alpha0">$\alpha_0$ (intercept)</label>
+                                <div class="slider-container">
+                                    <input type="range" id="alpha0" min="-3" max="3" step="0.1" value="0">
+                                    <div class="value-display" id="alpha0-value">0.0</div>
+                                </div>
                             </div>
-                            <div class="readout-row">
-                                <span class="readout-label">Cost $\mathcal{J}$:</span>
-                                <span class="readout-value" id="jOut">0.000</span>
+                            <div class="control-group">
+                                <label for="beta0">$\beta_0$ (slope)</label>
+                                <div class="slider-container">
+                                    <input type="range" id="beta0" min="-3" max="3" step="0.1" value="0">
+                                    <div class="value-display" id="beta0-value">0.0</div>
+                                </div>
                             </div>
-                            <div class="readout-row">
-                                <span class="readout-label">$||\nabla\mathcal{J}||$:</span>
-                                <span class="readout-value" id="gradNormOut">0.000</span>
+                            <div class="control-group">
+                                <label for="eta">$\eta$ (learning rate)</label>
+                                <div class="slider-container">
+                                    <input type="range" id="eta" min="0.001" max="1.5" step="0.001" value="0.1">
+                                    <div class="value-display" id="eta-value">0.100</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
+        </div>
+
+        <!-- Theory Section -->
+        <div class="theory-section">
+            <h3>Mathematical Foundations</h3>
+            <p>
+                <strong>Gradient descent</strong> is an iterative optimization algorithm that finds parameter values minimizing the cost function $\mathcal{J}(\alpha,\beta) = \frac{1}{2n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)^2$ for our linear regression model $\mu(x) = \alpha + \beta x$. Rather than solving analytically, gradient descent starts with an initial guess for the parameters and repeatedly adjusts them in the direction that most decreases the cost.<br><br>
+
+                At each iteration, we <strong>update</strong> the parameters according to $\alpha \leftarrow \alpha - \eta \frac{\partial \mathcal{J}}{\partial \alpha}$ and $\beta \leftarrow \beta - \eta \frac{\partial \mathcal{J}}{\partial \beta}$, where the gradients are $\frac{\partial \mathcal{J}}{\partial \alpha} = \frac{1}{n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i)$ and $\frac{\partial \mathcal{J}}{\partial \beta} = \frac{1}{n}\sum_{i=1}^{n}(\alpha + \beta x_i - y_i) \cdot x_i$.<br><br>
+
+                The <strong>learning rate</strong> $\eta$ is crucial: too small and the algorithm takes tiny steps requiring many iterations; too large and it may overshoot the minimum and diverge. A moderate $\eta$ leads to steady decrease in $\mathcal{J}$ over iterations. As we approach the minimum, the gradient magnitude decreases, effectively reducing step size even with constant $\eta$.
+            </p>
         </div>
 
     </div>

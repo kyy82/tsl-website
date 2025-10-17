@@ -6,6 +6,7 @@
     <title>1D Classification</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -62,7 +63,9 @@
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="plot" width="600" height="400"></canvas>
+                <div style="position: relative; width: 600px; height: 400px;">
+                    <canvas id="plot"></canvas>
+                </div>
                 <div class="plot-buttons">
                     <button class="generate-data-btn" id="generate-data-btn">Generate New Data</button>
                     <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>

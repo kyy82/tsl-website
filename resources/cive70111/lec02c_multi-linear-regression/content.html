@@ -6,7 +6,7 @@
     <title>Multi-Linear Regression</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -22,26 +22,17 @@
 
             <div class="tab-content">
                 <div class="tab-panel active" data-tab-title="Introduction">
-                    <strong>Multi-Linear Regression</strong><br><br>
                     Multi-linear regression extends simple linear regression to handle multiple input features simultaneously. Instead of predicting from just one variable, we can use several features to make more accurate predictions.<br><br>
                     In civil engineering, this is particularly valuable for projects like predicting housing costs from multiple property characteristics, estimating structural loads from various design parameters, or forecasting traffic flow from multiple environmental factors.
                 </div>
 
                 <div class="tab-panel" data-tab-title="Instructions">
-                    <strong>How to Use:</strong><br><br>
-                    • Select which housing features to include in the model using the checkboxes<br>
-                    • The model automatically trains when you change feature selection<br>
-                    • Compare the actual vs predicted prices in the plot below<br>
-                    • Try different feature combinations to see how they affect performance<br>
-                    • Observe how performance metrics change with different feature sets
-                </div>
+                    • Click feature boxes to enable/disable them (colored = enabled, gray = disabled). The model will automatically re-train.<br>
+                    • Using the plot below, compare the actual vs predicted prices. The closer the points are to the diagonal line, the better the predictions<br>
+                    • Try different feature combinations to see how they affect performance, and observe how metrics change with different feature sets<br><br>
 
-                <div class="tab-panel" data-tab-title="Theory">
-                    <strong>Mathematical Foundation:</strong><br><br>
-                    The multi-linear regression model is:<br>
-                    $\text{Price} = \beta_0 + \beta_1 \times \text{Area} + \beta_2 \times \text{Bedrooms} + \beta_3 \times \text{Bathrooms} + \beta_4 \times \text{Stories}$<br><br>
-                    Where $\beta_0$ is the intercept and $\beta_1, \beta_2, \beta_3, \beta_4$ are coefficients for each feature. The model uses ordinary least squares to minimize the sum of squared residuals.<br><br>
-                    <strong>Dataset:</strong> 525 training samples, 20 test samples (housing prices normalized for interpretable metrics)
+                    <strong>Which combination of features maximises R²?</strong> Why do you think that is?
+
                 </div>
 
                 <div class="tab-panel" data-tab-title="Tips">
@@ -57,29 +48,29 @@
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="prediction-plot" style="max-width: 600px; max-height: 400px;"></canvas>
+                <canvas id="prediction-plot" style="max-width: 650px; max-height: 550px;"></canvas>
             </div>
 
             <div class="controls">
                 <div class="control-group">
                     <label>Select Features:</label>
-                    <div class="feature-selection">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="area-feature" class="checkbox-input" checked>
-                            Area (sq ft)
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="bedrooms-feature" class="checkbox-input" checked>
-                            Bedrooms
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="bathrooms-feature" class="checkbox-input" checked>
-                            Bathrooms
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="stories-feature" class="checkbox-input" checked>
-                            Stories
-                        </label>
+                    <div class="feature-grid">
+                        <div class="feature-box feature-area active" data-feature="area">
+                            <div class="feature-icon">📐</div>
+                            <div class="feature-label">Area (sq ft)</div>
+                        </div>
+                        <div class="feature-box feature-bedrooms active" data-feature="bedrooms">
+                            <div class="feature-icon">🛏️</div>
+                            <div class="feature-label">Bedrooms</div>
+                        </div>
+                        <div class="feature-box feature-bathrooms active" data-feature="bathrooms">
+                            <div class="feature-icon">🚿</div>
+                            <div class="feature-label">Bathrooms</div>
+                        </div>
+                        <div class="feature-box feature-stories active" data-feature="stories">
+                            <div class="feature-icon">🏢</div>
+                            <div class="feature-label">Stories</div>
+                        </div>
                     </div>
                 </div>
 
@@ -96,12 +87,39 @@
                 </div>
             </div>
         </div>
+
+        <!-- Theory Section -->
+        <div class="theory-section">
+            <h3>Mathematical Foundations</h3>
+            <p>
+                <strong>Multiple linear regression</strong> extends the single-variable framework to handle multiple features simultaneously. With $p$ features, the linear model becomes $\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p$, where $\beta_0$ is the intercept (previously denoted $\alpha$ in single-variable regression) and $\beta_1, \ldots, \beta_p$ are the weights for each feature. <br><br>
+
+                For our housing example: $\mathrm{Price} = \beta_0 + \beta_1 \cdot \mathrm{Area} + \beta_2 \cdot \mathrm{Bedrooms} + \beta_3 \cdot \mathrm{Bathrooms} + \beta_4 \cdot \mathrm{Stories}$. Each feature contributes independently to the prediction, weighted by its corresponding parameter.<br><br>
+            </p>
+        </div>
+
         </div>
     </div>
 
     <script src="../scripts/demotab.js"></script>
     <script src="script.js"></script>
     <script>
+        // Hook into MathJax's ready callback
+        if (!window.MathJax) {
+            window.MathJax = {};
+        }
+        if (!window.MathJax.startup) {
+            window.MathJax.startup = {};
+        }
+
+        const originalPageReady = window.MathJax.startup.pageReady || (() => MathJax.startup.defaultPageReady());
+
+        window.MathJax.startup.pageReady = function() {
+            return originalPageReady.call(this).then(() => {
+                console.log('MathJax is ready and has processed the page');
+            });
+        };
+
         // Initialize the demo when the page loads
         window.addEventListener('load', () => {
             new MultiLinearRegressionDemo();

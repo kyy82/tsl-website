@@ -12,7 +12,7 @@
           "code": "lec02a",
           "path": "lec02a_linear-regression",
           "title": "Linear Regression",
-          "description": "Explore how linear regression finds the best line through data points. Adjust parameters and see how the line changes in real-time.",
+          "description": "Explore how linear regression finds the best line through data points.",
           "preview": "preview.svg"
         },
         {
@@ -20,7 +20,7 @@
           "code": "lec02b",
           "path": "lec02b_gradient-descent",
           "title": "Gradient Descent",
-          "description": "Step through gradient descent one iteration at a time. Visualize how parameters evolve and track the optimization path on the cost surface.",
+          "description": "Step through gradient descent one iteration at a time. ",
           "preview": "preview.svg"
         },
         {
@@ -28,7 +28,7 @@
           "code": "lec02c",
           "path": "lec02c_multi-linear-regression",
           "title": "Multi-Linear Regression",
-          "description": "Interactive demonstration of multi-linear regression with real-time feature selection. Toggle features on and off to see their impact on model predictions.",
+          "description": "Interactive demonstration of multi-linear regression with real-time feature selection.",
           "preview": "preview.svg"
         }
       ]
@@ -37,7 +37,7 @@
       "week": 4,
       "lectureNumber": "03",
       "lectureTitle": "Supervised Learning II",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "regularization",
@@ -69,7 +69,7 @@
       "week": 5,
       "lectureNumber": "04",
       "lectureTitle": "Neural Networks",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "neural-networks",
@@ -86,6 +86,14 @@
           "title": "Backpropagation",
           "description": "Step-by-step visualization of the backpropagation algorithm. Watch how gradients flow backward through the network layers.",
           "preview": "preview.svg"
+        },
+        {
+          "id": "applying-neural-networks",
+          "code": "lec04c",
+          "path": "lec04c_applying-neural-networks",
+          "title": "Applying Neural Networks",
+          "description": "Train neural networks on real civil engineering datasets. Configure architecture, compare with linear regression, and make predictions in real-world units.",
+          "preview": "preview.svg"
         }
       ]
     },
@@ -93,7 +101,7 @@
       "week": 6,
       "lectureNumber": "05",
       "lectureTitle": "Computer Vision",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "convolution-pooling",
@@ -117,7 +125,7 @@
       "week": 7,
       "lectureNumber": "06",
       "lectureTitle": "Attention",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "rnn",
@@ -141,7 +149,7 @@
       "week": 8,
       "lectureNumber": "07",
       "lectureTitle": "Unsupervised Learning",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "k-means",
@@ -157,7 +165,7 @@
       "week": 9,
       "lectureNumber": "08",
       "lectureTitle": "Reinforcement Learning",
-      "locked": false,
+      "locked": true,
       "demos": [
         {
           "id": "multi-armed-bandit",

@@ -1,0 +1,90 @@
+{
+  "structures": {
+    "Cement": {
+      "mean": 281.0676,
+      "std": 104.2644
+    },
+    "Superplasticizer": {
+      "mean": 6.1862,
+      "std": 5.8451
+    },
+    "Age": {
+      "mean": 45.4547,
+      "std": 62.8698
+    },
+    "Water": {
+      "mean": 181.7656,
+      "std": 21.2756
+    },
+    "Strength": {
+      "mean": 35.6333,
+      "std": 16.5381
+    }
+  },
+  "environment": {
+    "Nitrogen": {
+      "mean": 60.3774,
+      "std": 2.7823
+    },
+    "Ammonia": {
+      "mean": 25.5481,
+      "std": 5.5026
+    },
+    "Temperature": {
+      "mean": 16.0173,
+      "std": 5.1668
+    },
+    "Inflow": {
+      "mean": 2.8696,
+      "std": 0.4009
+    },
+    "BOD": {
+      "mean": 375.8077,
+      "std": 52.5779
+    }
+  },
+  "transport": {
+    "Top_Speed": {
+      "mean": 186.5205,
+      "std": 32.6399
+    },
+    "Fastcharge": {
+      "mean": 589.8738,
+      "std": 242.1447
+    },
+    "0-100": {
+      "mean": 6.6738,
+      "std": 2.5045
+    },
+    "Battery": {
+      "mean": 74.0022,
+      "std": 20.8294
+    },
+    "UK_price": {
+      "mean": 43329.0063,
+      "std": 41804.5109
+    }
+  },
+  "geotechnics": {
+    "dmax": {
+      "mean": 34.8300,
+      "std": 24.4762
+    },
+    "Gr": {
+      "mean": 30.5291,
+      "std": 28.4927
+    },
+    "Sa": {
+      "mean": 36.4932,
+      "std": 26.4535
+    },
+    "Cl": {
+      "mean": 4.4992,
+      "std": 3.8641
+    },
+    "CU": {
+      "mean": 189.3317,
+      "std": 419.2268
+    }
+  }
+}

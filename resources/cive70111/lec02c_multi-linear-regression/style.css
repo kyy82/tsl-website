@@ -13,6 +13,103 @@
             gap: 12px;
         }
 
+        .feature-box {
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            border: 2px solid transparent;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.4;
+            filter: grayscale(50%);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .feature-label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-2px);
+            opacity: 0.6;
+        }
+
+        /* Area feature - Blue */
+        .feature-area {
+            background: linear-gradient(135deg, #5a9fd4, #4a89c4);
+            color: white;
+        }
+
+        .feature-area.active {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #5a9fd4;
+        }
+
+        .feature-area.active:hover {
+            background: linear-gradient(135deg, #4a89c4, #3a79b4);
+        }
+
+        /* Bedrooms feature - Purple */
+        .feature-bedrooms {
+            background: linear-gradient(135deg, #a87ab8, #9a6aa8);
+            color: white;
+        }
+
+        .feature-bedrooms.active {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #a87ab8;
+        }
+
+        .feature-bedrooms.active:hover {
+            background: linear-gradient(135deg, #9a6aa8, #8a5a98);
+        }
+
+        /* Bathrooms feature - Coral */
+        .feature-bathrooms {
+            background: linear-gradient(135deg, #e88b7b, #d87b6b);
+            color: white;
+        }
+
+        .feature-bathrooms.active {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #e88b7b;
+        }
+
+        .feature-bathrooms.active:hover {
+            background: linear-gradient(135deg, #d87b6b, #c86b5b);
+        }
+
+        /* Stories feature - Orange */
+        .feature-stories {
+            background: linear-gradient(135deg, #d89456, #c88446);
+            color: white;
+        }
+
+        .feature-stories.active {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #d89456;
+        }
+
+        .feature-stories.active:hover {
+            background: linear-gradient(135deg, #c88446, #b87436);
+        }
+
         .checkbox-label {
             display: flex;
             align-items: center;

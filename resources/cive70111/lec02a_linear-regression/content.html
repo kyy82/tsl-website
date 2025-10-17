@@ -6,6 +6,7 @@
     <title>Linear Regression</title>
     <script src="../scripts/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../scripts/demotab.css">
     <link rel="stylesheet" href="../demo-common.css">
@@ -21,29 +22,18 @@
 
             <div class="tab-content">
                 <div class="tab-panel active" data-tab-title="Introduction">
-                    <strong>Linear Regression</strong><br><br>
                     This interactive demo helps you understand linear regression, one of the fundamental concepts in machine learning and statistics. Linear regression finds the best straight line through data points to model relationships between variables.<br><br>
                     You'll explore how changing the line parameters affects the fit quality, learn about different error metrics, and work with real civil engineering datasets to see linear regression in action.
                 </div>
 
                 <div class="tab-panel" data-tab-title="Instructions">
-                    <strong>How to Use:</strong><br><br>
-                    • Adjust the $\alpha$ slider to move the line up or down<br>
-                    • Adjust the $\beta$ slider to change the slope of the line<br>
-                    • Click anywhere on the plot to add new data points<br>
-                    • Use <em>"Generate New Data"</em> to create 10 random points<br>
-                    • Use <em>"Clear All Data"</em> to remove all points<br>
-                    • Click on one of the datasets in <em>"Load Example Datasets"</em> to see real-life examples<br>
-                    • Toggle visualization options to explore different aspects of the regression
+                    • Adjust the $\alpha$ (intercept) and $\beta$ (slope) sliders to move the regression line and observe how the error metrics change<br>
+                    • Load sample datasets from civil engineering examples or generate/add your own data points by clicking on the plot<br>
+                    • Toggle visualization options to explore squared errors and confidence intervals<br><br>
+
+                    <strong>What is the maximum R² score you could achieve? Which sample dataset allows for the best fit? </strong>
                 </div>
 
-                <div class="tab-panel" data-tab-title="Challenges">
-                    <strong>Test Your Understanding:</strong><br><br
-                    • <em>Minimize MSE below 50</em> - Can you find the best fit?<br>
-                    • <em>Achieve R² above 0.75</em> - Aim for a strong correlation<br>
-                    • <em>Compare different datasets</em> - Which shows the strongest linear relationship?<br>
-                    • <em>Use "Find Optimal Solution"</em> - Then try to match it manually!
-                </div>
 
                 <div class="tab-panel" data-tab-title="Compete">
                     <strong>Live Competition Mode</strong><br><br>
@@ -63,20 +53,15 @@
                     • Live updates as you adjust parameters
                 </div>
 
-                <div class="tab-panel" data-tab-title="Tips">
-                    <strong>Understanding the Metrics:</strong><br><br>
-                    • <strong>R² values:</strong> 0.0-0.3 (poor), 0.3-0.7 (moderate), 0.7+ (good fit)<br>
-                    • <strong>MSE vs MAE:</strong> MSE penalizes large errors more heavily than MAE<br>
-                    • <strong>Confidence intervals:</strong> Show uncertainty in predictions (wider = less certain)<br>
-                    • <strong>α (alpha):</strong> Y-intercept - where the line crosses the Y-axis<br>
-                    • <strong>β (beta):</strong> Slope - how much Y changes for each unit of X
-                </div>
             </div>
         </div>
 
         <div class="demo-area">
             <div class="plot-container">
-                <canvas id="plot" width="600" height="455"></canvas>
+                <div style="position: relative; width: 600px; height: 455px;">
+                    <canvas id="plot"></canvas>
+                    <canvas id="overlay-canvas" style="position: absolute; top: 0; left: 0; pointer-events: none; background: transparent; z-index: 1; visibility: hidden;"></canvas>
+                </div>
                 <div class="plot-buttons">
                     <button class="generate-data-btn" id="generate-data-btn">Generate Random Data</button>
                     <button class="clear-data-btn" id="clear-data-btn">Clear All Data</button>
@@ -114,17 +99,29 @@
 
             <div class="controls">
                 <div class="control-group">
-                    <label for="alpha">$\alpha$ (Intercept)</label>
+                    <div class="label-with-buttons">
+                        <label for="alpha">$\alpha$ (Intercept)</label>
+                        <div class="fine-tune-buttons">
+                            <button class="fine-tune-btn" id="alpha-minus">−</button>
+                            <button class="fine-tune-btn" id="alpha-plus">+</button>
+                        </div>
+                    </div>
                     <div class="slider-container">
-                        <input type="range" id="alpha" min="-100" max="200" step="1" value="0">
+                        <input type="range" id="alpha" min="-100" max="200" step="0.1" value="0">
                         <div class="value-display" id="alpha-value">0</div>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label for="beta">$\beta$ (Gradient/Slope)</label>
+                    <div class="label-with-buttons">
+                        <label for="beta">$\beta$ (Gradient/Slope)</label>
+                        <div class="fine-tune-buttons">
+                            <button class="fine-tune-btn" id="beta-minus">−</button>
+                            <button class="fine-tune-btn" id="beta-plus">+</button>
+                        </div>
+                    </div>
                     <div class="slider-container">
-                        <input type="range" id="beta" min="-10" max="30" step="0.1" value="1">
+                        <input type="range" id="beta" min="-10" max="30" step="0.01" value="1">
                         <div class="value-display" id="beta-value">1.0</div>
                     </div>
                 </div>
@@ -161,6 +158,26 @@
 
                 <button class="solution-btn" id="solution-btn">Find Optimal Solution</button>
             </div>
+        </div>
+
+        <!-- Theory Section -->
+        <div class="theory-section">
+            <h3>Mathematical Foundations</h3>
+            <p>
+                The simplest regression model assumes a linear relationship between a single input feature and the output, taking the form $\hat{y} = \alpha + \beta x$, where $\hat{y}$ is our predicted value, $x$ is the input feature, $\alpha$ is the <em>bias</em> or <em>intercept</em> (the predicted value when $x=0$), and $\beta$ is the <em>weight</em> or <em>slope</em> (how much the prediction changes per unit of $x$).<br><br>
+
+                <strong>Training the model</strong> means finding the best-fitting $\alpha$ and $\beta$ based on our training data. Visually, we want a line that goes close to all the points. Numerically, "best fit" usually means the line that minimizes the prediction errors. 
+
+                We evaluate model performance using three complementary metrics, each highlighting different aspects of prediction quality:<br><br>
+
+                <strong>1. Mean Absolute Error (MAE)</strong> = $\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$ measures the average absolute difference between actual and predicted values. MAE is <em>robust to outliers</em> because it treats all errors equally regardless of magnitude. Used when you want an intuitive measure in the same units as your data (e.g., if predicting bridge deflection in mm, MAE is also in mm). Lower values indicate better fit.<br><br>
+
+                <strong>2. Mean Squared Error (MSE)</strong> = $\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$ measures the average squared difference between actual and predicted values. MSE <em>heavily penalizes large errors</em> due to squaring, making it sensitive to outliers. This is the most commonly used metric for training regression models because squaring makes the function differentiable everywhere and convex, enabling efficient optimization. The cost function $J(\alpha,\beta)$ used in training is essentially $\frac{1}{2}$MSE. Lower values indicate better fit.<br><br>
+
+                <strong>3. R-squared (R²)</strong> = $1 - \frac{\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}$ represents the proportion of variance in the data explained by the model, where $\bar{y}$ is the mean of observed values. R² ranges from 0 to 1 (or negative for very poor fits), with <em>higher values indicating better explanatory power</em>. Interpretation: 0.0-0.3 (poor fit), 0.3-0.7 (moderate), 0.7+ (good fit). Unlike MAE and MSE, R² is <em>scale-independent</em>, making it ideal for comparing models across different datasets or units. Widely used in statistics and sciences to communicate model quality to non-technical audiences.<br><br>
+
+                <strong>Practical guidance:</strong> Use MSE for training (optimization-friendly), MAE for interpretable error reporting (same units as data), and R² for overall model assessment (percentage of variance explained). Confidence intervals show uncertainty in predictions—wider intervals indicate less certainty.
+            </p>
         </div>
 
     </div>
